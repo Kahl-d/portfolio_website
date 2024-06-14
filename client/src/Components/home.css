@@ -1,0 +1,27 @@
+#homeContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#top{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid white;
+}
+
+#top div{
+    margin: 1rem;
+}
+
+#main{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
