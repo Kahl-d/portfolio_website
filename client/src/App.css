@@ -1,5 +1,10 @@
 :root{
     --primary-color-dark: #000814;
+    --secondary-color-dark: #001d3d;
+    --seondary-color-dark2: #003566;
+    --primary-color-light: #ffc300;
+    --secondary-color-light: #ffd60a;
+
 }
 
 *{
