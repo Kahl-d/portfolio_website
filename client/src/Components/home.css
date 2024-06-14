@@ -27,7 +27,11 @@
 }
 
 input{
-    border: none;
     width: 200px;
     height: 60%;
+    outline: 1px solid rgba(255, 255, 255, 0.563);
+    background: rgba(255, 255, 255, 0.63);
+    border: none;
+    padding: 1rem;
 }
+
