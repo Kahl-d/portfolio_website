@@ -207,16 +207,15 @@ const Skills = () => {
             </div>
 
             <div className='skillRow'>
-                <div>Other Skills:</div>
-                <div>Machine Learning</div>
-                <div>Deep Learning</div>
-                <div>Statistical Data Analysis</div>
-                <div>Natural Language Processing</div>
-                <div>Computer Vision</div>
-                <div>Big Data</div>
-                <div>Data Mining</div>
-                <div>Artificial Intelligence</div>
-                <div>Generative AI</div>
+                <div className='os'>Machine Learning</div>
+                <div className='os'>Deep Learning</div>
+                <div className='os'>Statistical Data Analysis</div>
+                <div className='os'>Natural Language Processing</div>
+                <div className='os'>Computer Vision</div>
+                <div className='os'>Big Data</div>
+                <div className='os'>Data Mining</div>
+                <div className='os'>Artificial Intelligence</div>
+                <div className='os'>Generative AI</div>
                 
             </div>
 

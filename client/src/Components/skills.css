@@ -45,3 +45,10 @@
     font-size: 0.8rem;
     font-family: 'Montserrat', sans-serif;
 }
+
+.os{
+    background-color: var(--primary-color-light);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
