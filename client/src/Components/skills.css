@@ -1,0 +1,32 @@
+#skillContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.skillRow{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: center;
+}
+
+.skillBox{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color-light);
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+
+.skillIcon{
+    font-size: 3rem;
+    color: var(--primary-color);
+}
