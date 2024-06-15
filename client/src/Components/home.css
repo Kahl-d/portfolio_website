@@ -29,17 +29,23 @@
 
 #mainText{
     width: 50%;
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
-p{
+.fs1{
     margin: 1rem;
-    font-family: 'Sherif', sans-serif;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.fs2{
+    margin: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+}
 
 button{
     width: 200px;
@@ -55,7 +61,7 @@ input{
     width: 200px;
     height: 60%;
     outline: 1px solid rgba(255, 255, 255, 0.563);
-    background: rgba(255, 255, 255, 0.63);
+    background: white;
     border: none;
     padding: 1rem;
 }
@@ -91,5 +97,5 @@ input{
 
 .highlightText{
     color: var(--primary-color-light);
-    font-size: 2rem;
+    font-size: 3rem;
 }

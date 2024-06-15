@@ -18,11 +18,11 @@ const Home = () => {
             </div>
             <div id="main">
                 <div id="mainText">
-                    <p>Hi, I'm 
+                    <p className="fs1">Hi, I'm 
                         <span className="highlightText"> Khalid</span>
                     
                     </p>
-                    <p>Innovative data science enthusiast with a keen aptitude for identifying patterns and insights within numbers and data. Passionate
+                    <p className="fs2">Innovative data science enthusiast with a keen aptitude for identifying patterns and insights within numbers and data. Passionate
                     about leveraging IT solutions in public sector, with proven ability to adapt and excel in collaborative, cross-departmental projects.
                     Driven towards advancing technology through creative solutions and meticulous learning. Excels in applying comprehensive
                     tatistical analysis and machine learning techniques to develop and optimize predictive models and AI-driven applications.</p>
