@@ -21,7 +21,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondary-color-light);
+    background-color: white;
+    color: var(--primary-color-light);
     border-radius: 1rem;
     margin: 1rem;
 }
@@ -29,4 +30,9 @@
 
 .skillIcon{
     font-size: 3rem;
+}
+
+.skillText h3{
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
 }

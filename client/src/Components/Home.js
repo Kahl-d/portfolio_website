@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdContactPage } from "react-icons/md";
-import { SiKeras } from "react-icons/si";
+import { FaKorvue } from "react-icons/fa";
 
 
 
@@ -13,7 +13,7 @@ const Home = () => {
     return ( 
         <div className="section" id="homeContainer">
             <div id="top">
-                <div><SiKeras/></div>
+                <div id="logo"><FaKorvue/></div>
                 <div>
                     <input type="text" placeholder="Search" />
                 </div>
