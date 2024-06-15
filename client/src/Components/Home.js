@@ -5,13 +5,15 @@ import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdContactPage } from "react-icons/md";
+import { SiKeras } from "react-icons/si";
+
 
 
 const Home = () => {
     return ( 
         <div className="section" id="homeContainer">
             <div id="top">
-                <div>logo</div>
+                <div><SiKeras/></div>
                 <div>
                     <input type="text" placeholder="Search" />
                 </div>
