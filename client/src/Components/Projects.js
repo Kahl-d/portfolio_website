@@ -53,9 +53,9 @@ const Projects = () => {
             style={{ backgroundImage: `url(${items[highlighted].image})` }}
         >
             <main>
-                <ul className='slider'>
+                <div className='slider'>
                     {items.map((item, index) => (
-                        <li
+                        <div
                             key={item.id}
                             className={`item ${index === highlighted ? 'highlighted' : ''}`}
                             style={{ backgroundImage: `url(${item.image})` }}
@@ -64,9 +64,9 @@ const Projects = () => {
                                     <h2 className='title'>{item.title}</h2>
                             )}
                            
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
                 <nav className='nav'>
                     <IoArrowBackOutline className='btn prev' onClick={prevSlide} />
                     <IoArrowForwardOutline className='btn next' onClick={nextSlide} />
