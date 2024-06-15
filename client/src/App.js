@@ -1,6 +1,7 @@
 import React from "react";
 import "./app.css"
 import Home from './Components/Home'
+import Skills from './Components/Skills'
 
 
 const App = () => {
@@ -11,7 +12,7 @@ const App = () => {
             </div>
 
             <div className="part">
-                Part2
+                <Skills />
             </div>
 
 
