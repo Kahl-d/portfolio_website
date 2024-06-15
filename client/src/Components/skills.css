@@ -1,7 +1,7 @@
 #skillContainer{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 1rem;
 }
 
@@ -12,6 +12,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     justify-self: center;
+    margin-bottom: 3rem;
 }
 
 .skillBox{
@@ -25,6 +26,14 @@
     color: var(--primary-color-light);
     border-radius: 1rem;
     margin: 1rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.skillBox:hover{
+    background-color: var(--primary-color-light);
+    color: white;
+    scale: 1.1;
 }
 
 
