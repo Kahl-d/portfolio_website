@@ -202,19 +202,22 @@ const Skills = () => {
                     </div>
                 </div>
 
-                {/* Matplotlib */}
-
-                <div className='skillBox'>
-                    <div className='skillIcon'>
-                        <SiPlotly/>
-                    </div>
-                    <div className='skillText'>
-                        <h3>Matplotlib</h3>
-                    </div>
-                </div>
 
 
+            </div>
 
+            <div className='skillRow'>
+                <div>Other Skills:</div>
+                <div>Machine Learning</div>
+                <div>Deep Learning</div>
+                <div>Statistical Data Analysis</div>
+                <div>Natural Language Processing</div>
+                <div>Computer Vision</div>
+                <div>Big Data</div>
+                <div>Data Mining</div>
+                <div>Artificial Intelligence</div>
+                <div>Generative AI</div>
+                
             </div>
 
        
