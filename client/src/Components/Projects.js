@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './projects.css';
 import { IoArrowBackOutline, IoArrowForwardOutline } from 'react-icons/io5';
 
@@ -36,7 +36,6 @@ const Projects = () => {
         }
     ];
 
-    // Initialize items with the last item at the front
     const [items, setItems] = useState(() => {
         const updatedItems = [...initialItems];
         const itemToMove = updatedItems.pop();
@@ -63,11 +62,8 @@ const Projects = () => {
     };
 
     return (
-        <div
-            className='section'
-            id="projectsContainer"
-            style={{ backgroundImage: `url(${items[highlighted].image})` }}
-        >
+        <div className='section' id="projectsContainer"
+            style={{ backgroundImage: `url(${items[highlighted].image})` }}>
             <main>
                 <div className='slider'>
                     {items.map((item, index) => (
