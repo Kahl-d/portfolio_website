@@ -8,7 +8,6 @@ import { MdContactPage } from "react-icons/md";
 import { FaKorvue } from "react-icons/fa";
 
 
-
 const Home = () => {
     return ( 
         <div className="section" id="homeContainer">
