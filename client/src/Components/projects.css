@@ -41,8 +41,8 @@ main {
     border-radius: 20px;
     margin: 0 10px;
     transition: transform 0.3s, width 0.75s, height 0.75s;
+    border: 1px solid white;
 }
-
 
 
 .nav {
@@ -61,4 +61,5 @@ main {
     font-size: 2rem;
     margin: 1rem;
 }
+
 
