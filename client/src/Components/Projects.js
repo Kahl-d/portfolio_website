@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './projects.css';
 import { IoArrowBackOutline, IoArrowForwardOutline } from 'react-icons/io5';
 
 const Projects = () => {
-    const items = [
+    const initialItems = [
         {
             id: 1,
             title: 'Project 1',
@@ -36,14 +36,30 @@ const Projects = () => {
         }
     ];
 
-    const [highlighted, setHighlighted] = useState(0);
+    // Initialize items with the last item at the front
+    const [items, setItems] = useState(() => {
+        const updatedItems = [...initialItems];
+        const itemToMove = updatedItems.pop();
+        updatedItems.unshift(itemToMove);
+        return updatedItems;
+    });
+
+    const [highlighted, setHighlighted] = useState(items.length - 1);
 
     const nextSlide = () => {
-        setHighlighted((prevIndex) => (prevIndex + 1) % items.length);
+        const updatedItems = [...items];
+        const itemToMove = updatedItems.shift();
+        updatedItems.push(itemToMove);
+        setItems(updatedItems);
+        setHighlighted(updatedItems.length - 1);
     };
 
     const prevSlide = () => {
-        setHighlighted((prevIndex) => (prevIndex - 1 + items.length) % items.length);
+        const updatedItems = [...items];
+        const itemToMove = updatedItems.pop();
+        updatedItems.unshift(itemToMove);
+        setItems(updatedItems);
+        setHighlighted(updatedItems.length - 1);
     };
 
     return (
@@ -60,10 +76,6 @@ const Projects = () => {
                             className={`item ${index === highlighted ? 'highlighted' : ''}`}
                             style={{ backgroundImage: `url(${item.image})` }}
                         >
-                            {index === highlighted && (
-                                    <h2 className='title'>{item.title}</h2>
-                            )}
-                           
                         </div>
                     ))}
                 </div>

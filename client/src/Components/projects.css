@@ -27,6 +27,8 @@ main {
     display: flex;
     justify-content: center;
     overflow: hidden;
+    position: absolute;
+    right: -20%;
 }
 
 .item {
@@ -40,7 +42,6 @@ main {
     margin: 0 10px;
     transition: transform 0.3s, width 0.75s, height 0.75s;
 }
-
 
 
 
@@ -61,8 +62,3 @@ main {
     margin: 1rem;
 }
 
-
-
-.highlighted{
-    width: 300px;
-}

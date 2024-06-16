@@ -15,8 +15,6 @@ import { SiKeras } from "react-icons/si";
 import { SiPandas } from "react-icons/si";
 import { SiNumpy } from "react-icons/si";
 import { SiScikitlearn } from "react-icons/si";
-import { GiArtificialIntelligence } from "react-icons/gi";
-import { SiPlotly } from "react-icons/si";
 import { IoLogoTableau } from "react-icons/io5";
 import { SiD3Dotjs } from "react-icons/si";
 
