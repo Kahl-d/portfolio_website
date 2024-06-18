@@ -6,13 +6,13 @@ const Projects = () => {
     const initialItems = [
         {
             id: 1,
-            title: 'Project 1',
+            title: 'Umame',
             description: 'Description for Project 1',
             image: 'https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg'
         },
         {
             id: 2,
-            title: 'Project 2',
+            title: 'Flight Fare Prediction',
             description: 'Description for Project 2',
             image: 'https://i.redd.it/tc0aqpv92pn21.jpg'
         },
