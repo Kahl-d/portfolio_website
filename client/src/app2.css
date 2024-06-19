@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primarry-black: #28282B;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--primarry-black);
     color: #333;
     font-size: 16px;
     line-height: 1.6;
@@ -17,7 +21,8 @@ body {
 
 #appContainer {
     width: 100vw;
-    height: fit-content;
+    height: 100vh;
+    background-color: aqua;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -75,6 +80,7 @@ body {
 .part {
     width: 100%;
     min-height: 100vh;
+    max-height: fit-content;
     padding: 1rem; /* Optional: Add some padding for better readability */
 }
 
