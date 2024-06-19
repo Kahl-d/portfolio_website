@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import './app2.css';
-import { TbHomeFilled } from "react-icons/tb";
-import { IoSchoolSharp } from "react-icons/io5";
-import { MdOutlineWorkOutline } from "react-icons/md";
-import { MdOutlineConstruction } from "react-icons/md";
-import { GiSkills } from "react-icons/gi";
-import { MdOutlineContacts } from "react-icons/md";
+import Skills from "./Components/Skills";
+
 
 const App2 = () => {
     useEffect(() => {
@@ -64,7 +60,9 @@ const App2 = () => {
                 <div id="home" className="part">Home</div>
                 <div id="education" className="part">Education</div>
                 <div id="experience" className="part">Experience</div>
-                <div id="skills" className="part">Skills</div>
+                <div id="skills" className="part">
+                    <Skills />
+                </div>
                 <div id="projects" className="part">Projects</div>
                 <div id="contact" className="part">Contact</div>
             </div>
