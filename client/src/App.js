@@ -3,11 +3,12 @@ import "./app.css"
 import Home from './Components/Home'
 import Skills from './Components/Skills'
 import Projects from './Components/Projects'
+import Gallery from './Components/Gallery'
 
 
 const App = () => {
     return (
-        <div id="appContainer">
+        <div id="appContainer1">
             <div className="part">
                 <Home />
             </div>
@@ -16,8 +17,14 @@ const App = () => {
                 <Skills />
             </div>
 
-            <div className="part">
+            
+
+            {/* <div className="part">
                 <Projects />
+            </div> */}
+
+            <div className="part">
+                <Gallery />
             </div>
 
 

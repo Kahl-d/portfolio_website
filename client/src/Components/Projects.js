@@ -5,6 +5,12 @@ import { IoArrowBackOutline, IoArrowForwardOutline } from 'react-icons/io5';
 const Projects = () => {
     const initialItems = [
         {
+            id: 0,
+            title: 'Projects',
+            description: 'Description for Projects',
+            image: 'https://www.thespruce.com/thmb/1vGxv4qQYz9vH8bZ8w9H5JQd6fU=/1500x1000/filters:fill(auto,1)/GettyImages-1139206354-5c8a0e1ac9e77c0001f4f8d0.jpg'
+        },
+        {
             id: 1,
             title: 'Umame',
             description: 'Description for Project 1',

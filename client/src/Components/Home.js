@@ -11,12 +11,7 @@ import { FaKorvue } from "react-icons/fa";
 const Home = () => {
     return ( 
         <div className="section" id="homeContainer">
-            <div id="top">
-                <div id="logo"><FaKorvue/></div>
-                <div>
-                    <input type="text" placeholder="Search" />
-                </div>
-            </div>
+            
             <div id="main">
                 <div id="mainText">
                     <p className="fs1">Hi, I'm 
