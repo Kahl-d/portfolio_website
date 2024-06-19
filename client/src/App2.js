@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import './app2.css';
 import Skills from "./Components/Skills";
 
-
 const App2 = () => {
     useEffect(() => {
         const links = document.querySelectorAll(".nav-link");
@@ -23,7 +22,7 @@ const App2 = () => {
         const targetElement = document.getElementById(targetId);
 
         window.scrollTo({
-            top: targetElement.offsetTop - 16,
+            top: targetElement.offsetTop,
             behavior: "smooth"
         });
     };
@@ -34,38 +33,47 @@ const App2 = () => {
                 <div>
                     <a href="#home" className="nav-link">Home</a>
                 </div>
-
                 <div>
                     <a href="#education" className="nav-link">Education</a>
                 </div>
-
                 <div>
                     <a href="#experience" className="nav-link">Work</a>
                 </div>
-
                 <div>
                     <a href="#skills" className="nav-link">Skills</a>
                 </div>
-
                 <div>
                     <a href="#projects" className="nav-link">Projects</a>
                 </div>
-
                 <div>
                     <a href="#contact" className="nav-link">Contact</a>
                 </div>
             </div>
-
             <div id="appContent">
-                <div id="home" className="part">Home</div>
-                <div id="education" className="part">
+                <div id="home" className="part">
+                    <div className="sticky-tag">Home</div>
+                    <p>Content for Home section...</p>
                 </div>
-                <div id="experience" className="part">Experience</div>
+                <div id="education" className="part">
+                    <div className="sticky-tag">Education</div>
+                    <p>Content for Education section...</p>
+                </div>
+                <div id="experience" className="part">
+                    <div className="sticky-tag">Work</div>
+                    <p>Content for Work section...</p>
+                </div>
                 <div id="skills" className="part">
+                    <div className="sticky-tag">Skills</div>
                     <Skills />
                 </div>
-                <div id="projects" className="part">Projects</div>
-                <div id="contact" className="part">Contact</div>
+                <div id="projects" className="part">
+                    <div className="sticky-tag">Projects</div>
+                    <p>Content for Projects section...</p>
+                </div>
+                <div id="contact" className="part">
+                    <div className="sticky-tag">Contact</div>
+                    <p>Content for Contact section...</p>
+                </div>
             </div>
         </div>
     );

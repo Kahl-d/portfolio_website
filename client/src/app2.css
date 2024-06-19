@@ -1,16 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Rubik+Glitch+Pop&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --primarry-black: #28282B;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--primarry-black);
     color: #333;
     font-size: 16px;
     line-height: 1.6;
@@ -22,11 +23,9 @@ body {
 #appContainer {
     width: 100vw;
     height: 100vh;
-    background-color: aqua;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 1rem;
     position: relative;
 }
 
@@ -40,8 +39,6 @@ body {
     position: fixed;
     left: 0;
     top: calc(50% - 250px);
-    backdrop-filter: blur(10px); /* Creates the frosted glass effect */
-    
 }
 
 #appNav div {
@@ -56,32 +53,34 @@ body {
     transform: rotateZ(180deg);
 }
 
-
-
 #appNav div:hover {
     scale: 1.5;
     cursor: pointer;
 }
 
-.iconBtn {
-    font-size: 3rem;
-}
-
-
-
 #appContent {
-    width: 60%;
-    height: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
 }
 
 .part {
     width: 100%;
     min-height: 100vh;
-    max-height: fit-content;
-    padding: 1rem; /* Optional: Add some padding for better readability */
+    padding: 1rem;
+    position: relative;
+}
+
+.sticky-tag {
+    font-size: 4rem;
+    opacity: 0.2;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    width: 100%;
+    text-align: center;
 }
 
 /* Optional: Styling for nav links */
