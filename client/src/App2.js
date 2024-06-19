@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import './app2.css';
 import Skills from "./Components/Skills";
+import Gallery from "./Components/Gallery";
 
 const App2 = () => {
     useEffect(() => {
@@ -68,7 +69,7 @@ const App2 = () => {
                 </div>
                 <div id="projects" className="part">
                     <div className="sticky-tag">Projects</div>
-                    <p>Content for Projects section...</p>
+                    <Gallery />
                 </div>
                 <div id="contact" className="part">
                     <div className="sticky-tag">Contact</div>

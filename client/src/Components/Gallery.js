@@ -5,11 +5,7 @@ const Gallery = () => {
   return (
     <div className="wrapper">
       <div className="items">
-        <div
-          className="item"
-          tabIndex="0"
-          style={{ backgroundImage: 'url("https://e22u.short.gy/f8spJ8")' }}
-        ></div>
+        
         <div
           className="item"
           tabIndex="0"
