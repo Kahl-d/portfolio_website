@@ -65,6 +65,7 @@ body {
 
 #appContent {
     width: 60%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;

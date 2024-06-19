@@ -27,7 +27,7 @@ const App2 = () => {
         const targetElement = document.getElementById(targetId);
 
         window.scrollTo({
-            top: targetElement.offsetTop,
+            top: targetElement.offsetTop - 16,
             behavior: "smooth"
         });
     };
