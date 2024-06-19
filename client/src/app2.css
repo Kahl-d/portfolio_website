@@ -39,6 +39,7 @@ body {
     position: fixed;
     left: 0;
     top: calc(50% - 250px);
+    z-index: 100;
 }
 
 #appNav div {
@@ -80,7 +81,6 @@ body {
     z-index: 10;
     background: white;
     width: 100%;
-    text-align: center;
 }
 
 /* Optional: Styling for nav links */
