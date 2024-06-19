@@ -35,28 +35,28 @@ const App2 = () => {
     return (
         <div id="appContainer">
             <div id="appNav">
-                <div id="topBtn">
-                    <a href="#home" className="nav-link"><TbHomeFilled className="iconBtn" /></a>
+                <div>
+                    <a href="#home" className="nav-link">Home</a>
                 </div>
 
                 <div>
-                    <a href="#education" className="nav-link"><IoSchoolSharp className="iconBtn" /></a>
+                    <a href="#education" className="nav-link">Education</a>
                 </div>
 
                 <div>
-                    <a href="#experience" className="nav-link"><MdOutlineWorkOutline className="iconBtn" /></a>
+                    <a href="#experience" className="nav-link">Work</a>
                 </div>
 
                 <div>
-                    <a href="#skills" className="nav-link"><GiSkills className="iconBtn" /></a>
+                    <a href="#skills" className="nav-link">Skills</a>
                 </div>
 
                 <div>
-                    <a href="#projects" className="nav-link"><MdOutlineConstruction className="iconBtn" /></a>
+                    <a href="#projects" className="nav-link">Projects</a>
                 </div>
 
-                <div id="bottomBtn">
-                    <a href="#contact" className="nav-link"><MdOutlineContacts className="iconBtn" /></a>
+                <div>
+                    <a href="#contact" className="nav-link">Contact</a>
                 </div>
             </div>
 
