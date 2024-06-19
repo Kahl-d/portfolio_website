@@ -58,7 +58,8 @@ const App2 = () => {
 
             <div id="appContent">
                 <div id="home" className="part">Home</div>
-                <div id="education" className="part">Education</div>
+                <div id="education" className="part">
+                </div>
                 <div id="experience" className="part">Experience</div>
                 <div id="skills" className="part">
                     <Skills />
