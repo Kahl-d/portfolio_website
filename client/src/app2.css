@@ -9,10 +9,10 @@
 :root{
     --primary-color-dark: #000814;
     --secondary-color-dark: #001d3d;
-    --seondary-color-dark2: #003566;
+    --secondary-color-dark2: #003566;
     --primary-color-light: #ffc300;
     --secondary-color-light: #ffd60a;
-    --primarry-black: #28282B;
+    --primary-black: #28282B;
 
 
 }
@@ -20,6 +20,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: white;
     color: #333;
     font-size: 16px;
     line-height: 1.6;
@@ -103,3 +104,5 @@ body {
     width: 100%;
     height: 100%;
 }
+
+
