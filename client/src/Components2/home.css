@@ -75,12 +75,14 @@ a{
     border: 1px solid black;
     z-index: 2;
     transition: all 0.3s;
+    background-color: #444444;
+    color: aliceblue;
 }
 
 .info{
   width: 0;
   font-size: 0;
-  transition: all 0.3s;
+  transition: width 0.3s;
 }
 
 .infoDiv:hover{
@@ -98,11 +100,6 @@ a{
     margin: 1rem;
 
 }
-
-
-
-
-  
 
 
   #wave{
