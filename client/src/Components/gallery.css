@@ -26,18 +26,18 @@
     transition: transform 1.25s var(--transition);
     will-change: transform;
     /* rotate 90 degrees */
-    /* transform: rotateZ(-90deg); */
+    transform: rotateZ(-90deg);
 }
 
-/* .card{
+.card{
     transform: rotateZ(90deg);
 
-} */
+}
 
 
 .item {
     width: calc(var(--index) * 3);
-    height: calc(var(--index) * 15);
+    height: calc(var(--index) * 20);
     background-color: #333;
     background-size: cover;
     background-position: center;

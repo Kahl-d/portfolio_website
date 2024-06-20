@@ -1,14 +1,28 @@
 #journeyContainer{
-    height: calc(100vh - 100px);
     width: 100%;
     display: flex;
     flex-direction: column;
     color: white;
+    overflow: hidden;
 }
 
-#years{
-    width: 100%;
-    height: 10%;
+
+.thing{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    width: 500px;
+    margin-bottom: 4rem;
+}
+
+.thing div{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+
+#thing1{
+    margin-left: 50%;
 }
