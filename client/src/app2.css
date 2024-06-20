@@ -83,16 +83,15 @@ body {
 }
 
 .sticky-tag {
-    font-size: 4rem;
+    width: fit-content;
+    height: 100px;
     opacity: 0.2;
-    position: -webkit-sticky; /* For Safari */
-    position: absolute;
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: white;
-    width: fit-content
+    font-size: 4rem;
+    
 }
+
 
 /* Optional: Styling for nav links */
 .nav-link {
