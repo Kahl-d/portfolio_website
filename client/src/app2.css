@@ -107,7 +107,12 @@ body {
     cursor: pointer;
 }
 
-#education{
+#journey{
     background-color: #444444;
+}
+
+#journey .sticky-tag{
+    color: white;
+    opacity: 0.5;
 }
 

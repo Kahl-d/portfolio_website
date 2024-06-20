@@ -38,11 +38,11 @@ const App2 = () => {
                     <a href="#home" className="nav-link">About</a>
                 </div>
                 <div>
-                    <a href="#education" className="nav-link">Education</a>
+                    <a href="#journey" className="nav-link">Journey</a>
                 </div>
-                <div>
+                {/* <div>
                     <a href="#experience" className="nav-link">Work</a>
-                </div>
+                </div> */}
                 <div>
                     <a href="#skills" className="nav-link">Skills</a>
                 </div>
@@ -58,14 +58,14 @@ const App2 = () => {
                     <div className="sticky-tag">About</div>
                     <Home />
                 </div>
-                <div id="education" className="part">
-                    <div className="sticky-tag">Education</div>
+                <div id="journey" className="part">
+                    <div className="sticky-tag">Journey</div>
                     <Journey />
                 </div>
-                <div id="experience" className="part">
+                {/* <div id="experience" className="part">
                     <div className="sticky-tag">Work</div>
                     <p>Content for Work section...</p>
-                </div>
+                </div> */}
                 <div id="skills" className="part">
                     <div className="sticky-tag">Skills</div>
                     
