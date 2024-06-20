@@ -200,6 +200,7 @@
   .card:hover{
     scale: 1.1;
     cursor: pointer;
+    z-index: 2;
 
   }
   
