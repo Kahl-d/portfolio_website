@@ -1,33 +1,159 @@
-:root{
-    --primary-color-dark: #000814;
-    --secondary-color-dark: #001d3d;
-    --seondary-color-dark2: #003566;
-    --primary-color-light: #ffc300;
-    --secondary-color-light: #ffd60a;
 
-}
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#appContainer1{
-    background-color: var(--primary-color-dark);
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+#appContainer {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+}
+
+#appNav {
+    width: 80px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    position: fixed;
+    left: 0;
+    top: calc(50% - 250px);
+    z-index: 100;
+}
+
+#appNav div {
     width: 100%;
-    height: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: scale 0.3s;
+    /* writing-mode: vertical-rl; */
+    text-orientation: mixed;
+    /* transform: rotateZ(180deg); */
+}
+
+#appNav div:hover {
+    scale: 1.5;
+    cursor: pointer;
+}
+
+#appContent {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.part {
+    width: 100%;
+    /* height: 100vh; */
+    min-height: 100vh;
+    
+    /* padding: 1rem; */
+    position: relative;
+    padding-left: 4rem;
+}
+
+.sticky-tag {
+    width: fit-content;
+    height: 100px;
+    opacity: 0.2;
+    position: sticky;
+    top: 0;
+    font-size: 4rem;
     
 }
 
-.part{
+
+/* Optional: Styling for nav links */
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    cursor: pointer;
+}
+
+#journey{
+    background-color: #444444;
+}
+
+#journey .sticky-tag{
     color: white;
+    opacity: 0.6;
 }
 
 
-.section{
-    width: 100%;
-    height: 100%;
+.nav-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.nav-link span{
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    transition: font-size 0.5s;
+    font-weight: bold;
+    color: #444;
+
+
+}
+
+#j-link span{
+    color: white;
+}
+
+/* only show span label when navlink active */
+.nav-link span {
+    font-size: 0;
+    font-family: 'Roboto', sans-serif;
+
+    transition: font-size 0.1s;
+}
+
+.nav-link.active * {
+    font-size: 0rem;
+}
+
+
+.nav-link.active span {
+    font-size: 1rem;
+}
+
+.nav-link:hover * {
+    font-size: 0rem;
+}
+
+.nav-link:hover span {
+    
+    font-size: 0.8rem;
 }

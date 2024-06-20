@@ -6,7 +6,7 @@
 
 #homeContainer{
     width: 100%;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh);
     display: flex;
     position: relative;
 }
@@ -46,7 +46,7 @@
     height: fit-content;
     position: absolute;
     right: 2rem;
-    top: -2rem;
+    top: 2rem;
     display: flex;
 
     flex-direction: column;
