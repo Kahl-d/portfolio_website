@@ -15,6 +15,7 @@
     justify-content: center;
     width: 100%;
     height: calc(100vh - 100px);
+    position: relative;
 }
 
 .items {
@@ -49,7 +50,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    position: relative;
+    /* position: relative; */
     text-align: center;
 }
 
@@ -161,3 +162,4 @@
     width: 120px;
     height: 100px;
 }
+

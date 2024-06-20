@@ -77,6 +77,9 @@ const Gallery = () => {
                 <ProjectCard project={project} />
               </div>
             )}
+
+           
+
           </div>
         ))}
       </div>
