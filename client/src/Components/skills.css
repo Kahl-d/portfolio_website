@@ -23,18 +23,13 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    color: var(--primary-color-light);
+    color: #444;
     border-radius: 1rem;
     margin: 1rem;
     transition: all 0.3s;
     cursor: pointer;
 }
 
-.skillBox:hover{
-    background-color: var(--primary-color-light);
-    color: white;
-    scale: 1.1;
-}
 
 
 .skillIcon{
@@ -47,8 +42,9 @@
 }
 
 .os{
-    background-color: var(--primary-color-light);
+    background-color: #444;
     border-radius: 1rem;
     padding: 0.5rem;
     font-size: 1rem;
+    color: white;
 }

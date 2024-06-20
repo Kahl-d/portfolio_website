@@ -14,7 +14,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
+    height: fit-content;
     position: relative;
 }
 
@@ -38,7 +39,7 @@
 .item {
     width: calc(var(--index) * 3);
     height: calc(var(--index) * 20);
-    background-color: #333;
+    background-color: #444;
     background-size: cover;
     background-position: center;
     cursor: pointer;

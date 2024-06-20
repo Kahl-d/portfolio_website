@@ -58,9 +58,9 @@ body {
     justify-content: center;
     align-items: center;
     transition: scale 0.3s;
-    writing-mode: vertical-rl;
+    /* writing-mode: vertical-rl; */
     text-orientation: mixed;
-    transform: rotateZ(180deg);
+    /* transform: rotateZ(180deg); */
 }
 
 #appNav div:hover {
@@ -117,3 +117,30 @@ body {
     opacity: 0.6;
 }
 
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+}
+
+/* only show span label when navlink active */
+.nav-link span {
+    font-size: 0;
+    transition: font-size 0.3s;
+}
+
+.nav-link.active * {
+    font-size: 0rem;
+}
+
+
+.nav-link.active span {
+    font-size: 1rem;
+
+}
