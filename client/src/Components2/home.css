@@ -1,0 +1,13 @@
+#homeContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+#homeImage img{
+    height: 80%;
+    position: absolute;
+    bottom: calc(50% - 40%);
+    right: 0;
+}

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import './app2.css';
 import Skills from "./Components/Skills";
 import Gallery from "./Components/Gallery";
+import Home from "./Components2/Home";
+
 
 const App2 = () => {
     useEffect(() => {
@@ -53,7 +55,7 @@ const App2 = () => {
             <div id="appContent">
                 <div id="home" className="part">
                     <div className="sticky-tag">Home</div>
-                    <p>Content for Home section...</p>
+                    <Home />
                 </div>
                 <div id="education" className="part">
                     <div className="sticky-tag">Education</div>
@@ -65,7 +67,7 @@ const App2 = () => {
                 </div>
                 <div id="skills" className="part">
                     <div className="sticky-tag">Skills</div>
-                    {/* <Skills /> */}
+                    
                 </div>
                 <div id="projects" className="part">
                     <div className="sticky-tag">Projects</div>
