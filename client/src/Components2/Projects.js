@@ -70,11 +70,11 @@ const Projects = () => {
             {projects.map((project, index) => (
                 <div
                     key={index}
-                    className="project"
+                    className="project card"
                     id={`project${index + 1}`}
                     onClick={() => handleProjectClick(project)}
                 >
-                    <span>{project.name}</span>
+                    <span className="card-title">{project.name}</span>
                 </div>
             ))}
         </div>
