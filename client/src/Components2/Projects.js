@@ -60,7 +60,7 @@ const Projects = () => {
                     <div>
                         <h2>{selectedProject.name}</h2>
                         <p>{selectedProject.description}</p>
-                        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="button2">View on GitHub</a>
                     </div>
                 ) : (
                     <p>Select a project to see the details</p>

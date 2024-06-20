@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import './app2.css';
 import Skills from "./Components/Skills";
-import Gallery from "./Components/Gallery";
+// import Gallery from "./Components/Gallery";
 import Home from "./Components2/Home";
 import Journey from "./Components2/Journey";
 import { IoMdHome } from "react-icons/io";
