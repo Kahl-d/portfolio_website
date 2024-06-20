@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./gallery.css";
 
 const projects = [
@@ -9,7 +9,7 @@ const projects = [
     image: "https://cdn.educba.com/academy/wp-content/uploads/2019/04/Predictive-Modeling.jpg"
   },
   {
-    name: " Advance NLP Techniques",
+    name: "Advance NLP Techniques",
     description: "This repository showcases various NLP mini-projects, utilizing techniques such as n-grams, word embeddings, and generative language models. Projects include text classification with PyTorch, Naive Bayes classifiers, and more, highlighting a range of applications in natural language processing.",
     link: "https://github.com/Kahl-d/Natural-Language-Processing",
     image: "https://cdn-images-1.medium.com/max/1500/1*MKsqxsgoS5WXMNc_zQF4wQ.jpeg"
@@ -55,6 +55,18 @@ const projects = [
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".item")) {
+        setSelectedIndex(null);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   const handleClick = (index) => {
     setSelectedIndex(index === selectedIndex ? null : index);
   };
@@ -77,9 +89,6 @@ const Gallery = () => {
                 <ProjectCard project={project} />
               </div>
             )}
-
-           
-
           </div>
         ))}
       </div>
@@ -91,18 +100,16 @@ const ProjectCard = ({ project }) => (
   <div className="card">
     <img src={project.image} alt={project.name} className="card-image" />
     <div className="card-content">
-        <h2 className="card-title">{project.name}</h2>
-        <p className="card-description">{project.description}</p>
-
-        <button 
-            onClick={() => window.open(project.link, "_blank", "noopener noreferrer")}
-            className="card-button"
-        >
-            View on GitHub
-        </button>
+      <h2 className="card-title">{project.name}</h2>
+      <p className="card-description">{project.description}</p>
+      <button 
+        onClick={() => window.open(project.link, "_blank", "noopener noreferrer")}
+        className="card-button"
+      >
+        View on GitHub
+      </button>
     </div>
-</div>
-
+  </div>
 );
 
 export default Gallery;
