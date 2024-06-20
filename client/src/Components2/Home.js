@@ -32,36 +32,36 @@ const Home = () => {
                 <div id="homeContact">
 
                     {/* Call */}
-                    <a href="tel:647-832-5980" className="infoDiv button2">
+                    <a href="tel:404-263-7813" className="infoDiv button2">
                         <IoIosCall />
-                        <div className="info">404-263-7813</div>
+                        <div className="info">(404) 263 7813</div>
                     </a>
                     <a href="mailto:email.khalidmkhan@gmail.com" className="infoDiv button2">
                         <MdEmail />
                         <div className="info">email.khalidmkhan@gmail.com</div>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/khalidmkhan/" className="infoDiv button2">
+                    <a href="https://www.linkedin.com/in/khalid-mehtab-khan-0982b1173/" className="infoDiv button2">
                         <CiLinkedin />
-                        <div className="info">LinkedIn</div>
+                        <div className="info">www.linkedin.com/in/khalid-mehtab-khan</div>
                     </a>
 
                     {/* github */}
-                    <a href="github.com" className="infoDiv button2">
+                    <a href="https://github.com/Kahl-d" className="infoDiv button2">
                         <FaGithub />
-                        <div className="info">Github.kahl-d</div>
+                        <div className="info">github.com/Kahl-d</div>
                     </a>
 
                     {/* twitter */}
-                    <a href="twitter.com" className="infoDiv button2">
+                    <a href="https://x.com/ashvatthamaa" className="infoDiv button2">
                         <FaSquareXTwitter />
-                        <div className="info">Twitter</div>
+                        <div className="info">x.com/ashvatthamaa</div>
                     </a>
                     
                     {/* instagram */}
-                    <a href="instagram.com" className="infoDiv button2">
+                    <a href="https://www.instagram.com/ashvatthama.__/" className="infoDiv button2">
                         <TiSocialInstagram />
-                        <div className="info">Instagram</div>
+                        <div className="info">@ashvatthama.__</div>
                     </a>
 
                 </div>
@@ -70,7 +70,7 @@ const Home = () => {
                 </div>
 
                 <div id="wave">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fillOpacity="1" d="M0,224L48,224C96,224,192,224,288,208C384,192,480,160,576,144C672,128,768,128,864,138.7C960,149,1056,171,1152,154.7C1248,139,1344,85,1392,58.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#444444" fillOpacity="1" d="M0,224L48,224C96,224,192,224,288,208C384,192,480,160,576,144C672,128,768,128,864,138.7C960,149,1056,171,1152,154.7C1248,139,1344,85,1392,58.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
                 </div>
             </div>
         </div>

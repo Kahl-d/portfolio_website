@@ -34,7 +34,7 @@ const App2 = () => {
         <div id="appContainer">
             <div id="appNav">
                 <div>
-                    <a href="#home" className="nav-link">Home</a>
+                    <a href="#home" className="nav-link">About</a>
                 </div>
                 <div>
                     <a href="#education" className="nav-link">Education</a>
@@ -54,7 +54,7 @@ const App2 = () => {
             </div>
             <div id="appContent">
                 <div id="home" className="part">
-                    <div className="sticky-tag">Home</div>
+                    <div className="sticky-tag">About</div>
                     <Home />
                 </div>
                 <div id="education" className="part">
