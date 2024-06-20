@@ -3,6 +3,7 @@ import './app2.css';
 import Skills from "./Components/Skills";
 import Gallery from "./Components/Gallery";
 import Home from "./Components2/Home";
+import Journey from "./Components2/Journey";
 
 
 const App2 = () => {
@@ -59,7 +60,7 @@ const App2 = () => {
                 </div>
                 <div id="education" className="part">
                     <div className="sticky-tag">Education</div>
-                    <p>Content for Education section...</p>
+                    <Journey />
                 </div>
                 <div id="experience" className="part">
                     <div className="sticky-tag">Work</div>
