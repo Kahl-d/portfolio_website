@@ -13,18 +13,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    width: 100%;
+    height: calc(100vh - 100px);
 }
 
 .items {
     display: flex;
     gap: 0.4rem;
     perspective: calc(var(--index) * 35);
+    transform-style: preserve-3d;
+    transition: transform 1.25s var(--transition);
+    will-change: transform;
+    /* rotate 90 degrees */
+    /* transform: rotateZ(-90deg); */
 }
+
+/* .card{
+    transform: rotateZ(90deg);
+
+} */
+
 
 .item {
     width: calc(var(--index) * 3);
-    height: calc(var(--index) * 12);
+    height: calc(var(--index) * 15);
     background-color: #333;
     background-size: cover;
     background-position: center;
@@ -132,4 +144,20 @@
     margin: 0 .45vw;
 }
 
+.card-title{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 
+}
+
+.card-description{
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.card img{
+    width: 120px;
+    height: 100px;
+}

@@ -3,34 +3,34 @@ import "./gallery.css";
 
 const projects = [
   {
-    name: "Visualizing the Housing Landscape in San Francisco",
-    description: "This project visualizes the housing market trends in San Francisco over the past decade.",
-    link: "https://github.com/your-repo",
-    image: "https://via.placeholder.com/150"
+    name: "Flight Fare Prediction",
+    description: "This project analyzed flight prices and operations at San Francisco International Airport (SFO) using statistical models like regression, classification, and random forests. It focused on factors influencing fares, such as travel dates, airlines, and destinations. Using data from Expedia, the study provided insights into fare patterns and helped predict price variations, benefiting travelers and airlines.",
+    link: "https://github.com/Kahl-d/Fare-Prediction-App",
+    image: "https://cdn.educba.com/academy/wp-content/uploads/2019/04/Predictive-Modeling.jpg"
   },
   {
-    name: "Analyzing Traffic Patterns in Los Angeles",
-    description: "A comprehensive analysis of traffic patterns in Los Angeles using real-time data.",
-    link: "https://github.com/your-repo",
-    image: "https://via.placeholder.com/150"
+    name: " Advance NLP Techniques",
+    description: "This repository showcases various NLP mini-projects, utilizing techniques such as n-grams, word embeddings, and generative language models. Projects include text classification with PyTorch, Naive Bayes classifiers, and more, highlighting a range of applications in natural language processing.",
+    link: "https://github.com/Kahl-d/Natural-Language-Processing",
+    image: "https://cdn-images-1.medium.com/max/1500/1*MKsqxsgoS5WXMNc_zQF4wQ.jpeg"
   },
   {
-    name: "Climate Change Impact on Coastal Cities",
-    description: "Studying the effects of climate change on coastal cities and potential mitigation strategies.",
-    link: "https://github.com/your-repo",
-    image: "https://via.placeholder.com/150"
+    name: "SmartSearch: Web Text Retrieval System",
+    description: "This project implements a text retrieval system that extracts and indexes text from web pages to create a searchable dictionary of unique words. Using this dictionary, the system ranks documents based on their relevance to user queries. The database includes 50 documents across topics like Economics, Android, Covid, Bitcoin, and Football. By applying a ranking function that considers term frequency and inverse document frequency, the system provides a ranked list of relevant documents for any given query.",
+    link: "https://github.com/Kahl-d/Information-Retrieval",
+    image: "https://res.cloudinary.com/hilnmyskv/image/upload/q_auto,f_auto/v1681989875/Algolia_com_Blog_assets/Featured_images/ux/what-is-intelligent-search-and-how-does-it-work/dntm8rnlmgbl51m9ozwy.jpg"
   },
   {
-    name: "Renewable Energy Adoption Trends",
-    description: "Tracking the adoption of renewable energy sources across different regions.",
-    link: "https://github.com/your-repo",
-    image: "https://via.placeholder.com/150"
+    name: "SF Housing & Renewable Energy Trends",
+    description: "This project features an interactive dashboard to visualize San Francisco's housing market. Using datasets from Zillow, SF Crime Data, Simple Maps, and GreatSchools, it displays average home values, rent prices, crime rates, and demographic factors by zip code. Key technologies include data visualization libraries (D3.js, Chart.js), web scraping tools (BeautifulSoup, NLTK), and statistical analysis techniques.",
+    link: "https://github.com/Kahl-d/DataWiz-Visualization",
+    image: "https://cdn.dribbble.com/users/434413/screenshots/19978179/media/bfd59a26b7f69672c1270d8b3d582a66.png?resize=400x0"
   },
   {
-    name: "Urbanization and Its Effects on Wildlife",
-    description: "Exploring the impact of urbanization on local wildlife populations.",
-    link: "https://github.com/your-repo",
-    image: "https://via.placeholder.com/150"
+    name: "UMAme - Personalized Culinary Platform",
+    description: "UMAme a personalized culinary platform that enhances everyday cooking by combining robust data algorithms with an intuitive interface. It allows users to tweak recipes, add ingredients, and share personalized creations. The platform features step-by-step instructions, in-recipe timers, and a dynamic ecosystem for user comments and suggestions. UMAme supports culinary exploration and encourages experimentation.",
+    link: "https://github.com/Kahl-d/UMAMe1",
+    image: "https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg"
   },
   {
     name: "Data Visualization Techniques for Big Data",
@@ -88,13 +88,18 @@ const ProjectCard = ({ project }) => (
   <div className="card">
     <img src={project.image} alt={project.name} className="card-image" />
     <div className="card-content">
-      <h2 className="card-title">{project.name}</h2>
-      <p className="card-description">{project.description}</p>
-      <a href={project.link} target="_blank" rel="noopener noreferrer" className="card-button">
-        View on GitHub
-      </a>
+        <h2 className="card-title">{project.name}</h2>
+        <p className="card-description">{project.description}</p>
+
+        <button 
+            onClick={() => window.open(project.link, "_blank", "noopener noreferrer")}
+            className="card-button"
+        >
+            View on GitHub
+        </button>
     </div>
-  </div>
+</div>
+
 );
 
 export default Gallery;

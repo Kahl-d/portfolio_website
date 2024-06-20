@@ -74,7 +74,7 @@ a{
     margin-left: 2rem;
     border: 1px solid black;
     z-index: 2;
-    transition: all 0.3s
+    transition: all 0.3s;
 }
 
 .info{
@@ -101,6 +101,7 @@ a{
 
 
 
+
   
 
 
@@ -111,3 +112,4 @@ a{
     position: absolute;
     bottom: -1%;
   }
+
