@@ -22,8 +22,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    color: #444;
+    color: white;
+    background-color: #444;
     border-radius: 1rem;
     margin: 1rem;
     transition: all 0.3s;

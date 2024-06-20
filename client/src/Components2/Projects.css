@@ -1,0 +1,95 @@
+#projectContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.project{
+    position: absolute;
+    font-size: 1rem;
+    background-size: cover;
+    padding: 0.5rem;
+
+
+}
+
+#project1{
+    bottom: 1rem;
+    right: 1rem;
+    width: 30%;
+    height: 20%;
+    background: url('https://cdn.educba.com/academy/wp-content/uploads/2019/04/Predictive-Modeling.jpg');
+    background-size: cover;
+    
+}
+
+#project2{
+    bottom: calc(20% + 2rem);
+    right: 1rem;
+    height: 40%;
+    width: 10%;
+    background: url('https://cdn-images-1.medium.com/max/1500/1*MKsqxsgoS5WXMNc_zQF4wQ.jpeg');
+    background-size: cover;
+
+}
+
+#project3{
+    bottom: calc(60% + 3rem);
+    right: 1rem;
+    height: 20%;
+    width: 10%;
+    border-radius: 2rem 0 0 0;
+
+    background: url('https://res.cloudinary.com/hilnmyskv/image/upload/q_auto,f_auto/v1681989875/Algolia_com_Blog_assets/Featured_images/ux/what-is-intelligent-search-and-how-does-it-work/dntm8rnlmgbl51m9ozwy.jpg');
+    background-size: cover;
+
+}
+
+#project4{
+    bottom: calc(20% + 2rem);
+    right: calc(10% + 2rem);
+    width: calc(20% - 1rem);
+    height: 30%;
+    border-radius: 2rem 0 0 0;
+
+    background: url('https://cdn.dribbble.com/users/434413/screenshots/19978179/media/bfd59a26b7f69672c1270d8b3d582a66.png?resize=400x0');
+    background-size: cover;
+
+}
+
+#project5{
+    bottom: calc(50% + 3rem);
+    right: calc(10% + 2rem);
+    height: 20%;
+    width: 10%;
+    border-radius: 2rem 0 0 0;
+
+    background: url('https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg');
+    background-size: cover;
+
+
+}
+
+#project6{
+    bottom: 1rem;
+    right: calc(30% + 2rem);
+    height: 40%;
+    width: 10%;
+    border-radius: 2rem 0 0 0;
+
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrlYRLf8t5WgZVG9zm2AGfkqVO5wZDZKXfgQ&s');
+    background-size: cover;
+
+}
+
+#project7{
+    bottom: 1rem;
+    right: calc(40% + 3rem);
+    height: 20%;
+    width: 10%;
+    border-radius: 2rem 0 0 0;
+    background: url('https://media.licdn.com/dms/image/D4D12AQFNUAdgaoK2zQ/article-cover_image-shrink_600_2000/0/1692816749106?e=2147483647&v=beta&t=iVpvOcBQmvYllV--CopadMhBsmyGEC85qb5jMtNFaxE');
+    background-size: cover;
+
+    
+}

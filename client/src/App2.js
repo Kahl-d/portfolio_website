@@ -9,6 +9,7 @@ import { GiJourney } from "react-icons/gi";
 import { IoBuild } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { MdContacts } from "react-icons/md";
+import Projects from "./Components2/Projects";
 
 const App2 = () => {
     useEffect(() => {
@@ -108,11 +109,10 @@ const App2 = () => {
                 </div>
                 <div id="projects" className="part">
                     <div className="sticky-tag">Projects</div>
-                    <Gallery />
+                    <Projects />
                 </div>
                 <div id="contact" className="part">
                     <div className="sticky-tag">Contact</div>
-                    <p>Content for Contact section...</p>
                 </div>
             </div>
         </div>
