@@ -65,7 +65,7 @@ const App2 = () => {
                 </div>
                 <div id="skills" className="part">
                     <div className="sticky-tag">Skills</div>
-                    <Skills />
+                    {/* <Skills /> */}
                 </div>
                 <div id="projects" className="part">
                     <div className="sticky-tag">Projects</div>
