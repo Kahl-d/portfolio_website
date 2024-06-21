@@ -11,7 +11,7 @@ import { GiSkills } from "react-icons/gi";
 import { MdContacts } from "react-icons/md";
 import Projects from "./Components2/Projects";
 // import Skills2 from "./Components2/Skills2";
-import App3 from "./Experiments/Grid";
+import SkillGrid from "./Experiments/SkillGrid";
 
 const App = () => {
     useEffect(() => {
@@ -106,9 +106,7 @@ const App = () => {
                 </div>
                 <div id="skills" className="part">
                     <div className="sticky-tag">Skills</div>
-                    {/* <Skills2 />  */}
-
-
+                     <SkillGrid />
                 </div>
                 <div id="projects" className="part">
                     <div className="sticky-tag">Projects</div>
@@ -116,7 +114,6 @@ const App = () => {
                 </div>
                 <div id="contact" className="part">
                     <div className="sticky-tag">Contact</div>
-                    <App3 />
                 </div>
             </div>
         </div>

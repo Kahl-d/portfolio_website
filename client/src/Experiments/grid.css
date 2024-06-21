@@ -12,12 +12,11 @@
     width: 100%;
     height: calc(100vh - 100px);
     position: relative;
-    background-color: white;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     perspective: calc(var(--index) * 35);
     transform-style: preserve-3d;
     width: 60%;
@@ -39,7 +38,7 @@
     justify-content: center;
     text-align: center;
     transform-style: preserve-3d;
-    color: transparent;
+    color: black;
     font-size: calc(var(--index) * 1.5);
     font-weight: bold;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
@@ -49,6 +48,7 @@
     filter: none;
     transform: translateZ(calc(var(--index) * 8.5)) scale(1.1);
     box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.55);
+    color: white;
 }
 
 .grid .item[data-distance="1"] {

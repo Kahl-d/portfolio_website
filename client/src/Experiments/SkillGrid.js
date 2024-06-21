@@ -33,35 +33,6 @@ const GridItem = ({ index, children, handleMouseEnter, handleMouseLeave }) => {
 
 const Grid = ({ items }) => {
 
-    const skills = [
-        { name: "C++", icon: <SiCplusplus /> },
-        { name: "Python", icon: <FaPython /> },
-        { name: "JavaScript", icon: <IoLogoJavascript /> },
-        { name: "Go", icon: <FaGolang /> },
-        { name: "SQL", icon: <PiFileSqlFill /> },
-        { name: "HTML", icon: <FaHtml5 /> },
-        { name: "CSS", icon: <IoLogoCss3 /> },
-        { name: "React", icon: <FaReact /> },
-        { name: "Flask", icon: <SiFlask /> },
-        { name: "PyTorch", icon: <SiPytorch /> },
-        { name: "TensorFlow", icon: <SiTensorflow /> },
-        { name: "Keras", icon: <SiKeras /> },
-        { name: "Pandas", icon: <SiPandas /> },
-        { name: "NumPy", icon: <SiNumpy /> },
-        { name: "Scikit-learn", icon: <SiScikitlearn /> },
-        { name: "Tableau", icon: <IoLogoTableau /> },
-        { name: "D3.js", icon: <SiD3Dotjs /> },
-        { name: "Machine Learning" },
-        { name: "Deep Learning" },
-        { name: "Statistical Data Analysis" },
-        { name: "Natural Language Processing" },
-        { name: "Computer Vision" },
-        { name: "Big Data" },
-        { name: "Data Mining" },
-        { name: "Artificial Intelligence" },
-        { name: "Generative AI" }
-      ];
-
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     const handleMouseEnter = (index) => {
@@ -86,7 +57,7 @@ const Grid = ({ items }) => {
                 {items.map((item, index) => {
                     const distance =
                         hoveredIndex !== null
-                            ? calculateDistance(index, hoveredIndex, 4)
+                            ? calculateDistance(index, hoveredIndex, 5)
                             : null;
                     return (
                         <div
@@ -96,7 +67,7 @@ const Grid = ({ items }) => {
                             onMouseEnter={() => handleMouseEnter(index)}
                             onMouseLeave={handleMouseLeave}
                         >
-                            {item}
+                            {item.icon ? <>{item.icon} {item.name}</> : item.name}
                         </div>
                     );
                 })}
@@ -105,10 +76,36 @@ const Grid = ({ items }) => {
     );
 };
 
-const App3 = () => {
-    const items = Array.from({ length: 16 }, (_, i) => `.`); // 25x25 grid
+const SkillGrid = () => {
+    const skills = [
+        { name: "C++", icon: <SiCplusplus /> },
+        { name: "Python", icon: <FaPython /> },
+        { name: "JavaScript", icon: <IoLogoJavascript /> },
+        { name: "Go", icon: <FaGolang /> },
+        { name: "SQL", icon: <PiFileSqlFill /> },
+        { name: "HTML", icon: <FaHtml5 /> },
+        { name: "CSS", icon: <IoLogoCss3 /> },
+        { name: "React", icon: <FaReact /> },
+        { name: "Flask", icon: <SiFlask /> },
+        { name: "PyTorch", icon: <SiPytorch /> },
+        { name: "TensorFlow", icon: <SiTensorflow /> },
+        { name: "Keras", icon: <SiKeras /> },
+        { name: "Pandas", icon: <SiPandas /> },
+        { name: "NumPy", icon: <SiNumpy /> },
+        { name: "Scikit-learn", icon: <SiScikitlearn /> },
+        { name: "Tableau", icon: <IoLogoTableau /> },
+        { name: "D3.js", icon: <SiD3Dotjs /> },
+        { name: "Machine Learning" },
+        { name: "Deep Learning" },
+        { name: "Statistical Data Analysis" },
+        { name: "Natural Language Processing" },
+        { name: "Computer Vision" },
+        { name: "Data Mining" },
+        { name: "Artificial Intelligence" },
+        { name: "Generative AI" }
+    ];
 
-    return <Grid items={items} />;
+    return <Grid items={skills} />;
 };
 
-export default App3;
+export default SkillGrid;
