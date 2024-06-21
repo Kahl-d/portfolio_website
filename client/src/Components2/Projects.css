@@ -9,16 +9,25 @@
     font-size: 1rem;
     background-size: cover;
     padding: 1rem;
+    background-color: #444;
+    color: white;
+    transition: scale 0.3s;
+    cursor: pointer;
 
 
 }
+
+.project:hover{
+  scale: 1.1;
+}
+
 
 #project1{
     bottom: 1rem;
     right: 1rem;
     width: 30%;
     height: 20%;
-    background: url('https://cdn.educba.com/academy/wp-content/uploads/2019/04/Predictive-Modeling.jpg');
+    /* background: url('https://cdn.educba.com/academy/wp-content/uploads/2019/04/Predictive-Modeling.jpg'); */
     background-size: 100% 100%;
 
     
@@ -29,7 +38,7 @@
     right: 1rem;
     height: 40%;
     width: 10%;
-    background: url('https://cdn-images-1.medium.com/max/1500/1*MKsqxsgoS5WXMNc_zQF4wQ.jpeg');
+    /* background: url('https://cdn-images-1.medium.com/max/1500/1*MKsqxsgoS5WXMNc_zQF4wQ.jpeg'); */
     background-size: 100% 100%;
 
 
@@ -42,7 +51,7 @@
     width: 10%;
     border-radius: 2rem 0 0 0;
 
-    background: url('https://res.cloudinary.com/hilnmyskv/image/upload/q_auto,f_auto/v1681989875/Algolia_com_Blog_assets/Featured_images/ux/what-is-intelligent-search-and-how-does-it-work/dntm8rnlmgbl51m9ozwy.jpg');
+    /* background: url('https://res.cloudinary.com/hilnmyskv/image/upload/q_auto,f_auto/v1681989875/Algolia_com_Blog_assets/Featured_images/ux/what-is-intelligent-search-and-how-does-it-work/dntm8rnlmgbl51m9ozwy.jpg'); */
     background-size: 100% 100%;
 
 
@@ -55,7 +64,7 @@
     height: 30%;
     border-radius: 2rem 0 0 0;
 
-    background: url('https://cdn.dribbble.com/users/434413/screenshots/19978179/media/bfd59a26b7f69672c1270d8b3d582a66.png?resize=400x0');
+    /* background: url('https://cdn.dribbble.com/users/434413/screenshots/19978179/media/bfd59a26b7f69672c1270d8b3d582a66.png?resize=400x0'); */
     background-size: 100% 100%;
 
 
@@ -68,7 +77,7 @@
     width: 10%;
     border-radius: 2rem 0 0 0;
 
-    background: url('https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg');
+    /* background: url('https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg'); */
     background-size: 100% 100%;
 
 
@@ -82,7 +91,7 @@
     width: 10%;
     border-radius: 2rem 0 0 0;
 
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrlYRLf8t5WgZVG9zm2AGfkqVO5wZDZKXfgQ&s');
+    /* background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrlYRLf8t5WgZVG9zm2AGfkqVO5wZDZKXfgQ&s'); */
     background-size: 100% 100%;
 
 }
@@ -93,12 +102,13 @@
     height: 20%;
     width: 10%;
     border-radius: 2rem 0 0 0;
-    background: url('https://media.licdn.com/dms/image/D4D12AQFNUAdgaoK2zQ/article-cover_image-shrink_600_2000/0/1692816749106?e=2147483647&v=beta&t=iVpvOcBQmvYllV--CopadMhBsmyGEC85qb5jMtNFaxE');
+    background-color: #444;
     background-size: 100% 100%;
-
+    /* background-image: url('https://media.licdn.com/dms/image/D4D12AQFNUAdgaoK2zQ/article-cover_image-shrink_600_2000/0/1692816749106?e=2147483647&v=beta&t=iVpvOcBQmvYllV--CopadMhBsmyGEC85qb5jMtNFaxE'); */
 
     
 }
+
 
 
 #project-content{
@@ -180,63 +190,3 @@
   }
   
 
-
-  /* testing */
-
-
-  
-  
-  .card {
-    /* background-color: #f2f8f9; */
-    text-decoration: none;
-    overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: all 0.5s ease-out;
-    border: 1px solid black;
-    box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    background-size: 50% 50%;
-
-  }
-
-  .card-title{
-    color: transparent;
-
-  }
-
-  .card:hover{
-    scale: 1.1;
-    cursor: pointer;
-    z-index: 2;
-
-  }
-  
-  .card:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: -16px;
-    right: -16px;
-    background: linear-gradient(135deg, #364a60, #384c6c);
-    height: 32px;
-    width: 32px;
-    border-radius: 32px;
-    transform: scale(1);
-    transform-origin: 50% 50%;
-    transition: transform 0.35s ease-out;
-  }
-  
-  .card:hover:before {
-    transform: scale(28);
-  }
-  
-  .card:hover .small-desc {
-    transition: all 0.5s ease-out;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .card:hover .card-title {
-    transition: all 0.5s ease-out;
-    color: #ffffff;
-  }
-  
