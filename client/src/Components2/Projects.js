@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Projects.css'
+import './Projects.css';
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -57,7 +57,7 @@ const Projects = () => {
         <div id="projectsContainer">
             <div id="project-content">
                 {selectedProject ? (
-                    <div>
+                    <div className="project-details">
                         <h2>{selectedProject.name}</h2>
                         <p>{selectedProject.description}</p>
                         <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="button2">View on GitHub</a>
