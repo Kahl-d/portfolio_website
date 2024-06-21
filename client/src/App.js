@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import './app.css';
-import Skills from "./Components/Skills";
+// import Skills from "./Components/Skills";
 // import Gallery from "./Components/Gallery";
 import Home from "./Components2/Home";
 import Journey from "./Components2/Journey";
@@ -10,6 +10,7 @@ import { IoBuild } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { MdContacts } from "react-icons/md";
 import Projects from "./Components2/Projects";
+import Skills2 from "./Components2/Skills2";
 
 const App = () => {
     useEffect(() => {
@@ -104,7 +105,9 @@ const App = () => {
                 </div>
                 <div id="skills" className="part">
                     <div className="sticky-tag">Skills</div>
-                    <Skills/>
+                    <Skills2 />
+
+
                 </div>
                 <div id="projects" className="part">
                     <div className="sticky-tag">Projects</div>

@@ -22,7 +22,7 @@ import { SiD3Dotjs } from "react-icons/si";
 
 const Skills = () => {
     return (
-        <div className='section' id='skillContainer'>
+        <div id='skillContainer'>
             <div className='skillRow'>
                 <div className='skillBox'>
                     {/* c++ */}

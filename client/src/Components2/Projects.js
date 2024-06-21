@@ -54,7 +54,7 @@ const Projects = () => {
     };
 
     return (
-        <div className="section" id="projectsContainer">
+        <div id="projectsContainer">
             <div id="project-content">
                 {selectedProject ? (
                     <div>
