@@ -10,7 +10,8 @@ import { IoBuild } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { MdContacts } from "react-icons/md";
 import Projects from "./Components2/Projects";
-import Skills2 from "./Components2/Skills2";
+// import Skills2 from "./Components2/Skills2";
+import App3 from "./Experiments/Grid";
 
 const App = () => {
     useEffect(() => {
@@ -105,7 +106,7 @@ const App = () => {
                 </div>
                 <div id="skills" className="part">
                     <div className="sticky-tag">Skills</div>
-                    <Skills2 />
+                    {/* <Skills2 />  */}
 
 
                 </div>
@@ -115,6 +116,7 @@ const App = () => {
                 </div>
                 <div id="contact" className="part">
                     <div className="sticky-tag">Contact</div>
+                    <App3 />
                 </div>
             </div>
         </div>
