@@ -1,10 +1,22 @@
 import React from "react";
-import './journey.css';
+import './journey.css'
 
 const Journey = () => {
 
     return (
         <div id="journeyContainer">
+            <div id="years">
+                <div className="year" id="year0">2017</div>
+                <div className="year" id="year1">2018</div>
+                <div className="year" id="year2">2019</div>
+                <div className="year" id="year3">2020</div>
+                <div className="year" id="year4">2021</div>
+                <div className="year" id="year5">2022</div>
+                <div className="year" id="year6">2023</div>
+                <div className="year" id="year7">2024</div>
+                <div className="year" id="year8">2025</div>
+            </div>
+
             <div className="thing" id="thing1">
                 <div className="thing-title">
                     <span>The LNM Institute of Information Technology</span>

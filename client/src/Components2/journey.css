@@ -1,52 +1,15 @@
 #journeyContainer {
+    min-height: 2100px;
     position: relative;
     overflow-y: scroll;
     height: fit-content;
     padding-left: 100px;
-    /* background: #ffffff; */
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
-#yearSlider {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 100%;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background: #000;
-    color: #fff;
-    font-size: 1.5em;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-}
 
-#yearSlider div {
-    margin: 10px 0;
-}
 
-#monthIndicator {
-    position: fixed;
-    top: 80px;
-    left: 100px;
-    background: #000;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.thing {
-    margin: 50px 0;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 .thing-title span {
     display: block;
@@ -76,3 +39,55 @@
 .thing-content ul li {
     list-style-type: disc;
 }
+
+
+.thing{
+    background-color: white;
+    width: 50%;
+    border-radius: 2rem;
+    padding: 1rem;
+
+
+}
+
+#thing1{
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+#thing2{
+    margin-top: 1rem;
+    height: 400px;
+    position: absolute;
+    top: 1000px;
+    right: 0;
+}
+
+#thing3{
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+
+#years{
+    position: absolute;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+}
+
+.year{
+    width: fit-content;
+    position: sticky;
+    top: 0;
+    font-size: 2rem;
+}
+
