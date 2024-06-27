@@ -117,8 +117,14 @@
     flex-direction: column;
 }
 
+.project-image{
+
+  width: 100px;
+  height: 100px;
+}
+
 .button2{
-    margin-top: 1rem;
+    margin: 1rem 0 0 0;
 }
 
 .button2 {

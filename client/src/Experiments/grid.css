@@ -44,6 +44,15 @@
     font-weight: bold;
 }
 
+.item div{
+    display: flex;
+    flex-direction: column;
+}
+
+.icon{
+    font-size: 3rem;
+}
+
 .item:hover {
     filter: none;
     transform: translateZ(calc(var(--index) * 8.5)) scale(1.1);

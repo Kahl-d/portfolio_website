@@ -78,6 +78,7 @@ const Grid = ({ items }) => {
 
 const SkillGrid = () => {
     const skills = [
+        
         { name: "C++", icon: <SiCplusplus /> },
         { name: "Python", icon: <FaPython /> },
         { name: "JavaScript", icon: <IoLogoJavascript /> },
