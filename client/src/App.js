@@ -12,6 +12,7 @@ import { MdContacts } from "react-icons/md";
 import Projects from "./Components2/Projects";
 // import Skills2 from "./Components2/Skills2";
 import SkillGrid from "./Experiments/SkillGrid";
+import GenericGrid from "./Experiments/GenericGrid";
 
 const App = () => {
     useEffect(() => {
@@ -66,17 +67,24 @@ const App = () => {
         <div id="appContainer">
             <div id="appNav">
                 <div>
+                    <a href="#landing" className="nav-link">
+                        <IoMdHome />
+                        <span>Landing</span>
+                    </a>
+                </div>
+                
+                <div>
                     <a href="#home" className="nav-link">
                         <IoMdHome />
                         <span>Home</span>
                     </a>
                 </div>
-                <div>
+                {/* <div>
                     <a href="#journey" className="nav-link" id="j-link">
                         <GiJourney />
                         <span>Journey</span>
                     </a>
-                </div>
+                </div> */}
                 <div>
                     <a href="#skills" className="nav-link">
                         <GiSkills />
@@ -97,13 +105,17 @@ const App = () => {
                 </div>
             </div>
             <div id="appContent">
+            <div id="landing" className="part">
+                    <GenericGrid />
+                </div>
+
                 <div id="home" className="part">
                     <Home />
                 </div>
-                <div id="journey" className="part">
+                {/* <div id="journey" className="part">
                     <div className="sticky-tag">Journey</div>
                     <Journey />
-                </div>
+                </div> */}
                 <div id="skills" className="part">
                     <div className="sticky-tag">Skills</div>
                      <SkillGrid />

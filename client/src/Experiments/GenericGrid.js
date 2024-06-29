@@ -68,7 +68,7 @@ const GenericGrid = ({ numberOfBoxes }) => {
 
 
 
-    const Kindices = [29,33,41, 44, 53, 55, 65, 66, 77,78, 89, 91, 101, 104,113,117];
+    const Kindices = [28,32,40, 43, 52, 54, 64, 65, 76,77, 88, 90, 100, 103,112,116];
     
     // Generating generic items with highlighted class for specified indices
     const items = Array.from({ length: 144 }, (_, index) => ({

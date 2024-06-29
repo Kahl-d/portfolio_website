@@ -7,4 +7,4 @@ import GenericGrid from "./Experiments/GenericGrid";
 
 const root = document.getElementById("root");
 
-ReactDOM.createRoot(root).render(<GenericGrid/>);
+ReactDOM.createRoot(root).render(<App/>);
