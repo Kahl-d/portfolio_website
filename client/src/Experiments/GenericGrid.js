@@ -61,6 +61,13 @@ const Grid = ({ items }) => {
 };
 
 const GenericGrid = ({ numberOfBoxes }) => {
+
+    // Breating effect to down arrow
+    const downarrow = document.getElementById('downarrow');
+    
+
+
+
     const Kindices = [29,33,41, 44, 53, 55, 65, 66, 77,78, 89, 91, 101, 104,113,117];
     
     // Generating generic items with highlighted class for specified indices

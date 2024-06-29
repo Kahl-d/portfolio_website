@@ -23,6 +23,20 @@
     left: 50%;
     color: black;
     z-index: 1;
+    transition: all 0.5s;
+    animation: bounce 1s infinite;
+
+}
+
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
 }
 
 .grid_lp {
@@ -53,6 +67,7 @@
     color: black;
     font-size: calc(var(--index) * 1.5);
     font-weight: bold;
+
 }
 
 .item div{
@@ -69,6 +84,7 @@
     transform: translateZ(calc(var(--index) * 8.5)) scale(1.1);
     box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.55);
     color: white;
+    
 }
 
 .grid_lp .item[data-distance="1"] {
