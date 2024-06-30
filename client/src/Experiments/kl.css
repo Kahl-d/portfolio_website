@@ -12,6 +12,7 @@
     height: 100%;
     position: relative;
     padding: 0.5rem;
+    background-color: #444;
 }
 
 #downarrow {
@@ -21,10 +22,18 @@
     font-size: 2rem;
     bottom: 1rem;
     left: 50%;
-    color: black;
+    color: white;
     z-index: 1;
     transition: all 0.5s;
     animation: bounce 1s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#down{
+    font-size: 0.8rem;
 }
 
 @keyframes bounce {
@@ -43,12 +52,13 @@
     transform-style: preserve-3d;
     width: 100%;
     height: 100%;
+    background-color: #444;
 }
 
 .item {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #444;
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -78,61 +88,44 @@
     filter: none;
     transform: translateZ(calc(var(--index) * 8.5)) scale(1.1);
     box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.55);
-    color: white;
+    color: #444;
 }
 
 .grid_lp .item[data-distance="1"] {
     transform: translateZ(calc(var(--index) * 7.5)) scale(1.005);
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(255, 255, 255, 0.65);
 }
 
 .grid_lp .item[data-distance="2"] {
     transform: translateZ(calc(var(--index) * 6.5)) scale(1.003);
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 .grid_lp .item[data-distance="3"] {
     transform: translateZ(calc(var(--index) * 4.5)) scale(1.002);
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 .grid_lp .item[data-distance="4"] {
     transform: translateZ(calc(var(--index) * 2.5)) scale(1.001);
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .grid_lp .item[data-distance="5"] {
     transform: translateZ(calc(var(--index) * 1.0)) scale(1.0005);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(251, 251, 251);
 }
 
 .item[data-distance="0"] {
     transform: translateZ(calc(var(--index) * 8.5)) scale(1);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
 .highlighted {
-    background: black;
-}
-
-.highlighted:hover {
     background: white;
 }
 
-
-.item.bouncing {
-    animation: bounce 1s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.highlighted:hover {
+    background: #444;
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
