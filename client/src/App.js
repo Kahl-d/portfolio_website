@@ -105,7 +105,7 @@ const App = () => {
                 </div>
             </div>
             <div id="appContent">
-            <div id="landing" className="part">
+            <div id="landing">
                     <GenericGrid />
                 </div>
 
@@ -118,7 +118,7 @@ const App = () => {
                 </div> */}
                 <div id="skills" className="part">
                     <div className="sticky-tag">Skills</div>
-                     <SkillGrid />
+                     {/* <SkillGrid /> */}
                 </div>
                 <div id="projects" className="part">
                     <div className="sticky-tag">Projects</div>
