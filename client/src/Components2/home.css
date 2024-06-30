@@ -1,14 +1,14 @@
-*{
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
 
 #homeContainer{
     width: 100%;
     min-height: calc(100vh);
     display: flex;
     position: relative;
+    background-color: #1e1e1e;
+    color: white;
+    padding-left: 4rem;
+    overflow: hidden;
 }
 
 #homeImage img{
@@ -16,6 +16,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 100;
 }
 
 #homeContent{
@@ -30,8 +31,18 @@
     margin: 2rem;
     margin-bottom: 0;
 }
+#homeText h1{
+    font-size: 6rem;
+}
+#homeText *{
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 #homeText p{
+    font-family: 'Poppins', sans-serif;
+    
     font-size: 1.2rem;
     margin: 0;
 }
@@ -52,6 +63,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: end;
+    z-index: 101;
 }
 
 a{
@@ -103,10 +115,10 @@ a{
 
 
   #wave{
-    width: 100%;
+    width: 110%;
     transform: translateX(-10%);
-    z-index: -1;
+    z-index: 1;
     position: absolute;
-    bottom: -1%;
+    bottom: -2%;
   }
 

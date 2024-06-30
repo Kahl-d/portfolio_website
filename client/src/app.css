@@ -65,13 +65,12 @@ body {
 }
 
 .part {
-    width: 100%;
+    width: 100vw;
     /* height: 100vh; */
     min-height: 100vh;
     
     /* padding: 1rem; */
     position: relative;
-    padding-left: 4rem;
 }
 
 .sticky-tag {
@@ -81,6 +80,7 @@ body {
     position: sticky;
     top: 0;
     font-size: 4rem;
+    margin-left: 4rem;
     
 }
 
