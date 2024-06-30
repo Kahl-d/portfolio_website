@@ -7,11 +7,12 @@ import { IoMdHome } from "react-icons/io";
 import { IoBuild } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { MdContacts } from "react-icons/md";
-import Projects from "./Components2/Projects";
+// import Projects from "./Components2/Projects";
 // import Skills2 from "./Components2/Skills2";
 import SkillGrid from "./Experiments/SkillGrid";
 import GenericGrid from "./Experiments/GenericGrid";
 import { IoPersonCircle } from "react-icons/io5";
+import Projects from "./Components3/Projects";
 
 const App = () => {
     useEffect(() => {
@@ -67,7 +68,7 @@ const App = () => {
             <div id="appNav">
                 <div>
                     <a href="#landing" className="nav-link">
-                        <IoMdHome />
+                        {/* <IoMdHome /> */}
                         
                         <span>Home</span>
                     </a>
@@ -117,15 +118,16 @@ const App = () => {
                     <Journey />
                 </div> */}
                 <div id="skills" className="part">
-                    <div className="sticky-tag">Skills</div>
+                    {/* <div className="sticky-tag">Skills</div> */}
                      {/* <SkillGrid /> */}
                 </div>
                 <div id="projects" className="part">
-                    <div className="sticky-tag">Projects</div>
+                    {/* <div className="sticky-tag">Projects</div> */}
                     <Projects />
                 </div>
                 <div id="contact" className="part">
-                    <div className="sticky-tag">Contact</div>
+                    Contact
+                    {/* <div className="sticky-tag">Contact</div> */}
                 </div>
             </div>
         </div>

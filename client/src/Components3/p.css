@@ -1,0 +1,37 @@
+#projectsContainer{
+    width: 100vw;
+    height: 100%;
+    padding-left:4rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+
+
+#projectsContent{
+
+    width: max-content;
+    min-height: 80vh;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+   
+    
+}
+
+.project{
+    min-height: 100%;
+    width: 40vw;
+    border: 1px solid black;
+    margin: 1rem;
+}
+
+#projectFooter{
+    width: 100vw;
+    height: 20vh;
+    
+}
+
