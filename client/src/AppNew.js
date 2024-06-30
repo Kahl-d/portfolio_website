@@ -60,7 +60,7 @@ const App = () => {
         <div id="appContainer">
             
 
-                <div id="landing" className="part">
+                <div id="landing">
                     <GenericGrid />
                 </div>
 
@@ -100,7 +100,7 @@ const App = () => {
                     </a>
                 </div>
             </div>
-
+            <div id="appContent">
                     <div id="home" className="part">
                         {/* <Home /> */}
                     </div>
@@ -116,6 +116,8 @@ const App = () => {
                     <div id="contact" className="part">
                         <div className="sticky-tag">Contact</div>
                     </div>
+                    </div>
+
                 </div>
                 
             

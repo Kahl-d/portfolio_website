@@ -16,7 +16,16 @@ const GridItem = ({ index, children, handleMouseEnter, handleMouseLeave, ishighl
 };
 
 const Grid = ({ items }) => {
+    
+
     const [hoveredIndex, setHoveredIndex] = useState(null);
+
+    
+    
+    const handelingScroll = () => {
+        window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    };
+
 
     const handleMouseEnter = (index) => {
         setHoveredIndex(index);
@@ -35,8 +44,8 @@ const Grid = ({ items }) => {
     };
 
     return (
-        <div className="wrapper_lp">
-            <div id='downarrow'><FaArrowDown/></div>
+        <div className="wrapper_lp" onScroll={handelingScroll}>
+            <div id='downarrow' onClick={handelingScroll}><FaArrowDown/></div>
             <div className="grid_lp">
                 {items.map((item, index) => {
                     const distance =
@@ -63,9 +72,8 @@ const Grid = ({ items }) => {
 const GenericGrid = ({ numberOfBoxes }) => {
 
     // Breating effect to down arrow
-    const downarrow = document.getElementById('downarrow');
     
-
+    
 
 
     const Kindices = [105, 85,65, 125, 125,145, 165,185, 205, 225, 245, 265, 166, 147, 187, 128, 208, 109,229, 90, 250,71,271, 273];
