@@ -13,6 +13,7 @@ import Projects from "./Components2/Projects";
 // import Skills2 from "./Components2/Skills2";
 import SkillGrid from "./Experiments/SkillGrid";
 import GenericGrid from "./Experiments/GenericGrid";
+import { IoPersonCircle } from "react-icons/io5";
 
 const App = () => {
     useEffect(() => {
@@ -69,14 +70,15 @@ const App = () => {
                 <div>
                     <a href="#landing" className="nav-link">
                         <IoMdHome />
-                        <span>Landing</span>
+                        
+                        <span>Home</span>
                     </a>
                 </div>
                 
                 <div>
                     <a href="#home" className="nav-link">
-                        <IoMdHome />
-                        <span>Home</span>
+                        <IoPersonCircle/>
+                        <span>Profile</span>
                     </a>
                 </div>
                 {/* <div>
