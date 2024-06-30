@@ -41,7 +41,7 @@
 
 .grid_lp {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(20, 1fr);
     perspective: calc(var(--index) * 35);
     transform-style: preserve-3d;
     width: 95%;
@@ -67,6 +67,8 @@
     color: black;
     font-size: calc(var(--index) * 1.5);
     font-weight: bold;
+    animation : fadeIn 1s infinite;
+
 
 }
 

@@ -41,13 +41,13 @@ const Grid = ({ items }) => {
                 {items.map((item, index) => {
                     const distance =
                         hoveredIndex !== null
-                            ? calculateDistance(index, hoveredIndex, 12)
+                            ? calculateDistance(index, hoveredIndex, 20)
                             : null;
                     return (
                         <div
                             key={index}
                             className={`item ${item.ishighlighted ? 'highlighted' : ''}`}
-                            data-distance={distance <= 2 ? distance : ''}
+                            data-distance={distance <= 3 ? distance : ''}
                             onMouseEnter={() => handleMouseEnter(index)}
                             onMouseLeave={handleMouseLeave}
                         >
@@ -68,11 +68,11 @@ const GenericGrid = ({ numberOfBoxes }) => {
 
 
 
-    const Kindices = [28,32,40, 43, 52, 54, 64, 65, 76,77, 88, 90, 100, 103,112,116];
+    const Kindices = [105, 85,65, 125, 125,145, 165,185, 205, 225, 245, 265, 166, 147, 187, 128, 208, 109,229, 90, 250,71,271, 273];
     
     // Generating generic items with highlighted class for specified indices
-    const items = Array.from({ length: 144 }, (_, index) => ({
-        name: `Item ${index + 1}`,
+    const items = Array.from({ length: 320 }, (_, index) => ({
+        name: `Item ${index}`,
         ishighlighted: Kindices.includes(index)
     }));
 
