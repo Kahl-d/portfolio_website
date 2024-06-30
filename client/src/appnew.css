@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+
+#appContainer{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#landing{
+    width: 100%;
+    height: 100vh;
+}
+
+#parts-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.part{
+    width: 100%;
+    min-height: 100vh;
+}
