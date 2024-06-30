@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './kl.css';  // Make sure to include the CSS file
 import { FaArrowDown } from "react-icons/fa6";
 
-const GridItem = ({ index, children, handleMouseEnter, handleMouseLeave, ishighlighted }) => {
+const GridItem = ({ index, children, handleMouseEnter, handleMouseLeave, ishighlighted, isBouncing }) => {
     return (
         <div
-            className={`item ${ishighlighted ? 'highlighted' : ''}`}
+            className={`item ${ishighlighted ? 'highlighted' : ''} ${isBouncing ? 'bouncing' : ''}`}
             data-index={index}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -15,7 +15,7 @@ const GridItem = ({ index, children, handleMouseEnter, handleMouseLeave, ishighl
     );
 };
 
-const Grid = ({ items }) => {
+const Grid = ({ items, bouncingIndex }) => {
     
 
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -55,6 +55,7 @@ const Grid = ({ items }) => {
                     return (
                         <div
                             key={index}
+                            isBouncing={index === bouncingIndex}
                             className={`item ${item.ishighlighted ? 'highlighted' : ''}`}
                             data-distance={distance <= 3 ? distance : ''}
                             onMouseEnter={() => handleMouseEnter(index)}
@@ -73,7 +74,16 @@ const GenericGrid = ({ numberOfBoxes }) => {
 
     // Breating effect to down arrow
     
-    
+    const [bouncingIndex, setBouncingIndex] = useState(null);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const randomIndex = Math.floor(Math.random() * 320);
+            setBouncingIndex(randomIndex);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, []);
 
 
     const Kindices = [105, 85,65, 125, 125,145, 165,185, 205, 225, 245, 265, 166, 147, 187, 128, 208, 109,229, 90, 250,71,271, 273];
@@ -84,7 +94,7 @@ const GenericGrid = ({ numberOfBoxes }) => {
         ishighlighted: Kindices.includes(index)
     }));
 
-    return <Grid items={items} />;
+    return <Grid items={items} bouncingIndex={bouncingIndex} />;
 };
 
 export default GenericGrid;
