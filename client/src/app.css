@@ -47,9 +47,6 @@ body {
     justify-content: center;
     align-items: center;
     transition: scale 0.3s;
-    /* writing-mode: vertical-rl; */
-    text-orientation: mixed;
-    /* transform: rotateZ(180deg); */
 }
 
 #appNav div:hover {
@@ -66,10 +63,8 @@ body {
 
 .part {
     width: 100vw;
-    /* height: 100vh; */
     min-height: 100vh;
     
-    /* padding: 1rem; */
 }
 
 .sticky-tag {
@@ -84,7 +79,6 @@ body {
 }
 
 
-/* Optional: Styling for nav links */
 .nav-link {
     text-decoration: none;
     color: inherit;
@@ -133,7 +127,6 @@ body {
     color: white;
 }
 
-/* only show span label when navlink active */
 .nav-link span {
     font-size: 0;
     font-family: 'Roboto', sans-serif;
