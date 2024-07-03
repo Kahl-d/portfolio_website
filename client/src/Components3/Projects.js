@@ -12,7 +12,7 @@ const Projects = () => {
         const handleScroll = () => {
             const container = document.getElementById("projectsContainer");
             const rect = container.parentElement.getBoundingClientRect();
-            if (rect.top <= 2) {
+            if (rect.top <= 0) {
                 setIsTop(true);
                 container.parentElement.classList.add("top-touch");
             } else {
