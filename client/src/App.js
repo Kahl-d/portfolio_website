@@ -132,7 +132,7 @@ const App = () => {
                     <Home />
                 </div>
                 <div id="skills" className="part">
-                    SKILLS
+                    
                 </div>
                 <div id="projects" className="part">
                     <Projects />

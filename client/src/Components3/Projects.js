@@ -3,6 +3,8 @@ import './p.css';
 
 const Projects = () => {
     const [isTop, setIsTop] = useState(false);
+    const [atEnd, setAtEnd] = useState(false);
+    const [atStart, setAtStart] = useState(false);
     const projectsContainerRef = useRef(null);
     const projectsContentRef = useRef(null);
 
@@ -12,27 +14,43 @@ const Projects = () => {
             const rect = container.parentElement.getBoundingClientRect();
             if (rect.top <= 2) {
                 setIsTop(true);
-                // container.classList.add("top-touch");
                 container.parentElement.classList.add("top-touch");
             } else {
                 setIsTop(false);
-                // container.classList.remove("top-touch");
                 container.parentElement.classList.remove("top-touch");
             }
-
         };
-
-        window.addEventListener("scroll", handleScroll);
 
         const handleHorizontalScroll = (event) => {
             const container = projectsContainerRef.current;
             const content = projectsContentRef.current;
+            const deltaY = event.deltaY;
 
-            if (isTop) {
-                const deltaY = event.deltaY;
-                if (deltaY !== 0) {
-                    container.scrollLeft += deltaY;
-                    event.preventDefault();
+            if (isTop && deltaY !== 0) {
+                container.scrollLeft += deltaY;
+                event.preventDefault();
+
+                const isAtStart = container.scrollLeft === 0;
+                const isAtEnd = container.scrollLeft + container.clientWidth > content.scrollWidth;
+
+                
+                if (isAtStart) {
+                    setAtStart(true);
+                } else {
+                    setAtStart(false);
+                }
+
+                if (isAtEnd) {
+                    setAtEnd(true);
+                } else {
+                    setAtEnd(false);
+                }
+
+
+                if (deltaY < 0 && atStart) {
+                    window.scrollBy(0, -100); // Adjust this value as needed
+                } else if (deltaY > 0 && atEnd) {
+                    window.scrollBy(0, 100); // Adjust this value as needed
                 }
             }
         };
@@ -44,7 +62,7 @@ const Projects = () => {
             window.removeEventListener("scroll", handleScroll);
             projectsContainerRef.current.removeEventListener("wheel", handleHorizontalScroll);
         };
-    }, [isTop]);
+    }, [isTop, atEnd, atStart]);
 
     const projects = [
         {
@@ -86,6 +104,12 @@ const Projects = () => {
         {
             name: "Blockchain Technology and Its Applications",
             description: "Understanding blockchain technology and its potential use cases beyond cryptocurrencies.",
+            link: "https://github.com/your-repo",
+            image: "https://via.placeholder.com/150"
+        },
+        {
+            name: " ",
+            description: "",
             link: "https://github.com/your-repo",
             image: "https://via.placeholder.com/150"
         }
