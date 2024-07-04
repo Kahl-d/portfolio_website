@@ -64,6 +64,8 @@ body {
 .part {
     width: 100vw;
     min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-type:mandatory;
     
 }
 
@@ -90,16 +92,6 @@ body {
     cursor: pointer;
 }
 
-#journey{
-    background-color: #444444;
-}
-
-
-
-#journey .sticky-tag{
-    color: white;
-    opacity: 0.6;
-}
 
 
 .nav-link {
@@ -167,6 +159,8 @@ body {
     transition: all 1s ease-in-out;
     scroll-snap-align: start;
     scroll-snap-type: proximity;
+    background-color: transparent;
+    color: black;
 
 }
 

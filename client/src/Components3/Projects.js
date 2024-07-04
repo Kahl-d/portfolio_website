@@ -7,17 +7,30 @@ const Projects = () => {
     const [atStart, setAtStart] = useState(false);
     const projectsContainerRef = useRef(null);
     const projectsContentRef = useRef(null);
+    const SNAP_THRESHOLD = 20; // Adjust this value as needed
 
     useEffect(() => {
         const handleScroll = () => {
-            const container = document.getElementById("projectsContainer");
-            const rect = container.parentElement.getBoundingClientRect();
-            if (rect.top <= 0) {
+            const container = projectsContainerRef.current;
+            const rect = container.getBoundingClientRect();
+            const isCloseToTop = rect.top >= 0 && rect.top <= SNAP_THRESHOLD;
+
+            if (isCloseToTop) {
+                window.scrollTo({
+                    top: window.scrollY + rect.top,
+                    behavior: 'smooth'
+                });
                 setIsTop(true);
-                container.parentElement.classList.add("top-touch");
+                container.style.backgroundColor = "#333"; // Dark background
+                container.style.color = "#fff"; // Light text color
+            } else if (rect.top === 0) {
+                setIsTop(true);
+                container.style.backgroundColor = "#333"; // Dark background
+                container.style.color = "#fff"; // Light text color
             } else {
                 setIsTop(false);
-                container.parentElement.classList.remove("top-touch");
+                container.style.backgroundColor = ""; // Reset to default
+                container.style.color = ""; // Reset to default
             }
         };
 
@@ -31,25 +44,14 @@ const Projects = () => {
                 event.preventDefault();
 
                 const isAtStart = container.scrollLeft === 0;
-                const isAtEnd = container.scrollLeft + container.clientWidth > content.scrollWidth;
+                const isAtEnd = container.scrollLeft + container.clientWidth >= content.scrollWidth;
 
-                
-                if (isAtStart) {
-                    setAtStart(true);
-                } else {
-                    setAtStart(false);
-                }
+                setAtStart(isAtStart);
+                setAtEnd(isAtEnd);
 
-                if (isAtEnd) {
-                    setAtEnd(true);
-                } else {
-                    setAtEnd(false);
-                }
-
-
-                if (deltaY < 0 && atStart) {
+                if (deltaY < 0 && isAtStart) {
                     window.scrollBy(0, -100); // Adjust this value as needed
-                } else if (deltaY > 0 && atEnd) {
+                } else if (deltaY > 0 && isAtEnd) {
                     window.scrollBy(0, 100); // Adjust this value as needed
                 }
             }
@@ -106,24 +108,20 @@ const Projects = () => {
             description: "Understanding blockchain technology and its potential use cases beyond cryptocurrencies.",
             link: "https://github.com/your-repo",
             image: "https://via.placeholder.com/150"
-        },
-        {
-            name: " ",
-            description: "",
-            link: "https://github.com/your-repo",
-            image: "https://via.placeholder.com/150"
         }
     ];
 
     return (
-        <div id="projectsContainer" ref={projectsContainerRef} className={isTop ? "top-touch" : ""}>
+        <div id="projectsContainer" ref={projectsContainerRef}>
             <div id="projectsContent" ref={projectsContentRef}>
                 {projects.map((project, index) => (
                     <div className="project" key={index}>
                         <div className="projectInfo">
                             <h3>{project.name}</h3>
                             <p>{project.description}</p>
+                            {project.link && (
                             <a href={project.link} target="_blank" rel="noreferrer">View Project</a>
+                            )}
                         </div>
                     </div>
                 ))}

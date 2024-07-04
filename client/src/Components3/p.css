@@ -5,6 +5,7 @@
     overflow: auto;
     display: flex;
     flex-direction: column-reverse;
+    overflow: scroll;
 }
 
 
@@ -17,7 +18,6 @@
     max-height: 80vh;
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
    
     
 }
@@ -35,3 +35,9 @@
     
 }
 
+
+#projectsContainer .project:last-child {
+    border: 0;
+    color: transparent;   
+        /* Example: add padding */
+}
