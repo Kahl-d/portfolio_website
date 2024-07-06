@@ -1,7 +1,25 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import './projects.css';
 
 const Projects = () => {
+    useEffect(() => {
+        const scrollContainer = document.getElementById('projectsContainer');
+
+        const handleScroll = (event) => {
+            event.preventDefault();
+            scrollContainer.scrollLeft += event.deltaY;
+        };
+
+        if (scrollContainer) {
+            scrollContainer.addEventListener('wheel', handleScroll);
+        }
+
+        return () => {
+            if (scrollContainer) {
+                scrollContainer.removeEventListener('wheel', handleScroll);
+            }
+        };
+    }, []);
 
     const projects = [
         {
@@ -50,10 +68,23 @@ const Projects = () => {
 
     return (
         <div id="projectsContainer" className="section">
-            Projects
+            <div className="section-title">Projects</div>
+            <div className="projects">
+                {projects.map((project, index) => (
+                    <div className="project" key={index}>
+                        <div className="project-image">
+                            <img src={project.image} alt={project.name} />
+                        </div>
+                        <div className="project-info">
+                            <div className="project-name">{project.name}</div>
+                            <div className="project-description">{project.description}</div>
+                            <a href={project.link} target="_blank" rel="noreferrer" className="project-link">View Project</a>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
-
 }
 
 export default Projects;

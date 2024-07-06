@@ -1,0 +1,38 @@
+#projectsContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+
+.section-title{
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: #333;
+    text-align: center;
+}
+
+
+.projects{
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}   
+
+.project{
+    width: 40vw;
+    height: 100%;
+    margin: 1rem;
+
+}
+
+.project img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
