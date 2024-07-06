@@ -4,7 +4,7 @@ import { IoBuild } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { MdContacts } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
-import GenericGrid from "../Experiments/GenericGrid";
+import Projects from "./Projects";
 
 const AppN = () => {
 
@@ -36,12 +36,31 @@ const AppN = () => {
                 } else {
                     navLink.classList.remove('active');
                 }
+
+                if (entry.target.id === 'projects') {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('highlight');
+                    } else {
+                        entry.target.classList.remove('highlight');
+                    }
+                }
             });
         }, options);
 
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        const handleScroll = () => {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 0 && rect.bottom > window.innerHeight / 2) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        };
+
+        document.getElementById('appContent').addEventListener('scroll', handleScroll);
 
         // Clean up the event listeners on unmount
         return () => {
@@ -59,6 +78,8 @@ const AppN = () => {
             sections.forEach(section => {
                 observer.unobserve(section);
             });
+
+            document.getElementById('appContent').removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -71,10 +92,10 @@ const AppN = () => {
                 </div>
                 <div className="part" id="skills">
                     <div className="sticky-tag">Skills</div>
-                    
                 </div>
                 <div className="part" id="projects">
-                    <div className="sticky-tag">Projects</div>
+                    {/* <div className="sticky-tag">Projects</div> */}
+                    <Projects />
                 </div>
                 <div className="part" id="contact">
                     <div className="sticky-tag">Contact</div>
@@ -88,7 +109,7 @@ const AppN = () => {
                 </div>
                 <div>
                     <a href="#home" className="nav-link">
-                        <IoPersonCircle/>
+                        <IoPersonCircle />
                         <span>Profile</span>
                     </a>
                 </div>
