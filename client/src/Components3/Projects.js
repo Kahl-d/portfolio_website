@@ -1,70 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './p.css';
 
 const Projects = () => {
-    const [isTop, setIsTop] = useState(false);
-    const [atEnd, setAtEnd] = useState(false);
-    const [atStart, setAtStart] = useState(false);
     const projectsContainerRef = useRef(null);
-    const projectsContentRef = useRef(null);
-    const SNAP_THRESHOLD = 20; // Adjust this value as needed
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const container = projectsContainerRef.current;
-            const rect = container.getBoundingClientRect();
-            const isCloseToTop = rect.top >= 0 && rect.top <= SNAP_THRESHOLD;
-
-            if (isCloseToTop) {
-                window.scrollTo({
-                    top: window.scrollY + rect.top,
-                    behavior: 'smooth'
-                });
-                setIsTop(true);
-                container.style.backgroundColor = "#333"; // Dark background
-                container.style.color = "#fff"; // Light text color
-            } else if (rect.top === 0) {
-                setIsTop(true);
-                container.style.backgroundColor = "#333"; // Dark background
-                container.style.color = "#fff"; // Light text color
-            } else {
-                setIsTop(false);
-                container.style.backgroundColor = ""; // Reset to default
-                container.style.color = ""; // Reset to default
-            }
-        };
-
-        const handleHorizontalScroll = (event) => {
-            const container = projectsContainerRef.current;
-            const content = projectsContentRef.current;
-            const deltaY = event.deltaY;
-
-            if (isTop && deltaY !== 0) {
-                container.scrollLeft += deltaY;
-                event.preventDefault();
-
-                const isAtStart = container.scrollLeft === 0;
-                const isAtEnd = container.scrollLeft + container.clientWidth >= content.scrollWidth;
-
-                setAtStart(isAtStart);
-                setAtEnd(isAtEnd);
-
-                if (deltaY < 0 && isAtStart) {
-                    window.scrollBy(0, -100); // Adjust this value as needed
-                } else if (deltaY > 0 && isAtEnd) {
-                    window.scrollBy(0, 100); // Adjust this value as needed
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        projectsContainerRef.current.addEventListener("wheel", handleHorizontalScroll, { passive: false });
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-            projectsContainerRef.current.removeEventListener("wheel", handleHorizontalScroll);
-        };
-    }, [isTop, atEnd, atStart]);
+    const [isAtTop, setIsAtTop] = useState(false);
 
     const projects = [
         {
@@ -101,36 +40,78 @@ const Projects = () => {
             name: "Machine Learning in Healthcare",
             description: "Applications of machine learning algorithms in improving healthcare outcomes.",
             link: "https://github.com/your-repo",
-            image: "https://via.placeholder.com/150"
+            image: "https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg"
         },
         {
             name: "Blockchain Technology and Its Applications",
             description: "Understanding blockchain technology and its potential use cases beyond cryptocurrencies.",
             link: "https://github.com/your-repo",
-            image: "https://via.placeholder.com/150"
+            image: "https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg"
         }
     ];
 
+    useEffect(() => {
+        const handleScroll = (event) => {
+            const container = projectsContainerRef.current;
+            const maxScrollLeft = container.scrollWidth - container.clientWidth;
+            const isAtStart = container.scrollLeft === 0;
+            const isAtEnd = container.scrollLeft >= maxScrollLeft;
+            const deltaY = event.deltaY;
+
+            if ((deltaY < 0 && isAtStart) || (deltaY > 0 && isAtEnd)) {
+                // Allow the default scroll behavior to occur
+                return;
+            }
+
+            // Prevent default vertical scrolling
+            event.preventDefault();
+            container.scrollLeft += deltaY;
+        };
+
+        const handleWindowScroll = () => {
+            const container = projectsContainerRef.current;
+            if (container) {
+                const rect = container.getBoundingClientRect();
+                setIsAtTop(rect.top <= 0 && rect.bottom >= window.innerHeight);
+            }
+        };
+
+        const container = projectsContainerRef.current;
+        if (container) {
+            container.addEventListener('wheel', handleScroll);
+            window.addEventListener('scroll', handleWindowScroll);
+            handleWindowScroll(); // Initial check
+        }
+
+        return () => {
+            if (container) {
+                container.removeEventListener('wheel', handleScroll);
+                window.removeEventListener('scroll', handleWindowScroll);
+            }
+        };
+    }, []);
+
     return (
-        <div id="projectsContainer" ref={projectsContainerRef}>
-            <div id="projectsContent" ref={projectsContentRef}>
+        <div id="projectsContainer" 
+             className={`section projects-container ${isAtTop ? 'at-top' : ''}`} 
+             ref={projectsContainerRef}>
+            <div className="section-title">Projects</div>
+            <div className="projects">
                 {projects.map((project, index) => (
                     <div className="project" key={index}>
-                        <div className="projectInfo">
-                            <h3>{project.name}</h3>
-                            <p>{project.description}</p>
-                            {project.link && (
-                            <a href={project.link} target="_blank" rel="noreferrer">View Project</a>
-                            )}
+                        <div className="project-image">
+                            <img src={project.image} alt={project.name} />
+                        </div>
+                        <div className="project-info">
+                            <div className="project-name">{project.name}</div>
+                            <div className="project-description">{project.description}</div>
+                            <button><a href={project.link} target="_blank" rel="noreferrer" className="project-link">View Project</a></button>
                         </div>
                     </div>
                 ))}
             </div>
-            <div id="projectFooter">
-                <p>More projects available on </p>
-            </div>
         </div>
     );
-};
+}
 
 export default Projects;

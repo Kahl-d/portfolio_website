@@ -13,10 +13,11 @@ const Projects = () => {
                 const deltaY = event.deltaY;
 
                 if ((deltaY < 0 && isAtStart) || (deltaY > 0 && isAtEnd)) {
-                
+                    // Allow the default scroll behavior to occur
                     return;
                 }
 
+                // Prevent default vertical scrolling
                 event.preventDefault();
                 scrollContainer.scrollLeft += deltaY;
             }
@@ -68,13 +69,15 @@ const Projects = () => {
             name: "Machine Learning in Healthcare",
             description: "Applications of machine learning algorithms in improving healthcare outcomes.",
             link: "https://github.com/your-repo",
-            image: "https://via.placeholder.com/150"
+            image: "https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg"
+
         },
         {
             name: "Blockchain Technology and Its Applications",
             description: "Understanding blockchain technology and its potential use cases beyond cryptocurrencies.",
             link: "https://github.com/your-repo",
-            image: "https://via.placeholder.com/150"
+            image: "https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg"
+            
         }
     ];
 
@@ -90,7 +93,7 @@ const Projects = () => {
                         <div className="project-info">
                             <div className="project-name">{project.name}</div>
                             <div className="project-description">{project.description}</div>
-                            <a href={project.link} target="_blank" rel="noreferrer" className="project-link">View Project</a>
+                            <button><a href={project.link} target="_blank" rel="noreferrer" className="project-link">View Project</a></button>
                         </div>
                     </div>
                 ))}
