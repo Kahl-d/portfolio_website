@@ -9,77 +9,42 @@ import Projects from "./Projects";
 const AppN = () => {
 
     useEffect(() => {
-        const navLinks = document.querySelectorAll('.nav-link');
+        const handleNavClick = (event) => {
+            event.preventDefault();
+            const targetId = event.currentTarget.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
 
+        const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+            link.addEventListener('click', handleNavClick);
         });
 
         const sections = document.querySelectorAll('.part');
-        const options = {
-            root: null,
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const navLink = document.querySelector(`a[href="#${entry.target.id}"]`);
-                if (entry.isIntersecting) {
-                    navLink.classList.add('active');
-                } else {
-                    navLink.classList.remove('active');
-                }
-
-                if (entry.target.id === 'projects') {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('highlight');
-                    } else {
-                        entry.target.classList.remove('highlight');
-                    }
+                if (navLink) {
+                    navLink.classList.toggle('active', entry.isIntersecting);
                 }
             });
-        }, options);
+        }, { threshold: 0.5 });
 
         sections.forEach(section => {
             observer.observe(section);
         });
 
-        const handleScroll = () => {
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 0 && rect.bottom > window.innerHeight / 2) {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        };
-
-        document.getElementById('appContent').addEventListener('scroll', handleScroll);
-
         // Clean up the event listeners on unmount
         return () => {
             navLinks.forEach(link => {
-                link.removeEventListener('click', (event) => {
-                    event.preventDefault();
-                    const targetId = link.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
+                link.removeEventListener('click', handleNavClick);
             });
-
             sections.forEach(section => {
                 observer.unobserve(section);
             });
-
-            document.getElementById('appContent').removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -94,7 +59,6 @@ const AppN = () => {
                     <div className="sticky-tag">Skills</div>
                 </div>
                 <div className="part" id="projects">
-                    {/* <div className="sticky-tag">Projects</div> */}
                     <Projects />
                 </div>
                 <div className="part" id="contact">
