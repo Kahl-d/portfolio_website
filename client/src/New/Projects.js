@@ -70,14 +70,12 @@ const Projects = () => {
             description: "Applications of machine learning algorithms in improving healthcare outcomes.",
             link: "https://github.com/your-repo",
             image: "https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg"
-
         },
         {
             name: "Blockchain Technology and Its Applications",
             description: "Understanding blockchain technology and its potential use cases beyond cryptocurrencies.",
             link: "https://github.com/your-repo",
             image: "https://images.freeimages.com/clg/istock/previews/9255/92550943-vector-umami-concept-template.jpg"
-            
         }
     ];
 
