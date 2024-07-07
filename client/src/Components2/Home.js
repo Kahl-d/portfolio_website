@@ -24,14 +24,14 @@ const Home = () => {
 
                 </div>
 
-                {/* <div id="homeAbout">
+                <div id="homeAbout">
                     <p>
                     Innovative data science enthusiast with a keen aptitude for identifying patterns and insights within numbers and data. Passionate
                     about leveraging IT solutions in public sector, with proven ability to adapt and excel in collaborative, cross-departmental projects.
                     Driven towards advancing technology through creative solutions and meticulous learning. Excels in applying comprehensive
                     tatistical analysis and machine learning techniques to develop and optimize predictive models and AI-driven applications.
                     </p>
-                </div> */}
+                </div>
 
                 <div id="homeContact">
 

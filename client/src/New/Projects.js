@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import './projects.css';
 
 const Projects = () => {
     useEffect(() => {
         const scrollContainer = document.getElementById('projectsContainer');
-        const projectsContainer = document.querySelector('.projects');
 
         const handleScroll = (event) => {
             if (scrollContainer) {
                 const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
                 const isAtStart = scrollContainer.scrollLeft === 0;
-                const isAtEnd = scrollContainer.scrollLeft === maxScrollLeft;
+                const isAtEnd = scrollContainer.scrollLeft >= maxScrollLeft;
                 const deltaY = event.deltaY;
 
                 if ((deltaY < 0 && isAtStart) || (deltaY > 0 && isAtEnd)) {
-                    // Allow vertical scrolling when at the start or end of the horizontal scroll
+                
                     return;
                 }
 

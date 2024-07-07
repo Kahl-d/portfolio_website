@@ -5,6 +5,8 @@ import { GiSkills } from "react-icons/gi";
 import { MdContacts } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
 import Projects from "./Projects";
+import GenericGrid from '../Experiments/GenericGrid'
+import Home from '../Components2/Home'
 
 const AppN = () => {
 
@@ -51,9 +53,15 @@ const AppN = () => {
     return (
         <div id="appContainer">
             <div id="appContent">
-                <div className="part" id="landing">Landing</div>
+                <div className="part" id="landing">
+                    <GenericGrid/>
+                </div>
                 <div className="part" id="home">
-                    <div className="sticky-tag">Home</div>
+                    {/* <div className="sticky-tag">
+                        Home
+                    </div> */}
+                    <Home/>
+
                 </div>
                 
                 <div className="part" id="skills">
