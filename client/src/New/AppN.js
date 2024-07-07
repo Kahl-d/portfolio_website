@@ -55,6 +55,7 @@ const AppN = () => {
                 <div className="part" id="home">
                     <div className="sticky-tag">Home</div>
                 </div>
+                
                 <div className="part" id="skills">
                     <div className="sticky-tag">Skills</div>
                 </div>
@@ -64,6 +65,7 @@ const AppN = () => {
                 <div className="part" id="contact">
                     <div className="sticky-tag">Contact</div>
                 </div>
+                
             </div>
             <div id="appNav">
                 <div>
@@ -77,6 +79,7 @@ const AppN = () => {
                         <span>Profile</span>
                     </a>
                 </div>
+                
                 <div>
                     <a href="#skills" className="nav-link">
                         <GiSkills />
