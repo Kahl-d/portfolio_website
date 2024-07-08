@@ -46,9 +46,9 @@ const Contact = () => {
             <h1>Get in touch ..</h1>
             <div id="contactDownload">
                 <div className="contactDownloadDiv">
-                    <QRCode value={resumeUrl} />  {/* Add QR code here */}
+                    <QRCode value={resumeUrl} className="QRCode"/>  {/* Add QR code here */}
                 </div>
-                <div className="contactDownloadDiv">
+                <div className="contactDownloadDiv" id="resumeBtn">
                     <a href={resumeUrl} target="_blank" rel="noopener noreferrer">Resume</a>  {/* Add link to open in a new tab */}
                 </div>
             </div>
