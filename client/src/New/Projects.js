@@ -27,9 +27,25 @@ const Projects = () => {
             scrollContainer.addEventListener('wheel', handleScroll);
         }
 
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    scrollContainer.classList.add('touching-top');
+                } else {
+                    scrollContainer.classList.remove('touching-top');
+                }
+            },
+            { threshold: [0, 1] } // Observe when the element is fully or partially in view
+        );
+
+        if (scrollContainer) {
+            observer.observe(scrollContainer);
+        }
+
         return () => {
             if (scrollContainer) {
                 scrollContainer.removeEventListener('wheel', handleScroll);
+                observer.unobserve(scrollContainer);
             }
         };
     }, []);

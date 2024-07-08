@@ -7,6 +7,7 @@ import { IoPersonCircle } from "react-icons/io5";
 import Projects from "./Projects";
 import GenericGrid from '../Experiments/GenericGrid'
 import Home from '../Components2/Home'
+import Contact from './Contact'
 
 const AppN = () => {
 
@@ -72,6 +73,7 @@ const AppN = () => {
                 </div>
                 <div className="part" id="contact">
                     <div className="sticky-tag">Contact</div>
+                    <Contact/>
                 </div>
                 
             </div>
