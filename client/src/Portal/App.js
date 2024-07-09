@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./appp.css";
+import "./App.css";
 
 const App = () => {
   const [leftWidth, setLeftWidth] = useState(20);
@@ -18,11 +18,20 @@ const App = () => {
     if (!isDragging) return;
 
     const dx = e.clientX - startX;
+    const dxPercent = (dx / window.innerWidth) * 100;
 
     if (draggingDiv === "left") {
-      setLeftWidth((prevWidth) => Math.min(Math.max(prevWidth + (dx / window.innerWidth) * 100, 10), 70));
+      const newLeftWidth = Math.min(Math.max(leftWidth + dxPercent, 5), 65);
+      const newCenterWidth = 100 - newLeftWidth - rightWidth;
+      if (newCenterWidth >= 5) {
+        setLeftWidth(newLeftWidth);
+      }
     } else if (draggingDiv === "right") {
-      setRightWidth((prevWidth) => Math.min(Math.max(prevWidth - (dx / window.innerWidth) * 100, 10), 70));
+      const newRightWidth = Math.min(Math.max(rightWidth - dxPercent, 30), 65);
+      const newCenterWidth = 100 - leftWidth - newRightWidth;
+      if (newCenterWidth >= 5) {
+        setRightWidth(newRightWidth);
+      }
     }
 
     setStartX(e.clientX);
@@ -34,25 +43,28 @@ const App = () => {
   };
 
   return (
-    <div id="appContainer" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-      <div
-        id="appLeft"
-        style={{ minWidth: `${leftWidth}%`, borderRight: "2px solid #000" }}
-      >
+    <div id="mainContainer">
+      <h1>Portal</h1>
+      <div id="appContainer" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
         <div
-          className="resizer"
-          onMouseDown={(e) => handleMouseDown(e, "left")}
-        />
-      </div>
-      <div id="appCenter" style={{ minWidth: `${100 - leftWidth - rightWidth}%` }} />
-      <div
-        id="appRight"
-        style={{ minWidth: `${rightWidth}%`, borderLeft: "2px solid #000" }}
-      >
+          id="appLeft"
+          style={{ width: `${leftWidth}%`, borderRight: "2px solid #000" }}
+        >
+          <div
+            className="resizer"
+            onMouseDown={(e) => handleMouseDown(e, "left")}
+          />
+        </div>
+        <div id="appCenter" style={{ width: `${100 - leftWidth - rightWidth}%` }} />
         <div
-          className="resizer"
-          onMouseDown={(e) => handleMouseDown(e, "right")}
-        />
+          id="appRight"
+          style={{ width: `${rightWidth}%`, borderLeft: "2px solid #000" }}
+        >
+          <div
+            className="resizer"
+            onMouseDown={(e) => handleMouseDown(e, "right")}
+          />
+        </div>
       </div>
     </div>
   );
