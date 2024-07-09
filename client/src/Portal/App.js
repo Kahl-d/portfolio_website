@@ -3,7 +3,7 @@ import "./App.css";
 
 const App = () => {
   const [leftWidth, setLeftWidth] = useState(20);
-  const [rightWidth, setRightWidth] = useState(30);
+  const [rightWidth, setRightWidth] = useState(20);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [draggingDiv, setDraggingDiv] = useState(null);
@@ -27,7 +27,7 @@ const App = () => {
         setLeftWidth(newLeftWidth);
       }
     } else if (draggingDiv === "right") {
-      const newRightWidth = Math.min(Math.max(rightWidth - dxPercent, 30), 65);
+      const newRightWidth = Math.min(Math.max(rightWidth - dxPercent, 20), 65);
       const newCenterWidth = 100 - leftWidth - newRightWidth;
       if (newCenterWidth >= 5) {
         setRightWidth(newRightWidth);
@@ -44,8 +44,8 @@ const App = () => {
 
   return (
     <div id="mainContainer">
-      <h1>Portal</h1>
-      <div id="appContainer" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
+      <div id="header">Header</div>
+      <div id="appContainer" className="section" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
         <div
           id="appLeft"
           style={{ width: `${leftWidth}%`, borderRight: "2px solid #000" }}
@@ -55,9 +55,9 @@ const App = () => {
             onMouseDown={(e) => handleMouseDown(e, "left")}
           />
         </div>
-        <div id="appCenter" style={{ width: `${100 - leftWidth - rightWidth}%` }} />
+        <div id="appCenter" className="section" style={{ width: `${100 - leftWidth - rightWidth}%` }} />
         <div
-          id="appRight"
+          id="appRight" className="section"
           style={{ width: `${rightWidth}%`, borderLeft: "2px solid #000" }}
         >
           <div
