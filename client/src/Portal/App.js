@@ -46,24 +46,16 @@ const App = () => {
     <div id="mainContainer">
       <div id="header">Header</div>
       <div id="appContainer" className="section" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-        <div
-          id="appLeft"
-          style={{ width: `${leftWidth}%`, borderRight: "2px solid #000" }}
-        >
-          <div
-            className="resizer"
-            onMouseDown={(e) => handleMouseDown(e, "left")}
-          />
+        <div id="appLeft" style={{ width: `${leftWidth}%`, borderRight: "2px solid #000" }}>
+          <div className="resizer" onMouseDown={(e) => handleMouseDown(e, "left")}/>
+            Skills
         </div>
-        <div id="appCenter" className="section" style={{ width: `${100 - leftWidth - rightWidth}%` }} />
-        <div
-          id="appRight" className="section"
-          style={{ width: `${rightWidth}%`, borderLeft: "2px solid #000" }}
-        >
-          <div
-            className="resizer"
-            onMouseDown={(e) => handleMouseDown(e, "right")}
-          />
+        <div id="appCenter" className="section" style={{ width: `${100 - leftWidth - rightWidth}%` }}>
+            Projects
+        </div>
+        <div id="appRight" className="section" style={{ width: `${rightWidth}%`, borderLeft: "2px solid #000" }}>
+          <div className="resizer" onMouseDown={(e) => handleMouseDown(e, "right")}/>
+            Profile
         </div>
       </div>
     </div>
