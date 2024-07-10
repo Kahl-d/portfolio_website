@@ -1,12 +1,12 @@
 // App3.js
 import React, { useState } from "react";
-import "./App.css";
+import "./ps.css";
 import Skills from "./Skills";
 import Profile from "./Profile";
 import Projects from "./Projects";
 import { IoClose } from "react-icons/io5";
 
-const App3 = () => {
+const ProjectSkillsContainer = () => {
   const [rightWidth, setRightWidth] = useState(35);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -41,7 +41,7 @@ const App3 = () => {
 
   return (
     <div id="mainContainer" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-      <div id="appContainer" className="section">
+      <div id="PSContainer" className="section">
         <div id="appCenter" className="section" style={{ width: `${100 - rightWidth}%` }}>
           <Projects setTheSelectedProject={setSelectedProject} />
         </div>
@@ -77,4 +77,4 @@ const App3 = () => {
   );
 };
 
-export default App3;
+export default ProjectSkillsContainer;

@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App3 from "./Portal/App3";
-
+import AppN from './New/AppN'
 const root = document.getElementById("root");
 
-ReactDOM.createRoot(root).render(<App3/>);
+ReactDOM.createRoot(root).render(<AppN/>);

@@ -4,11 +4,13 @@ import { IoBuild } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { MdContacts } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
-import Projects from "./Projects";
+// import Projects from "./Projects";
 import GenericGrid from '../Experiments/GenericGrid'
-import Home from '../Components2/Home'
+// import Home from '../Components2/Home'
+import Home from '../Portal/Home'
 import Contact from './Contact'
-import Skills from '../Components/Skills';
+// import Skills from '../Components/Skills';
+import ProjectSkillsContainer from '../Portal/ProjectSkillsContainer'
 
 const AppN = () => {
 
@@ -67,12 +69,13 @@ const AppN = () => {
                 </div>
                 
                 <div className="part" id="skills">
-                    <div className="sticky-tag">Skills</div>
-                    <Skills/>
+                    {/* <div className="sticky-tag">Skills</div>
+                    <Skills/> */}
+                    <ProjectSkillsContainer/>
                 </div>
-                <div className="part" id="projects">
+                {/* <div className="part" id="projects">
                     <Projects />
-                </div>
+                </div> */}
                 <div className="part" id="contact">
                     <div className="sticky-tag">Contact</div>
                     <Contact/>
@@ -98,12 +101,12 @@ const AppN = () => {
                         <span>Skills</span>
                     </a>
                 </div>
-                <div>
+                {/* <div>
                     <a href="#projects" className="nav-link">
                         <IoBuild />
                         <span>Projects</span>
                     </a>
-                </div>
+                </div> */}
                 <div>
                     <a href="#contact" className="nav-link">
                         <MdContacts />

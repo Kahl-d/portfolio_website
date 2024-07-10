@@ -37,7 +37,7 @@
   margin: 0.5rem;
  }
 
-  #appContainer {
+  #PSContainer {
     display: flex;
     flex-grow: 1;
     width: 100%;
