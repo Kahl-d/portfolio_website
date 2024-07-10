@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Skills from "./Skills";
 
 const App = () => {
   const [leftWidth, setLeftWidth] = useState(20);
@@ -48,7 +49,7 @@ const App = () => {
       <div id="appContainer" className="section" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
         <div id="appLeft" style={{ width: `${leftWidth}%`, borderRight: "2px solid #000" }}>
           <div className="resizer" onMouseDown={(e) => handleMouseDown(e, "left")}/>
-            Skills
+            <Skills/>
         </div>
         <div id="appCenter" className="section" style={{ width: `${100 - leftWidth - rightWidth}%` }}>
             Projects
