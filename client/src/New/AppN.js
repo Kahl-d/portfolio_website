@@ -8,7 +8,7 @@ import Projects from "./Projects";
 import GenericGrid from '../Experiments/GenericGrid'
 import Home from '../Components2/Home'
 import Contact from './Contact'
-import Skills from '../Components/Skills'
+import Skills from '../Components/Skills';
 
 const AppN = () => {
 

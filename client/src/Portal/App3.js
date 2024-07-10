@@ -4,8 +4,8 @@ import Skills from "./Skills";
 import Profile from "./Profile";
 import Projects from "./Projects";
 
-const App = () => {
-  const [rightWidth, setRightWidth] = useState(20);
+const App3 = () => {
+  const [rightWidth, setRightWidth] = useState(35);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [draggingDiv, setDraggingDiv] = useState(null);
@@ -38,9 +38,9 @@ const App = () => {
 
   return (
     <div id="mainContainer" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-      <div id="appTop">
+      {/* <div id="appTop">
         <Profile />
-      </div>
+      </div> */}
       <div id="appContainer" className="section">
         <div id="appCenter" className="section" style={{ width: `${100 - rightWidth}%` }}>
           <Projects />
@@ -54,4 +54,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App3;

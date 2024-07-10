@@ -47,84 +47,89 @@ const Projects = () => {
         }
     ];
 
-  const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const projectsBody = document.getElementById('projectsBody');
-      if (projectsBody.scrollTop > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+    useEffect(() => {
+        const handleScroll = () => {
+            const projectsBody = document.getElementById('projectsBody');
+            if (projectsBody.scrollTop > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        const projectsBody = document.getElementById('projectsBody');
+        projectsBody.addEventListener('scroll', handleScroll);
+
+        return () => {
+            projectsBody.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const handleProjectClick = (project) => {
+        setSelectedProject(project);
     };
 
-    const projectsBody = document.getElementById('projectsBody');
-    projectsBody.addEventListener('scroll', handleScroll);
-
-    return () => {
-      projectsBody.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return (
-    <div id="projectsContainer">
-      <div id="projectsHeader" className={isScrolled ? 'scrolled' : ''}>
-        <img
-          src="https://studentprojectguide.com/wp-content/uploads/2019/12/student-projetc.jpg"
-          alt="projects"
-          id="headerImg"
-          className={isScrolled ? 'scrolled' : ''}
-        />
-        <h1 className={isScrolled ? 'scrolled' : ''}>Projects</h1>
-      </div>
-      <div id="projectsBody">
-        <div id="projectsList">
-          {projects.map((project, index) => (
-            <div key={index} className="project">
-              <img src={project.image} alt={project.name} className="projectImg" />
-              <div className="text">
-                <span>{project.name}</span>
-              </div>
+    return (
+        <div id="projectsContainer">
+            <div id="projectsHeader" className={isScrolled ? 'scrolled' : ''}>
+                <img
+                    src="https://studentprojectguide.com/wp-content/uploads/2019/12/student-projetc.jpg"
+                    alt="projects"
+                    id="headerImg"
+                    className={isScrolled ? 'scrolled' : ''}
+                />
+                <h1 className={isScrolled ? 'scrolled' : ''}>Projects</h1>
             </div>
-          ))}
-        </div>
-        <span>Categories</span>
+            <div id="projectScreen">
+                {selectedProject ? (
+                    <div className="projectDetail">
+                        <img src={selectedProject.image} alt={selectedProject.name} className="projectImg" />
+                        <div className='projectText'>
+                        <h2>{selectedProject.name}</h2>
+                        <p>{selectedProject.description}</p>
+                        <button><a href={selectedProject.link} target="_blank" rel="noopener noreferrer">View Project</a></button>
+                        </div>
+                    </div>
+                ) : (
+                    <p>Select a project to view details</p>
+                )}
+            </div>
+            <div id="projectsBody" className={isScrolled ? 'scrolled' : ''}>
 
-        <div className="category" id="category1">
-          <span>Machine Learning</span>
-          <div className="horizontal-scroll">
-            {projects.map((project, index) => (
-              <div key={index} className="projectCard">
-                <img src={project.image} alt={project.name} className="projectImgCard" />
-                <div className="textCard">
-                  <h2>{project.name}</h2>
-                  <p>{project.description}</p>
-                  <a href={project.link}>View Project</a>
+                <div className="category" id="category1">
+                    <span>Machine Learning</span>
+                    <div className="horizontal-scroll">
+                        {projects.map((project, index) => (
+                            <div key={index} className="projectCard" onClick={() => handleProjectClick(project)}>
+                                <img src={project.image} alt={project.name} className="projectImgCard" />
+                                <div className="textCard">
+                                    <h2>{project.name}</h2>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        <div className="category" id="category2">
-          <span>Machine Learning</span>
-          <div className="horizontal-scroll">
-            {projects.map((project, index) => (
-              <div key={index} className="projectCard">
-                <img src={project.image} alt={project.name} className="projectImgCard" />
-                <div className="textCard">
-                  <h2>{project.name}</h2>
-                  <p>{project.description}</p>
-                  <a href={project.link}>View Project</a>
+                <div className="category" id="category2">
+                    <span>Machine Learning</span>
+                    <div className="horizontal-scroll">
+                        {projects.map((project, index) => (
+                            <div key={index} className="projectCard" onClick={() => handleProjectClick(project)}>
+                                <img src={project.image} alt={project.name} className="projectImgCard" />
+                                <div className="textCard">
+                                    <h2>{project.name}</h2>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
+
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Projects;
