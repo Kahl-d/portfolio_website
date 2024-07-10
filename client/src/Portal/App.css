@@ -3,7 +3,12 @@
   --dark-2: #121212;
   --dark-3: #1a1a1a;
   --dark-4: #222222;
+  --most-light: #ffffff;
+  --light-2: #f0f0f0;
+  --light-3: #e0e0e0;
+  --light-4: #d0d0d0;
 }
+
 
 * {
     margin: 0;

@@ -1,7 +1,7 @@
 import React from "react";
 import './profile.css';
 
-import ProfilePicture from '../Resources/profile7.png';
+import ProfilePicture from '../Resources/profile.png';
 
 
 const Profile = () =>{

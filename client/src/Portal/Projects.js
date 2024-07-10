@@ -1,9 +1,7 @@
 import React from "react";
 import './projects.css';
 
-
-const Projects = () =>{
-
+const Projects = () => {
     const projects = [
         {
             name: "Flight Fare Prediction",
@@ -55,28 +53,61 @@ const Projects = () =>{
         }
     ];
 
-
     return (
-        <div id="projectsContianer">
+        <div id="projectsContainer">
             <div id="projectsHeader">
                 <img src="https://studentprojectguide.com/wp-content/uploads/2019/12/student-projetc.jpg" alt="projects" id="headerImg"/>
                 <h1>Projects</h1>
-
             </div>
             <div id="projectsBody">
                 <div id="projectsList">
                     {projects.map((project, index) => (
                         <div key={index} className="project">
                             <img src={project.image} alt={project.name} className="projectImg"/>
-                            <div className="projectInfo">
-                                <h2>{project.name}</h2>
+                            <div className="text">
+                                <span>{project.name}</span>
                             </div>
                         </div>
                     ))}
                 </div>
+                <span>Categories</span>
+                
+                    <div className="category" id="category1">
+                        <span>Machine Learning</span>
+                        <div className="horizontal-scroll">
+                            {projects.map((project, index) => (
+                                <div key={index} className="projectCard">
+                                    <img src={project.image} alt={project.name} className="projectImgCard"/>
+                                    <div className="textCard">
+                                        <h2>{project.name}</h2>
+                                        <p>{project.description}</p>
+                                        <a href={project.link}>View Project</a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="category" id="category2">
+                        <span>Machine Learning</span>
+                        <div className="horizontal-scroll">
+                            {projects.map((project, index) => (
+                                <div key={index} className="projectCard">
+                                    <img src={project.image} alt={project.name} className="projectImgCard"/>
+                                    <div className="textCard">
+                                        <h2>{project.name}</h2>
+                                        <p>{project.description}</p>
+                                        <a href={project.link}>View Project</a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                
             </div>
         </div>
     )
 }
 
-export default Projects
+export default Projects;
