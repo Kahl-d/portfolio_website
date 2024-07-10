@@ -6,7 +6,7 @@ const Home = ()=>{
         <div id="homeContainer">
             <div id="biggerCircle">
                 <div id="smallerCircle">
-                    
+                
                 </div>
             </div>
             <div id="homeContent">Content</div>
