@@ -1,0 +1,25 @@
+#profileContainer{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#profileImageDiv{
+    margin: 0.5rem;
+    background-color: antiquewhite;
+    border-radius: 1rem;
+    /* padding: 1rem; */
+}
+
+#profileImageDiv img{
+    width: 100%;
+    height: 400px;
+}
+
+.name{
+    color: black;
+}
+

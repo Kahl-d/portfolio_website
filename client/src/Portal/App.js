@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Skills from "./Skills";
+import Profile from "./Profile";
 
 const App = () => {
   const [leftWidth, setLeftWidth] = useState(20);
@@ -56,7 +57,7 @@ const App = () => {
         </div>
         <div id="appRight" className="section" style={{ width: `${rightWidth}%`, borderLeft: "2px solid #000" }}>
           <div className="resizer" onMouseDown={(e) => handleMouseDown(e, "right")}/>
-            Profile
+            <Profile/>
         </div>
       </div>
     </div>

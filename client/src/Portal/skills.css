@@ -3,17 +3,21 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-right: 1.2rem;
+    /* padding-right: 1.2rem; */
     font-family: 'Arial', sans-serif;
 }
 
 #skillsHeader {
     font-size: 2rem;
     font-weight: bold;
+    padding: 1rem;
 }
 
 #skillsFilter {
     display: flex;
+    align-items: center;
+    height: 80px;
+    overflow-y: hidden;
     flex-direction: row;
     overflow-x: scroll;
 
@@ -47,27 +51,32 @@
 .skill {
     width: 100%;
     min-height: 50px;
-    margin: 0.5rem;
-    background-color: white;
-    color: black;
     display: flex;
+    padding-left: 1rem;
     flex-direction: row;
     align-items: center;
-    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    color: white;
+
+}
+
+.skill span{
+    color: white;
 }
 
 .skill:hover {
+    background-color: #1a1a1a;
     transform: scale(1.05);
 }
 
 .icon {
     font-size: 2rem;
-    margin-bottom: 0.5rem;
+    margin-right: 1rem;
 }
 
 .name {
     font-size: 1.2rem;
     font-weight: bold;
+    color: white;
 }
