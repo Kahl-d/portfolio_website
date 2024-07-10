@@ -5,6 +5,9 @@
     flex-direction: column;
     /* padding-right: 1.2rem; */
     font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    border-radius: 0 1rem 1rem 0;
+
 }
 
 #skillsHeader {

@@ -1,9 +1,12 @@
 #profileContainer{
     width: 100%;
-    height: max-content;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #121212;
+    border-radius: 1rem 0 0 1rem;
+
 }
 
 
