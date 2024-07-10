@@ -9,7 +9,6 @@
 
 #profileImageDiv{
     margin: 0.5rem;
-    background-color: antiquewhite;
     border-radius: 1rem;
     /* padding: 1rem; */
 }
@@ -20,6 +19,6 @@
 }
 
 .name{
-    color: black;
+    color: white;
 }
 

@@ -29,14 +29,14 @@
     margin-bottom: 0.5rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    background-color: #e0e0e0;
+    background-color: #222222;
     border-radius: 1rem;
     transition: background-color 0.3s ease;
 }
 
 .filters.active, .filters:hover {
-    background-color: #0288d1;
-    color: white;
+    background-color: white;
+    color: var(--dark-4);
 }
 
 #skills {

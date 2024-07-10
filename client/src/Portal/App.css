@@ -1,3 +1,10 @@
+:root{
+  --most-dark: #000000;
+  --dark-2: #121212;
+  --dark-3: #1a1a1a;
+  --dark-4: #222222;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -40,7 +47,7 @@
 
   
   .resizer {
-    width: 10px;
+    width: 5px;
     height: 100%;
     background-color: #000;
     cursor: ew-resize;
@@ -59,6 +66,6 @@
   }
   
   .resizer:hover {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
   }
   
