@@ -71,3 +71,51 @@
     background-color: rgba(255, 255, 255, 0.6);
   }
   
+
+  #projectScreen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-right: 1rem;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    border-radius: 1rem 0 0 1rem;
+    position: relative;
+  }
+
+  #closeBtn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    background-color: #ffffff;
+    color: #000;
+
+  }
+
+  .projectDetail{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+  }
+
+  .projectImg{
+    max-width: 100%;
+    height: 40vh;
+    border-radius: 1rem 1rem 0 0;
+    margin-bottom: 1rem;
+  }
+  .projectDetail h2{
+    font-size: 2rem;
+  }
+
+  .card-button{
+    width: 20%;
+    margin: 1rem 0;
+    height: 40px;
+  }
+  

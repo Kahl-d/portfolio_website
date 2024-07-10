@@ -4,6 +4,7 @@ import "./App.css";
 import Skills from "./Skills";
 import Profile from "./Profile";
 import Projects from "./Projects";
+import { IoClose } from "react-icons/io5";
 
 const App3 = () => {
   const [rightWidth, setRightWidth] = useState(35);
@@ -47,30 +48,24 @@ const App3 = () => {
         <div id="appRight" className="section" style={{ width: `${rightWidth}%`, borderLeft: "2px solid #000" }}>
           <div className="resizer" onMouseDown={handleMouseDown} />
           {selectedProject ? (
-            <div>
-              <button
-                onClick={() => setSelectedProject(null)}
-                style={{
-                  position: "absolute",
-                  top: 10,
-                  right: 10,
-                  padding: "5px 10px",
-                  fontSize: "16px",
-                }}
-              >
-                X
-              </button>
+            <div id="projectScreen">
+              <IoClose
+                id="closeBtn"
+                onClick={() => setSelectedProject(null)}/>
+              
               <div className="projectDetail">
-                <div className="projectText">
-                  <h2>{selectedProject.name}</h2>
+                
                   <img src={selectedProject.image} alt={selectedProject.name} className="projectImg" />
+                  <h2>{selectedProject.name}</h2>
+                  
                   <p>{selectedProject.description}</p>
-                  <button>
-                    <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
-                      View Project
-                    </a>
+                  <button 
+                    onClick={() => window.open(selectedProject.link, "_blank", "noopener noreferrer")}
+                    className="card-button"
+                  >
+                    View on GitHub
                   </button>
-                </div>
+                
               </div>
             </div>
           ) : (
