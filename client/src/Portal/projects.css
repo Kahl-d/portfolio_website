@@ -6,82 +6,108 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-}
-
-#projectsHeader {
+  }
+  
+  #projectsHeader {
     width: 100%;
     height: 300px;
     display: flex;
-    font-size: 4rem;
     align-items: baseline;
+    font-size: 4rem;
     color: #fff;
-}
-
-#headerImg {
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+  }
+  
+  #projectsHeader.scrolled {
+    height: 60px; /* Adjust height for the shrunk header */
+  }
+  
+  #headerImg {
     width: 200px;
     height: 200px;
     margin: 1rem;
     border-radius: 0.5rem;
-}
-
-#projectsBody {
+    transition: all 0.3s ease;
+  }
+  
+  #headerImg.scrolled {
+    width: 50px; /* Adjust width for the shrunk header */
+    height: 50px; /* Adjust height for the shrunk header */
+    margin: 0.5rem;
+  }
+  
+  #projectsHeader h1 {
+    transition: all 0.3s ease;
+  }
+  
+  #projectsHeader h1.scrolled {
+    font-size: 1.5rem; /* Adjust font size for the shrunk header */
+  }
+  
+  #projectsBody {
     width: 100%;
-    max-height: calc(100% - 300px);
+    flex-grow: 1;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-}
-
-#projectsList {
+    transition: height 0.3s ease;
+  }
+  
+  #projectsBody.scrolled {
+    height: calc(100% - 60px); /* Adjust height when header is shrunk */
+  }
+  
+  #projectsList {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 1rem; /* Add some space between grid items */
-}
-
-.project {
+  }
+  
+  .project {
     background-color: #1e1e1e;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: row;
     color: #fff;
-}
-
-.project:hover {
+  }
+  
+  .project:hover {
     background-color: #2e2e2e;
-}
-
-.projectImg {
+  }
+  
+  .projectImg {
     width: 50px;
     height: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
-}
-
-.text {
+  }
+  
+  .text {
     margin: 1rem;
     font-size: 0.8rem;
-}
-
-#categories {
+  }
+  
+  #categories {
     max-width: 100%;
     overflow: hidden;
-}
-
-.category {
+  }
+  
+  .category {
     width: 100%;
     max-height: 500px;
     display: flex;
     flex-direction: column;
-}
-
-.horizontal-scroll {
+  }
+  
+  .horizontal-scroll {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-}
-
-.projectCard {
+  }
+  
+  .projectCard {
     background-color: #1e1e1e;
     border-radius: 0.5rem;
     padding: 1rem;
@@ -93,33 +119,34 @@
     color: #fff;
     min-width: 200px; /* Adjust the width of each card */
     position: relative;
-}
-
-.projectImgCard {
+  }
+  
+  .projectImgCard {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 0.5rem;
-}
-
-.textCard {
+  }
+  
+  .textCard {
     margin-top: 1rem;
-}
-
-.textCard h2 {
+  }
+  
+  .textCard h2 {
     font-size: 1rem;
-}
-
-.textCard p {
+  }
+  
+  .textCard p {
     font-size: 0.5rem;
-}
-
-.textCard a {
+  }
+  
+  .textCard a {
     color: #1e90ff;
     text-decoration: none;
     font-weight: bold;
-}
-
-.textCard a:hover {
+  }
+  
+  .textCard a:hover {
     text-decoration: underline;
-}
+  }
+  

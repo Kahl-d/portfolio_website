@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     background-color: #121212;
     border-radius: 0 1rem 1rem 0;
@@ -11,14 +11,16 @@
 
 
 #profileImageDiv{
+    width: 100%;
+    height: 100%;
     margin: 0.5rem;
     border-radius: 1rem;
     /* padding: 1rem; */
 }
 
 #profileImageDiv img{
-    width: 100%;
-    height: 400px;
+    /* width: 400px; */
+    height: 100%;
 }
 
 .name{
