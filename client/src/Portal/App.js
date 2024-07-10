@@ -5,16 +5,15 @@ import Profile from "./Profile";
 import Projects from "./Projects";
 
 const App = () => {
-  const [leftWidth, setLeftWidth] = useState(20);
   const [rightWidth, setRightWidth] = useState(20);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [draggingDiv, setDraggingDiv] = useState(null);
 
-  const handleMouseDown = (e, div) => {
+  const handleMouseDown = (e) => {
     setIsDragging(true);
     setStartX(e.clientX);
-    setDraggingDiv(div);
+    setDraggingDiv("right");
   };
 
   const handleMouseMove = (e) => {
@@ -23,18 +22,10 @@ const App = () => {
     const dx = e.clientX - startX;
     const dxPercent = (dx / window.innerWidth) * 100;
 
-    if (draggingDiv === "left") {
-      const newLeftWidth = Math.min(Math.max(leftWidth + dxPercent, 5), 65);
-      const newCenterWidth = 100 - newLeftWidth - rightWidth;
-      if (newCenterWidth >= 5) {
-        setLeftWidth(newLeftWidth);
-      }
-    } else if (draggingDiv === "right") {
-      const newRightWidth = Math.min(Math.max(rightWidth - dxPercent, 20), 65);
-      const newCenterWidth = 100 - leftWidth - newRightWidth;
-      if (newCenterWidth >= 5) {
-        setRightWidth(newRightWidth);
-      }
+    const newRightWidth = Math.min(Math.max(rightWidth - dxPercent, 5), 65);
+    const newCenterWidth = 100 - newRightWidth;
+    if (newCenterWidth >= 5) {
+      setRightWidth(newRightWidth);
     }
 
     setStartX(e.clientX);
@@ -46,19 +37,17 @@ const App = () => {
   };
 
   return (
-    <div id="mainContainer">
-      <div id="header">Header</div>
-      <div id="appContainer" className="section" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-        <div id="appLeft" style={{ width: `${leftWidth}%`, borderRight: "2px solid #000" }}>
-          <div className="resizer" onMouseDown={(e) => handleMouseDown(e, "left")}/>
-            <Skills/>
-        </div>
-        <div id="appCenter" className="section" style={{ width: `${100 - leftWidth - rightWidth}%` }}>
-            <Projects/>
+    <div id="mainContainer" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
+      <div id="appTop">
+        <Profile />
+      </div>
+      <div id="appContainer" className="section">
+        <div id="appCenter" className="section" style={{ width: `${100 - rightWidth}%` }}>
+          <Projects />
         </div>
         <div id="appRight" className="section" style={{ width: `${rightWidth}%`, borderLeft: "2px solid #000" }}>
-          <div className="resizer" onMouseDown={(e) => handleMouseDown(e, "right")}/>
-            <Profile/>
+          <div className="resizer" onMouseDown={handleMouseDown} />
+          <Skills />
         </div>
       </div>
     </div>
