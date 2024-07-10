@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './projects.css';
 
-const Projects = () => {
+const Projects = (props) => {
     const projects = [
         {
             name: "Flight Fare Prediction",
@@ -70,6 +70,8 @@ const Projects = () => {
 
     const handleProjectClick = (project) => {
         setSelectedProject(project);
+        props.setTheSelectedProject(project);
+
     };
 
     return (
@@ -83,20 +85,7 @@ const Projects = () => {
                 />
                 <h1 className={isScrolled ? 'scrolled' : ''}>Projects</h1>
             </div>
-            <div id="projectScreen">
-                {selectedProject ? (
-                    <div className="projectDetail">
-                        <img src={selectedProject.image} alt={selectedProject.name} className="projectImg" />
-                        <div className='projectText'>
-                        <h2>{selectedProject.name}</h2>
-                        <p>{selectedProject.description}</p>
-                        <button><a href={selectedProject.link} target="_blank" rel="noopener noreferrer">View Project</a></button>
-                        </div>
-                    </div>
-                ) : (
-                    <p>Select a project to view details</p>
-                )}
-            </div>
+
             <div id="projectsBody" className={isScrolled ? 'scrolled' : ''}>
 
                 <div className="category" id="category1">
@@ -114,6 +103,20 @@ const Projects = () => {
                 </div>
 
                 <div className="category" id="category2">
+                    <span>Machine Learning</span>
+                    <div className="horizontal-scroll">
+                        {projects.map((project, index) => (
+                            <div key={index} className="projectCard" onClick={() => handleProjectClick(project)}>
+                                <img src={project.image} alt={project.name} className="projectImgCard" />
+                                <div className="textCard">
+                                    <h2>{project.name}</h2>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="category" id="category3">
                     <span>Machine Learning</span>
                     <div className="horizontal-scroll">
                         {projects.map((project, index) => (

@@ -47,15 +47,11 @@
 }
 
 
-#projectScreen {
-  width: 100%;
-  height: 30%;
-  overflow: hidden;
-}
+
 
 #projectsBody {
   width: 100%;
-  height: 40%;
+  height: 70%;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -64,7 +60,7 @@
 }
 
 #projectsBody.scrolled {
-  height: calc(70% - 100px);
+  height: calc(100% - 100px);
 }
 
 .category {
@@ -100,42 +96,6 @@
   object-fit: cover;
 }
 
-.projectDetail {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.projectDetail .projectImg {
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-}
-
-.projectDetail .projectText {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  color: #fff;
-}
-
-.projectDetail .projectText button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #333;
-  border: none;
-  color: #fff;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-.projectDetail .projectText button a {
-  color: inherit;
-  text-decoration: none;
-}
 
 .textCard h2{
   font-size: 1rem;
