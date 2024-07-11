@@ -45,7 +45,7 @@ const Grid = ({ items }) => {
 
     return (
         <div className="wrapper_lp" onScroll={handelingScroll}>
-            <div id='downarrow' onClick={handelingScroll}><FaArrowDown/><span id='down'>Scroll Down</span></div>
+            {/* <div id='downarrow' onClick={handelingScroll}><FaArrowDown/><span id='down'>Scroll Down</span></div> */}
             <div className="grid_lp">
                 {items.map((item, index) => {
                     const distance =

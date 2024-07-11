@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --most-dark: #000000;
+    --dark-2: #121212;
+    --dark-3: #1a1a1a;
+    --dark-4: #222222;
+    --most-light: #ffffff;
+    --light-2: #f0f0f0;
+    --light-3: #e0e0e0;
+    --light-4: #d0d0d0;
+}
+
+#appContainer {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: var(--most-dark);
+    overflow: hidden;
+    position: relative;
+}
+
+.screen {
+    width: 90%;
+    height: 90%;
+    background-color: var(--dark-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--most-light);
+    transition: all 0.5s ease;
+    position: relative;
+    transform-origin: center center;
+    align-self: center;
+    justify-self: center;
+}
+
+.screen.expanded {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.screen.expanded.top-left {
+    transform-origin: top left;
+    top: 0;
+    left: 0;
+}
+
+.screen.expanded.top-right {
+    transform-origin: top right;
+    top: 0;
+    right: 0;
+}
+
+.screen.expanded.bottom-left {
+    transform-origin: bottom left;
+    bottom: 0;
+    left: 0;
+}
+
+.screen.expanded.bottom-right {
+    transform-origin: bottom right;
+    bottom: 0;
+    right: 0;
+}
+
+.screen.shrink {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--dark-3);
+    color: var(--most-light);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.screen.expanded .close-button {
+    display: block;
+}
