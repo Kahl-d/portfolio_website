@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import './np.css';
 
 const NewProjects = () => {
@@ -56,8 +57,15 @@ const NewProjects = () => {
         setActiveIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
     };
 
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: handleNext,
+        onSwipedRight: handlePrevious,
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true
+    });
+
     return (
-        <div id='newProjectsContainer'>
+        <div id='newProjectsContainer' {...swipeHandlers}>
             <div id='projectCarousel'>
                 {projects.map((project, index) => {
                     let className = 'projectCard';
