@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import './app.css';
 import Skills from '../Portal/Skills';
 import NewProjects from './NewProjects'
+import Profile from './Profile';
+
+import ColorOs from "./ColorOs";
+import { GiCaptainHatProfile } from "react-icons/gi";
+import { TbTools } from "react-icons/tb";
+import { GiLightProjector } from "react-icons/gi";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
 
 const ExpandedContent = ({ index }) => {
     // Example expanded content for each screen
     const contents = [
-        <div>Expanded Content 1</div>,
+        <Profile />,
         <Skills />,
         <NewProjects />,
-        <div>Expanded Content 4</div>
+        <ColorOs />
     ];
     return contents[index];
 };
@@ -26,9 +33,14 @@ const App = () => {
         setExpandedScreen(null);
     };
 
+    const profile = <div className="tile">
+        <GiCaptainHatProfile />
+        Profile
+    </div>
+
     return (
         <div id="appContainer">
-            {['Profile', 'Skills', 'Projects', 'Contact'].map((title, index) => (
+            {[profile, 'Skills', 'Projects', 'Contact'].map((title, index) => (
                 <div
                     key={index}
                     className={`screen ${expandedScreen === index ? `expanded ${getScreenPosition(index)}` : expandedScreen !== null ? 'shrink' : ''}`}

@@ -39,7 +39,7 @@
 
 .projectCard {
     position: absolute;
-    width: 50%;
+    width: 80%;
     height: fit-content;
     background-color: var(--dark-2);
     border-radius: 10px;
@@ -84,9 +84,6 @@
     transition: background-color 0.3s;
 }
 
-.projectCard a:hover {
-    background-color: var(--dark-4);
-}
 
 .projectCard.active {
     transform: translateZ(300px);
@@ -95,14 +92,17 @@
 }
 
 .projectCard.left {
+    width: 60%;
     transform: rotateY(60deg) translateX(-100%);
-    opacity: 0.5;
+    opacity: 0.2;
     z-index: 1;
 }
 
 .projectCard.right {
+    width: 60%;
+
     transform: rotateY(-60deg) translateX(100%);
-    opacity: 0.5;
+    opacity: 0.2;
     z-index: 1;
 }
 
