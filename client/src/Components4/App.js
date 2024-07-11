@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import './app.css';
+import Skills from '../Portal/Skills';
+import NewProjects from './NewProjects'
 
 const ExpandedContent = ({ index }) => {
     // Example expanded content for each screen
     const contents = [
         <div>Expanded Content 1</div>,
-        <div>Expanded Content 2</div>,
-        <div>Expanded Content 3</div>,
+        <Skills />,
+        <NewProjects />,
         <div>Expanded Content 4</div>
     ];
     return contents[index];
@@ -26,7 +28,7 @@ const App = () => {
 
     return (
         <div id="appContainer">
-            {['Title 1', 'Title 2', 'Title 3', 'Title 4'].map((title, index) => (
+            {['Profile', 'Skills', 'Projects', 'Contact'].map((title, index) => (
                 <div
                     key={index}
                     className={`screen ${expandedScreen === index ? `expanded ${getScreenPosition(index)}` : expandedScreen !== null ? 'shrink' : ''}`}
