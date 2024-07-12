@@ -48,16 +48,6 @@
     color: var(--most-light);
 }
 
-#hamburgerMenu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: var(--most-light);
-    cursor: pointer;
-    z-index: 1000;
-}
-
 #sidebar {
     position: fixed;
     top: 0;
@@ -93,6 +83,57 @@
 
 .navText {
     margin-left: 10px;
+}
+
+#hamburgerMenu {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--most-light);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+#hamburgerMenu.open{
+    display: block;
+}
+
+#hamburgerMenu.open .top {
+    transform: translateY(6px) rotate(45deg) translateX(1px);
+}
+
+#hamburgerMenu.open .middle {
+    opacity: 0;
+}
+
+#hamburgerMenu.open .bottom {
+    transform: translateY(0px) rotate(-45deg);
+}
+
+.menuLine {
+    width: 100%;
+    height: 3px;
+    background-color: var(--most-light);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.menuLine.top {
+    transform-origin: top;
+}
+
+.menuLine.middle {
+    transform-origin: center;
+}
+
+.menuLine.bottom {
+    transform-origin: bottom;
 }
 
 @media screen and (max-width: 768px) {

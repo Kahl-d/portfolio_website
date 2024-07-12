@@ -29,8 +29,10 @@ const App = () => {
                 {pages[currentPage]}
             </div>
 
-            <div id="hamburgerMenu" onClick={toggleMenu}>
-                <FiMenu />
+            <div id="hamburgerMenu" onClick={toggleMenu} className={menuOpen ? 'open' : ''}>
+                <div className="menuLine top"></div>
+                <div className="menuLine middle"></div>
+                <div className="menuLine bottom"></div>
             </div>
 
             <div id="sidebar" className={menuOpen ? 'open' : ''}>
