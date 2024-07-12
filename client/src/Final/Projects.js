@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './projects.css';
+import { IoIosClose } from "react-icons/io";
 
 const Projects = () => {
     const projects = [
@@ -122,15 +123,18 @@ const Projects = () => {
             <div id='projectScreenPC' style={{ width: `${rightWidth}%` }}>
                 <div className="resizer" onMouseDown={handleMouseDown} />
                 {selectedProject && (
-                    <div>
-                        <button onClick={handleCloseClick}>Close</button>
+                    <div className='screenCard'>
+                        <IoIosClose onClick={handleCloseClick} className='clsBtn'/>
+                        <img src={selectedProject.image} alt={selectedProject.name} className='screenImage' />
                         <h2>{selectedProject.name}</h2>
                         <p>{selectedProject.description}</p>
+                        <div className="screenLink">
                         <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
                     </div>
                 )}
             </div>
-            <div id="projectsContainer" style={{ width: `${100 - rightWidth}%`, borderLeft: "2px solid #000" }}>
+            <div id="projectsContainer" style={{ width: `${100 - rightWidth}%`}}>
                 <div id="projectsHeader" className={isScrolled ? 'scrolled' : ''}>
                     <img
                         src="https://studentprojectguide.com/wp-content/uploads/2019/12/student-projetc.jpg"
@@ -188,10 +192,13 @@ const Projects = () => {
             {/* Mobile view screen */}
             {isMobileView && selectedProject && (
                 <div className="mobileProjectScreen">
-                    <button onClick={handleCloseClick} className="closeButton">×</button>
+                    <IoIosClose onClick={handleCloseClick} className='clsBtn'/>
+                    <img src={selectedProject.image} alt={selectedProject.name} className='mscreenImage' />
                     <h2>{selectedProject.name}</h2>
                     <p>{selectedProject.description}</p>
-                    <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">View Project</a>
+                    <div className="mscreenLink">
+                        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
                 </div>
             )}
         </div>
