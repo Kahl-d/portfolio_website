@@ -4,14 +4,14 @@ import { IoHomeSharp } from "react-icons/io5";
 import { GrTools } from "react-icons/gr";
 import { GiFilmProjector } from "react-icons/gi";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
-
+import Projects from "./Projects";
 const App = () => {
     const [currentPage, setCurrentPage] = useState(0);
 
     const pages = [
         <div>Page 1</div>,
         <div>Page 2</div>,
-        <div>Page 3</div>,
+        <Projects />,
         <div>Page 4</div>
     ];
 

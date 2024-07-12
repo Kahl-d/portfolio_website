@@ -45,6 +45,7 @@ const ProjectSkillsContainer = () => {
         <div id="appCenter" className="section" style={{ width: `${100 - rightWidth}%` }}>
           <Projects setTheSelectedProject={setSelectedProject} />
         </div>
+
         <div id="appRight" className="section" style={{ width: `${rightWidth}%`, borderLeft: "2px solid #000" }}>
           <div className="resizer" onMouseDown={handleMouseDown} />
           {selectedProject ? (
@@ -69,7 +70,7 @@ const ProjectSkillsContainer = () => {
               </div>
             </div>
           ) : (
-            <Skills />
+            <div>Waiting</div>
           )}
         </div>
       </div>

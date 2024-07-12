@@ -20,26 +20,16 @@
   #mainContainer {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: #000;
     overflow: hidden;
+    padding: 1rem;
   }
 
-  #appTop{
-    width: 100%;
-    height: 30%;
-    margin: 0.5rem;
-  }
-
- .section{
-  color: white;
-  margin: 0.5rem;
- }
 
   #PSContainer {
     display: flex;
-    flex-grow: 1;
     width: 100%;
     height: 100%;
   }
@@ -117,5 +107,19 @@
     width: 20%;
     margin: 1rem 0;
     height: 40px;
+  }
+
+
+  /* media queries for mobile screen */
+  @media screen and (max-width: 768px){
+    #PSContainer{
+      flex-direction: column;
+    }
+    #appRight{
+      height: 50%;
+    }
+    #appCenter{
+      height: 50%;
+    }
   }
   
