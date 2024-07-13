@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#homeContainer{
+    width: 100%;
+    height: 100%;
+    background-color: var(--home-color);
+    position: relative;
+}
+
+
+#homePic{
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    box-shadow: inset 0 0 0 1000px var(--home-color);
+}
+
+#homeText{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    color: var(--most-dark);
+
+}
+
+#hiText {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+#nameText {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin: 0;
+    font-family: var(--italic-font);
+}
+
+#roleText {
+    font-size: 1rem;
+    display: flex;
+    gap: 10px;
+    font-family: var(--body-font);
+    
+}
+
+#roleText div {
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+}
+
+#roleText div:not(:last-child)::after {
+    content: '•';
+    margin-left: 5px;
+    position: absolute;
+    right: -10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    #homeText {
+        top: 5%;
+        left: 5%;
+    }
+
+    #homePic {
+        height: 70%;
+    }
+
+    #nameText {
+        font-size: 3rem;
+    }
+
+    #roleText {
+        font-size: 0.8rem;
+    }
+
+    #homePic {
+        height: 70%;
+        right: -50%;
+    }
+
+    #homeText{
+        top: 10%;
+        left: 5%;
+    }
+    
+}

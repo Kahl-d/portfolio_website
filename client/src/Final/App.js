@@ -6,6 +6,7 @@ import { GiFilmProjector } from "react-icons/gi";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
 import Projects from "./Projects";
 import SkillsPage from "./SkillsPage";
+import Home from "./Home";
 
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
     const [menuOpen, setMenuOpen] = useState(false); // State to manage hamburger menu
 
     const pages = [
-        <div>Page 1</div>,
+        <Home />,
         <SkillsPage />,
         <Projects />,
         <div>Page 4</div>

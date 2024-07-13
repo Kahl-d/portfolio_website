@@ -138,7 +138,7 @@ const Projects = () => {
             <div id="projectsContainer" style={{ width: `${100 - rightWidth}%`}}>
                 <div id="projectsHeader" className={isScrolled ? 'scrolled' : ''}>
                     <img
-                        src="https://studentprojectguide.com/wp-content/uploads/2019/12/student-projetc.jpg"
+                        src="https://cdn.harappa.education/wp-content/uploads/2021/07/18045048/Big-Picture-Thinking.jpg"
                         alt="projects"
                         id="headerImg"
                         className={isScrolled ? 'scrolled' : ''}

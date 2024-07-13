@@ -110,9 +110,7 @@
     padding-top: 2rem;
   }
 
-  #projectsContainerM {
-    display: none;
-  }
+ 
   
   #projectsHeader {
     width: 100%;
@@ -187,8 +185,8 @@
   }
   
   .projectCard {
-    min-width: 150px;
-    min-height: 150px;
+    min-width: 200px;
+    min-height: 200px;
     background-color: #1f1f1f;
     margin: 0.5rem;
     overflow: hidden;
@@ -318,6 +316,13 @@
     #projectsBody{
       height: 80%;
     }
+
+    .projectCard{
+      min-width: 150px;
+      min-height: 150px;
+    }
+
+
 
     
   }

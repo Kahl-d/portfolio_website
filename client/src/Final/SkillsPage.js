@@ -93,7 +93,7 @@ const SkillsPage = () => {
             <div id='skillsListContainer'>
                 <div id="skillsListHeader" className={isScrolled ? 'scrolled' : ''}>
                     <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnI284a7-1rgJxedA-Aus1sFMZz0FdLyF7-g&s"
+                        src="https://cdn.harappa.education/wp-content/uploads/2021/07/18045301/Multi-Disciplinary-Approach.jpg"
                         alt="projects"
                         id="skillHeaderImg"
                         className={isScrolled ? 'scrolled' : ''}

@@ -24,6 +24,9 @@
     --light-4: #d0d0d0;
     --body-font: "Montserrat", sans-serif;
 	--italic-font: "EB Garamond", serif;
+    --color-yellow: #ffbd01;
+    --home-color: #f5e4da;
+    --color-grey: #e0e0e0;
 }
 
 #appContainer {
@@ -105,6 +108,11 @@
     z-index: 1000;
     transition: transform 0.3s;
 }
+
+
+/* #hamburgerMenu div{
+    background-color: black;
+} */
 
 #hamburgerMenu.open{
     display: block;

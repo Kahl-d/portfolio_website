@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    background-color: var(--color-grey);
+    color: black;
 }
 
 #skillsListContainer {
@@ -72,6 +74,10 @@
     height: calc(95% - 60px);
 }
 
+#skillsListBody::-webkit-scrollbar{
+    display: none;
+}
+
 .skill {
     width: 100%;
     display: flex;
@@ -81,11 +87,10 @@
     max-height: 50px;
     padding: 1rem;
     z-index: 1;
+    /* box-shadow: 1px 2px 3px var(--shade-brown); */
 }
 
-.skill:hover{
-    background-color: var(--dark-2);
-}
+
 
 
 #skillsListFilter{
@@ -103,10 +108,11 @@
 }
 
 .filters {
-    background-color: var(--dark-3);
+    background-color: var(--color-yellow);
     color: var(--light-2);
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 0.2rem 0.5rem;
+    
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -128,6 +134,7 @@
     width: 50%;
     right: 0;
     bottom: 0;
+    opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
