@@ -4,9 +4,9 @@ import { IoHomeSharp } from "react-icons/io5";
 import { GrTools } from "react-icons/gr";
 import { GiFilmProjector } from "react-icons/gi";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
-import { FiMenu } from "react-icons/fi"; // Import hamburger menu icon
 import Projects from "./Projects";
 import SkillsPage from "./SkillsPage";
+
 
 const App = () => {
     const [currentPage, setCurrentPage] = useState(0);

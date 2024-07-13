@@ -17,6 +17,7 @@ import { SiNumpy } from "react-icons/si";
 import { SiScikitlearn } from "react-icons/si";
 import { IoLogoTableau } from "react-icons/io5";
 import { SiD3Dotjs } from "react-icons/si";
+import mainSkillsImage from '../Resources/5484597.png';
 
 const SkillsPage = () => {
     const skills = [
@@ -114,9 +115,9 @@ const SkillsPage = () => {
                     ))}
                 </div>
             </div>
-            <div id='skillsImagesContainer'>
-                Images
-            </div>
+
+            <img src={mainSkillsImage} alt="skills" id="skillsImage" />
+            
         </div>
     );
 }
