@@ -6,7 +6,7 @@ import { GiFilmProjector } from "react-icons/gi";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
 import { FiMenu } from "react-icons/fi"; // Import hamburger menu icon
 import Projects from "./Projects";
-import Skills from '../Portal/Skills';
+import SkillsPage from "./SkillsPage";
 
 const App = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -14,7 +14,7 @@ const App = () => {
 
     const pages = [
         <div>Page 1</div>,
-        <Skills />,
+        <SkillsPage />,
         <Projects />,
         <div>Page 4</div>
     ];
