@@ -95,7 +95,7 @@ const SkillsPage = () => {
                     <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnI284a7-1rgJxedA-Aus1sFMZz0FdLyF7-g&s"
                         alt="projects"
-                        id="headerImg"
+                        id="headerImgs"
                         className={isScrolled ? 'scrolled' : ''}
                     />
                     <h1 className={isScrolled ? 'scrolled' : ''}>Skills</h1>
