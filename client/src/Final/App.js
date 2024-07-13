@@ -7,6 +7,7 @@ import { MdOutlinePermContactCalendar } from "react-icons/md";
 import Projects from "./Projects";
 import SkillsPage from "./SkillsPage";
 import Home from "./Home";
+import Contact from "./Contact";
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
         <Home />,
         <SkillsPage />,
         <Projects />,
-        <div>Page 4</div>
+        <Contact/>
     ];
 
     const toggleMenu = () => {
@@ -34,6 +35,25 @@ const App = () => {
                 <div className="menuLine top"></div>
                 <div className="menuLine middle"></div>
                 <div className="menuLine bottom"></div>
+            </div>
+
+            <div className="navOptions">
+                <div className="navItemT1" onClick={() => { setCurrentPage(0); setMenuOpen(false); }}>
+                    <IoHomeSharp />
+                    <span className="navTextT1">Home</span>
+                </div>
+                <div className="navItemT1" onClick={() => { setCurrentPage(1); setMenuOpen(false); }}>
+                    <GrTools />
+                    <span className="navTextT1">Skills</span>
+                </div>
+                <div className="navItemT1" onClick={() => { setCurrentPage(2); setMenuOpen(false); }}>
+                    <GiFilmProjector />
+                    <span className="navTextT1">Projects</span>
+                </div>
+                <div className="navItemT1" onClick={() => { setCurrentPage(3); setMenuOpen(false); }}>
+                    <MdOutlinePermContactCalendar />
+                    <span className="navTextT1">Contact</span>
+                </div>
             </div>
 
             <div id="sidebar" className={menuOpen ? 'open' : ''}>

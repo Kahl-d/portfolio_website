@@ -110,9 +110,9 @@
 }
 
 
-/* #hamburgerMenu div{
-    background-color: black;
-} */
+#hamburgerMenu{
+    display: none;
+}
 
 #hamburgerMenu.open{
     display: block;
@@ -149,6 +149,41 @@
     transform-origin: bottom;
 }
 
+
+.navOptions{
+    width: 50%;
+    height: 40px;
+    color: var(--most-dark);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: transparent;
+    position: absolute;
+    top: 1rem;
+    right: 25%;
+    z-index: 1;
+}
+
+.navItemT1{
+    flex-grow: 1;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in;
+}
+
+/* .navItemT1:hover{
+    flex-grow: 2;
+    background-color: var(--most-light);
+    color: var(--most-dark);
+} */
+
+
+
 @media screen and (max-width: 768px) {
 
     #appContainer{
@@ -162,4 +197,14 @@
     .navItem {
         font-size: 1.2rem;
     }
+
+    .navOptions{
+        display: none;
+    }
+
+    #hamburgerMenu{
+        display: flex;
+    }
 }
+
+
