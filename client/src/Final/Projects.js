@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './projects.css';
 import { IoIosClose } from "react-icons/io";
+import ProjectImage from '../Resources/7456408.png'
 
 const Projects = () => {
     const projects = [
@@ -175,6 +176,19 @@ const Projects = () => {
                     </div>
 
                     <div className="category" id="category3">
+                        <span>Machine Learning</span>
+                        <div className="horizontal-scroll">
+                            {projects.map((project, index) => (
+                                <div key={index} className="projectCard" onClick={() => handleProjectClick(project)}>
+                                    <img src={project.image} alt={project.name} className="projectImgCard" />
+                                    <div className="textCard">
+                                        <h2>{project.name}</h2>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="category" id="category4">
                         <span>Machine Learning</span>
                         <div className="horizontal-scroll">
                             {projects.map((project, index) => (
