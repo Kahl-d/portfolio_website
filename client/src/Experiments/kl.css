@@ -15,26 +15,8 @@
     background-color: #000;
 }
 
-#downarrow {
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    font-size: 2rem;
-    bottom: 1rem;
-    left: 50%;
-    color: white;
-    z-index: 1;
-    transition: all 0.5s;
-    animation: bounce 1s infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
-#down{
-    font-size: 0.8rem;
-}
+
 
 @keyframes bounce {
     0%, 100% {
