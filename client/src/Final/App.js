@@ -38,6 +38,7 @@ const App = () => {
             </div>
 
             <div className="navOptions">
+                <div id="navLogo">K</div>
                 <div className="navItemT1" onClick={() => { setCurrentPage(0); setMenuOpen(false); }}>
                     <IoHomeSharp />
                     <span className="navTextT1">Home</span>
@@ -73,6 +74,7 @@ const App = () => {
                     <MdOutlinePermContactCalendar />
                     <span className="navText">Contact</span>
                 </div>
+                <div id="sidebarLogo">K</div>
             </div>
         </div>
     );
