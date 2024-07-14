@@ -1,5 +1,185 @@
 #contactContainer{
     width: 100%;
     height: 100%;
-    background-color: var(--shade-grey);
+    background-color: var(--color-con);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 3rem;
+    color: #222222;
 }
+
+.contactSection{
+    border-radius: 1rem;
+    margin: 1rem;
+    background-color: var(--color-con2);
+    padding: 1rem;
+}
+
+#contactTop{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#contactReviews{
+    display: flex;
+    flex-direction: row;
+}
+
+#contactPic{
+    height: 60%;
+}
+
+#contactBottom{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+#bottomLeft{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: transparent;
+}
+
+#bottomRight{
+    width: 70%;
+    height: 100% !important; 
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+#contactInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactItem{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--color-con2);
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    justify-content: space-between;
+}
+
+.innerItem{
+    display: flex;
+    flex-direction: column;
+}
+
+.takeArrow{
+    font-size: 2rem;
+}
+
+.icons{
+    font-size: 2rem;
+    color: blue;
+}
+
+.socialProfiles{
+    width: 100%;
+    height: 10%;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+.socialProfileItem{
+    height: 100%;
+    width: 20%;
+    padding: 0 0.4rem;
+    
+}
+
+
+form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#formTop{
+    width: 100%;
+    height: 30%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 1rem;
+}
+
+#formTop input{
+    width: 90%;
+    height: 80%;
+    background-color: var(--color-con3);
+    box-shadow: 0;
+    outline: 0;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#formMid{
+    background-color: var(--color-con3);
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    border: 1rem;
+    padding: 1rem;
+}
+
+#radioOptions{
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#formBottom{
+    width: 100%;
+    height: 40%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+/* media queries for mobile devices */
+
+@media screen and (max-width: 768px) {
+    
+
+    #contactTop{
+        height: 40%;
+    }
+    #contactBottom{
+        flex-direction: column;
+    }
+
+    #bottomLeft{
+        width: 100%;
+    }
+
+    #bottomRight{
+        display: none;
+    }
+}
+
+
