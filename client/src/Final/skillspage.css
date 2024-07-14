@@ -140,6 +140,7 @@
 @media screen and (max-width: 768px) {
     #skillPageContainer {
         flex-direction: column;
+        padding-bottom: 2rem;
     }
 
     #skillsListContainer {

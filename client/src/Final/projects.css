@@ -289,6 +289,8 @@
     #projectsContainer{
       /* display: none; */
       width: 100% !important;
+      padding-bottom: 2rem;
+
     }
 
     #projectScreenPC{

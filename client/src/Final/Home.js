@@ -53,10 +53,14 @@ const Grid = ({items}) => {
                 </div>
                 <div id="roleText">
                     <div id="roleText1">
-                        Full Stack Developer
+                        Data Scientist
                     </div>
                     <div id="roleText2">
                         Statistical Modeling Enthusiast
+                    </div>
+                    <div id="roleText3">
+                        Full Stack Developer
+                        
                     </div>
                     <div id="roleText3">
                         Creative Designer

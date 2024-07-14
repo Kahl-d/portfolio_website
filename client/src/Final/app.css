@@ -189,7 +189,7 @@ html{
 }
 
 .navItemT1{
-    width: fit-content;
+    width: 8%;
     z-index: 1000;
     cursor: pointer;
     padding: 0.5rem;
@@ -198,19 +198,28 @@ html{
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease-in;
-    margin: 0.5rem;
-    transition: all 0.5s ease;
+    margin: 0.5rem 0;
+    transition: all 1s ease;
+
 
 }
+
+
 
 .navTextT1{
     margin: 0 1rem;
 }
 
 .navItemT1:hover{
-    background-color: var(--most-light);
-    color: var(--most-dark);
+    width: 10%;
+    font-size: 1.2rem;
 }
+
+/* .navItemT1:nth-child(5){
+    background-color:var(--light-2);
+    color: var(--distant-blue);
+    border-radius: 10px;
+} */
 
 
 #navLogo{
@@ -230,6 +239,8 @@ html{
         height: calc(100vh - env(safe-area-inset-bottom));
         overflow: hidden; /* To ensure no scroll */
     }
+
+   
     #hamburgerMenu {
         font-size: 1.5rem;
     }

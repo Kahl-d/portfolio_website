@@ -262,6 +262,8 @@ form {
 @media screen and (max-width: 768px) {
     #contactContainer{
         padding-top: 4rem;
+        padding-bottom: 2rem;
+
     }
 
     #contactTop{
