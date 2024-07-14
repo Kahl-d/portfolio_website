@@ -24,9 +24,41 @@
     align-items: center;
 }
 
+#contactTop *{
+    font-size: 0.8rem;
+    font-family: var(--body-font);
+}
+
+#contactTop h1{
+    font-size: 2rem;
+    font-family: var(--italic-font);
+}
+
+span, h1, p{
+    user-select: none;
+}
+
 #contactReviews{
     display: flex;
     flex-direction: row;
+    width: 80%;
+    justify-content: center;
+}
+
+.review{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.2rem 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+.review span{
+    font-size: 0.6rem;
+    margin: 0 0.5rem;
 }
 
 #contactPic{
@@ -73,6 +105,7 @@
     padding: 0.5rem;
     border-radius: 1rem;
     justify-content: space-between;
+    align-items: center;
 }
 
 .innerItem{
@@ -80,19 +113,39 @@
     flex-direction: column;
 }
 
+.infoHead{
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.infoinfo{
+    font-size: 0.8rem;
+}
 .takeArrow{
     font-size: 2rem;
+    cursor: pointer;
+    color: var(--distant-blue);
+}
+
+.takeArrow:hover{
+    color: #1d7eaec0;
+
 }
 
 .icons{
     font-size: 2rem;
-    color: blue;
+    color: var(--distant-blue);
+
+}
+
+.icons:hover{
+    color: #1d7eaec0;
 }
 
 .socialProfiles{
     width: 100%;
     height: 10%;
-    
+    margin: 1rem 0;
     display: flex;
     flex-direction: row;
 }
@@ -101,9 +154,38 @@
     height: 100%;
     width: 20%;
     padding: 0 0.4rem;
+    cursor: pointer;
+}
+
+
+
+
+#resumeDiv{
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid var(--color-con3);
+    border-radius: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+    cursor: pointer;
+    background-color: var(--distant-blue);
+    color: white;
+    transition: all 0.3s ease;
     
 }
 
+
+#resumeDiv span{
+    margin: 0 0.5rem;
+}
+
+#resumeDiv:hover{
+    background-color: #1d7eaec0;
+    
+}
 
 form {
     width: 100%;
@@ -111,10 +193,11 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 #formTop{
-    width: 100%;
+    width: 90%;
     height: 30%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -134,24 +217,24 @@ form {
 
 #formMid{
     background-color: var(--color-con3);
-    width: 100%;
+    width: 90%;
     height: 30%;
     display: flex;
     flex-direction: column;
     margin: 1rem;
-    border: 1rem;
+    border-radius: 1rem;
     padding: 1rem;
 }
 
 #radioOptions{
-    width: 100%;
+    width: 90%;
     height: 80%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 #formBottom{
-    width: 100%;
+    width: 90%;
     height: 40%;
     margin: 1rem;
     display: flex;
@@ -159,22 +242,68 @@ form {
 
 }
 
+#formBottom textarea{
+    width: 100%;
+    height: 70%;
+    background-color: var(--color-con3);
+    margin: 0 0 0.5rem 0;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+}
+
+#formBottom button {
+    width: 20%;
+}
+
 
 
 /* media queries for mobile devices */
 
 @media screen and (max-width: 768px) {
-    
+    #contactContainer{
+        padding-top: 4rem;
+    }
 
     #contactTop{
-        height: 40%;
+        height: 50%;
+        text-align: center;
+        margin: 0;
     }
+
+    #contactTop h1{
+        font-size: 1.5rem;
+    }
+
+    #contactReviews{
+        width: 100%;
+        align-items: center;
+    }
+
+    .review{
+        width: fit-content;
+
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .review span{
+        font-size: 2rem;
+        margin: 0 0.2rem;
+    }
+
     #contactBottom{
         flex-direction: column;
+        height: 50%;
+        padding: 0;
     }
 
     #bottomLeft{
         width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     #bottomRight{
