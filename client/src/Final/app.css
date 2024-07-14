@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;
+    position: fixed;
+}
+
 :root {
     --main-color1 : #E85A4F;
     --main-color2 : #E98074;
