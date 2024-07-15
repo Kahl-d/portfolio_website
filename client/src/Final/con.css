@@ -267,7 +267,7 @@ form {
     }
 
     #contactTop{
-        height: 50%;
+        height: 40%;
         text-align: center;
         margin: 0;
     }
@@ -309,6 +309,14 @@ form {
     }
 
     #bottomRight{
+        display: none;
+    }
+
+    #contactTop p{
+        display: none;
+    }
+
+    #contactReviews{
         display: none;
     }
 }

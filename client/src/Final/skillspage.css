@@ -12,6 +12,7 @@
     overflow: hidden;
     background-color: var(--color-grey);
     color: black;
+    padding-bottom: 5rem;
 }
 
 #skillsListContainer {
@@ -149,5 +150,9 @@
 
     .filters {
         font-size: 0.6rem;
+    }
+
+    #skillsImage{
+        bottom: 2rem;
     }
 }
