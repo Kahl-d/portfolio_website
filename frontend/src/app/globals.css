@@ -194,3 +194,347 @@ h6 {
   animation-delay: 0.6s;
   opacity: 0;
 }
+
+/* Skills Section - Fixed Viewport Height, No Scroll */
+.skills-section {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 2rem;
+  height: 420px;
+}
+
+/* Skills grid area - fixed height, content adapts */
+.skills-grid-area {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 1rem;
+  min-width: 130px;
+  flex: 1 1 130px;
+  max-width: 180px;
+  background: var(--color-card);
+  border-radius: 1.25rem;
+  border: 1px solid transparent;
+  cursor: default;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: skillFadeIn 0.3s ease-out forwards;
+  opacity: 0;
+  text-align: center;
+}
+
+@keyframes skillFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-border);
+  background: var(--color-surface-elevated);
+}
+
+.skill-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-muted);
+  border-radius: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover .skill-icon-wrapper {
+  background: var(--color-accent);
+  transform: scale(1.05);
+}
+
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-foreground);
+  transition: all 0.3s ease;
+}
+
+.skill-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.skill-card:hover .skill-icon {
+  color: var(--color-accent-foreground);
+}
+
+.skill-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  line-height: 1.3;
+}
+
+/* Filter area - right side */
+.skills-filter-area {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  text-align: right;
+  width: 100%;
+}
+
+.filter-item {
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-muted-foreground);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: right;
+}
+
+.filter-item:hover {
+  color: var(--color-foreground);
+}
+
+.filter-item.active {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  letter-spacing: -0.02em;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .skills-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    height: auto;
+  }
+
+  .skills-filter-area {
+    order: -1;
+    padding-top: 0;
+  }
+
+  .filter-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    text-align: left;
+    justify-content: center;
+  }
+
+  .filter-item {
+    padding: 0.5rem 1rem;
+    background: var(--color-card);
+    border-radius: 9999px;
+    font-size: 0.8rem;
+  }
+
+  .filter-item.active {
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+
+  .skills-grid-area {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid-area {
+    height: 300px;
+  }
+
+  .skill-card {
+    min-width: 80px;
+    flex: 1 1 80px;
+  }
+}
+
+/* Experience Section - Timeline */
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-card {
+  background: var(--color-card);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-border);
+}
+
+.experience-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.experience-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.experience-meta {
+  min-width: 0;
+}
+
+.experience-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.experience-org {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.125rem;
+}
+
+.experience-location {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+}
+
+.experience-period {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+  white-space: nowrap;
+  padding: 0.375rem 0.75rem;
+  background: var(--color-muted);
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.experience-advisor {
+  font-size: 0.8rem;
+  color: var(--color-muted-foreground);
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.experience-award {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+.experience-description {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.experience-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  background: var(--color-muted);
+  padding: 0.375rem 0.625rem;
+  border-radius: 0.5rem;
+}
+
+/* Responsive experience */
+@media (max-width: 640px) {
+  .experience-header {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .experience-period {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 0.5rem;
+  }
+
+  .experience-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Responsive projects grid */
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

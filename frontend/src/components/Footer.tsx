@@ -1,18 +1,23 @@
-const footerLinks = {
-  navigate: [
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-  ],
-  connect: [
-    { name: "LinkedIn", href: "#" },
-    { name: "GitHub", href: "#" },
-    { name: "Twitter", href: "#" },
-  ],
-  contact: [
-    { name: "Email", href: "#contact" },
-  ],
-};
+import { NAV_ITEMS, SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants";
+
+const footerSections = [
+  {
+    title: "Navigate",
+    links: NAV_ITEMS.filter((item) => item.name !== "Contact"),
+  },
+  {
+    title: "Connect",
+    links: [
+      { name: "LinkedIn", href: SOCIAL_LINKS.linkedin },
+      { name: "GitHub", href: SOCIAL_LINKS.github },
+      { name: "Twitter", href: SOCIAL_LINKS.twitter },
+    ],
+  },
+  {
+    title: "Contact",
+    links: [{ name: "Email", href: SOCIAL_LINKS.email }],
+  },
+];
 
 export default function Footer() {
   return (
@@ -21,70 +26,40 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <h3 className="font-semibold text-lg mb-4">Khalid Khan</h3>
+            <h3 className="font-semibold text-lg mb-4">{SITE_CONFIG.name}</h3>
             <p className="text-sm text-[var(--color-muted-foreground)] leading-relaxed">
-              Building digital experiences with passion and precision.
+              {SITE_CONFIG.tagline}
             </p>
           </div>
 
-          {/* Navigate */}
-          <div>
-            <h3 className="font-semibold mb-4">Navigate</h3>
-            <ul className="space-y-2 text-sm text-[var(--color-muted-foreground)]">
-              {footerLinks.navigate.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="hover:text-[var(--color-accent)] transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Connect */}
-          <div>
-            <h3 className="font-semibold mb-4">Connect</h3>
-            <ul className="space-y-2 text-sm text-[var(--color-muted-foreground)]">
-              {footerLinks.connect.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="hover:text-[var(--color-accent)] transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-sm text-[var(--color-muted-foreground)]">
-              {footerLinks.contact.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="hover:text-[var(--color-accent)] transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Dynamic sections */}
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="font-semibold mb-4">{section.title}</h3>
+              <ul className="space-y-2 text-sm text-[var(--color-muted-foreground)]">
+                {section.links.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="hover:text-[var(--color-accent)] transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-[var(--color-border)] text-center text-sm text-[var(--color-muted-foreground)]">
-          <p>© {new Date().getFullYear()} Khalid Khan. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
