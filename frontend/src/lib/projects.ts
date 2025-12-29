@@ -26,7 +26,8 @@ export const PROJECTS: Project[] = [
       "+2.1% Macro-F1",
       "ICMLA 2025 submission",
     ],
-    image: "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?w=1200&q=80",
+    // Neural network visualization representing transformer architecture and NLP
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
   },
   {
     id: "secure-sense",
@@ -43,7 +44,8 @@ export const PROJECTS: Project[] = [
       "System-level tradeoff analysis",
       "Emerging AI Innovation Winner",
     ],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
+    // Privacy and security themed - digital lock/shield representing data protection
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&q=80",
   },
   {
     id: "biomedical-augmentation",
@@ -59,7 +61,8 @@ export const PROJECTS: Project[] = [
       "Biomedical text classification",
       "+3.5% accuracy improvement",
     ],
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80",
+    // DNA/molecular structure representing biomedical data
+    image: "https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=1200&q=80",
   },
   {
     id: "hierarchical-classification",
@@ -75,7 +78,8 @@ export const PROJECTS: Project[] = [
       "Feature attribution & interpretability",
       "Error-path tracing",
     ],
-    image: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=1200&q=80",
+    // Wildlife/animals representing species classification with taxonomies
+    image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=1200&q=80",
   },
   {
     id: "narrative-analysis",
@@ -91,7 +95,8 @@ export const PROJECTS: Project[] = [
       "Semantic framing comparison",
       "Discourse-level statistics",
     ],
-    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200&q=80",
+    // Ancient books/manuscripts representing text corpus and narrative analysis
+    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80",
   },
 ];
 

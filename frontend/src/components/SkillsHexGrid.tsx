@@ -75,120 +75,144 @@ const skillIcons: Record<string, React.ReactNode> = {
   network: <Network />,
 };
 
-// Subtle SVG illustrations for each category
+// SVG illustrations for each category - enhanced visibility
 const CategoryIllustrations: Record<SkillCategory, React.ReactNode> = {
   nlp: (
-    <svg viewBox="0 0 200 120" className="w-full h-full text-[var(--color-foreground)]">
-      {/* Text lines representing sentences */}
-      <line x1="20" y1="30" x2="140" y2="30" stroke="currentColor" strokeOpacity="0.15" strokeWidth="2" strokeLinecap="round" />
-      <line x1="20" y1="45" x2="180" y2="45" stroke="currentColor" strokeOpacity="0.12" strokeWidth="2" strokeLinecap="round" />
-      <line x1="20" y1="60" x2="120" y2="60" stroke="currentColor" strokeOpacity="0.1" strokeWidth="2" strokeLinecap="round" />
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[var(--color-accent)]">
+      {/* Text lines representing sentences - centered at y=60 */}
+      <line x1="10" y1="40" x2="130" y2="40" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="10" y1="60" x2="170" y2="60" stroke="currentColor" strokeOpacity="0.35" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="10" y1="80" x2="110" y2="80" stroke="currentColor" strokeOpacity="0.3" strokeWidth="2.5" strokeLinecap="round" />
       {/* Connecting arcs showing semantic relationships */}
-      <path d="M 40 30 Q 60 10, 80 30" fill="none" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1.5" />
-      <path d="M 100 45 Q 130 25, 160 45" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1.5" />
-      <path d="M 60 60 Q 80 75, 100 60" fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
+      <path d="M 30 40 Q 55 18, 80 40" fill="none" stroke="currentColor" strokeOpacity="0.5" strokeWidth="2" />
+      <path d="M 90 60 Q 125 38, 160 60" fill="none" stroke="currentColor" strokeOpacity="0.45" strokeWidth="2" />
+      <path d="M 50 80 Q 75 98, 100 80" fill="none" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
       {/* Nodes at key points */}
-      <circle cx="40" cy="30" r="3" fill="currentColor" fillOpacity="0.25" />
-      <circle cx="80" cy="30" r="3" fill="currentColor" fillOpacity="0.25" />
-      <circle cx="100" cy="45" r="3" fill="currentColor" fillOpacity="0.2" />
-      <circle cx="160" cy="45" r="3" fill="currentColor" fillOpacity="0.2" />
+      <circle cx="30" cy="40" r="4" fill="currentColor" fillOpacity="0.6" />
+      <circle cx="80" cy="40" r="4" fill="currentColor" fillOpacity="0.6" />
+      <circle cx="90" cy="60" r="4" fill="currentColor" fillOpacity="0.5" />
+      <circle cx="160" cy="60" r="4" fill="currentColor" fillOpacity="0.5" />
+      <circle cx="50" cy="80" r="4" fill="currentColor" fillOpacity="0.45" />
+      <circle cx="100" cy="80" r="4" fill="currentColor" fillOpacity="0.45" />
     </svg>
   ),
   llm: (
-    <svg viewBox="0 0 200 120" className="w-full h-full text-[var(--color-foreground)]">
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[var(--color-accent)]">
       {/* Central brain/model node */}
-      <circle cx="100" cy="60" r="20" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1.5" />
-      <circle cx="100" cy="60" r="12" fill="none" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1" />
+      <circle cx="100" cy="60" r="24" fill="none" stroke="currentColor" strokeOpacity="0.45" strokeWidth="2" />
+      <circle cx="100" cy="60" r="14" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeOpacity="0.35" strokeWidth="1.5" />
       {/* Radiating connections to agents */}
-      <line x1="100" y1="40" x2="100" y2="15" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
-      <line x1="120" y1="60" x2="160" y2="60" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
-      <line x1="80" y1="60" x2="40" y2="60" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
-      <line x1="115" y1="75" x2="145" y2="100" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1.5" />
-      <line x1="85" y1="75" x2="55" y2="100" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1.5" />
+      <line x1="100" y1="36" x2="100" y2="12" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
+      <line x1="124" y1="60" x2="165" y2="60" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
+      <line x1="76" y1="60" x2="35" y2="60" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
+      <line x1="117" y1="77" x2="150" y2="102" stroke="currentColor" strokeOpacity="0.35" strokeWidth="2" />
+      <line x1="83" y1="77" x2="50" y2="102" stroke="currentColor" strokeOpacity="0.35" strokeWidth="2" />
       {/* Agent nodes */}
-      <rect x="92" y="5" width="16" height="12" rx="2" fill="none" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
-      <rect x="160" y="52" width="20" height="16" rx="3" fill="none" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
-      <rect x="20" y="52" width="20" height="16" rx="3" fill="none" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
+      <rect x="90" y="2" width="20" height="14" rx="3" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeOpacity="0.45" strokeWidth="1.5" />
+      <rect x="165" y="50" width="24" height="20" rx="4" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeOpacity="0.4" strokeWidth="1.5" />
+      <rect x="11" y="50" width="24" height="20" rx="4" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeOpacity="0.4" strokeWidth="1.5" />
+      <circle cx="150" cy="102" r="6" fill="currentColor" fillOpacity="0.25" />
+      <circle cx="50" cy="102" r="6" fill="currentColor" fillOpacity="0.25" />
     </svg>
   ),
   data: (
-    <svg viewBox="0 0 200 120" className="w-full h-full text-[var(--color-foreground)]">
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[var(--color-accent)]">
       {/* Data flow streams */}
-      <path d="M 20 80 Q 50 40, 100 60 T 180 40" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="2" strokeLinecap="round" />
-      <path d="M 20 60 Q 60 80, 100 50 T 180 70" fill="none" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M 10 85 Q 50 35, 100 60 T 190 30" fill="none" stroke="currentColor" strokeOpacity="0.45" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M 10 55 Q 60 85, 100 45 T 190 75" fill="none" stroke="currentColor" strokeOpacity="0.35" strokeWidth="2" strokeLinecap="round" />
       {/* Data points along the flow */}
-      <circle cx="40" cy="65" r="4" fill="currentColor" fillOpacity="0.2" />
-      <circle cx="70" cy="55" r="3" fill="currentColor" fillOpacity="0.15" />
-      <circle cx="100" cy="58" r="5" fill="currentColor" fillOpacity="0.25" />
-      <circle cx="130" cy="48" r="3" fill="currentColor" fillOpacity="0.15" />
-      <circle cx="160" cy="52" r="4" fill="currentColor" fillOpacity="0.2" />
+      <circle cx="35" cy="60" r="6" fill="currentColor" fillOpacity="0.5" />
+      <circle cx="70" cy="50" r="5" fill="currentColor" fillOpacity="0.45" />
+      <circle cx="100" cy="55" r="8" fill="currentColor" fillOpacity="0.55" />
+      <circle cx="130" cy="42" r="5" fill="currentColor" fillOpacity="0.45" />
+      <circle cx="165" cy="45" r="6" fill="currentColor" fillOpacity="0.5" />
+      {/* Small data particles */}
+      <circle cx="50" cy="72" r="3" fill="currentColor" fillOpacity="0.35" />
+      <circle cx="145" cy="58" r="3" fill="currentColor" fillOpacity="0.35" />
     </svg>
   ),
   cv: (
-    <svg viewBox="0 0 200 120" className="w-full h-full text-[var(--color-foreground)]">
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[var(--color-accent)]">
       {/* Eye outline */}
-      <ellipse cx="100" cy="60" rx="45" ry="30" fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
-      <circle cx="100" cy="60" r="15" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1.5" />
-      <circle cx="100" cy="60" r="6" fill="currentColor" fillOpacity="0.1" />
+      <ellipse cx="100" cy="60" rx="50" ry="32" fill="none" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
+      <circle cx="100" cy="60" r="18" fill="none" stroke="currentColor" strokeOpacity="0.5" strokeWidth="2" />
+      <circle cx="100" cy="60" r="8" fill="currentColor" fillOpacity="0.4" />
+      <circle cx="96" cy="56" r="3" fill="currentColor" fillOpacity="0.6" />
       {/* Vision rays */}
-      <line x1="150" y1="60" x2="180" y2="45" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1" strokeDasharray="3,3" />
-      <line x1="150" y1="60" x2="185" y2="60" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1" strokeDasharray="3,3" />
-      <line x1="150" y1="60" x2="180" y2="75" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1" strokeDasharray="3,3" />
+      <line x1="155" y1="50" x2="185" y2="32" stroke="currentColor" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="4,4" />
+      <line x1="155" y1="60" x2="190" y2="60" stroke="currentColor" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="4,4" />
+      <line x1="155" y1="70" x2="185" y2="88" stroke="currentColor" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="4,4" />
+      {/* Detection points */}
+      <circle cx="185" cy="32" r="4" fill="currentColor" fillOpacity="0.4" />
+      <circle cx="190" cy="60" r="4" fill="currentColor" fillOpacity="0.4" />
+      <circle cx="185" cy="88" r="4" fill="currentColor" fillOpacity="0.4" />
     </svg>
   ),
   infra: (
-    <svg viewBox="0 0 200 120" className="w-full h-full text-[var(--color-foreground)]">
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[var(--color-accent)]">
       {/* Server stack */}
-      <rect x="30" y="25" width="50" height="15" rx="2" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1.5" />
-      <rect x="30" y="45" width="50" height="15" rx="2" fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
-      <rect x="30" y="65" width="50" height="15" rx="2" fill="none" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1.5" />
+      <rect x="25" y="20" width="55" height="20" rx="3" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeOpacity="0.45" strokeWidth="2" />
+      <rect x="25" y="45" width="55" height="20" rx="3" fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
+      <rect x="25" y="70" width="55" height="20" rx="3" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeOpacity="0.35" strokeWidth="2" />
       {/* Server lights */}
-      <circle cx="40" cy="32" r="2" fill="currentColor" fillOpacity="0.25" />
-      <circle cx="40" cy="52" r="2" fill="currentColor" fillOpacity="0.2" />
-      <circle cx="40" cy="72" r="2" fill="currentColor" fillOpacity="0.15" />
+      <circle cx="38" cy="30" r="3" fill="currentColor" fillOpacity="0.6" />
+      <circle cx="38" cy="55" r="3" fill="currentColor" fillOpacity="0.5" />
+      <circle cx="38" cy="80" r="3" fill="currentColor" fillOpacity="0.4" />
       {/* Connection lines */}
-      <path d="M 80 50 Q 110 50, 120 35" fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
-      <path d="M 80 55 Q 110 55, 130 55" fill="none" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1.5" />
+      <path d="M 80 40 Q 115 40, 130 25" fill="none" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
+      <path d="M 80 55 Q 115 55, 145 55" fill="none" stroke="currentColor" strokeOpacity="0.35" strokeWidth="2" />
+      <path d="M 80 75 Q 115 75, 130 90" fill="none" stroke="currentColor" strokeOpacity="0.3" strokeWidth="2" />
       {/* Network nodes */}
-      <circle cx="140" cy="35" r="8" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1" />
-      <circle cx="150" cy="55" r="10" fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1" />
+      <circle cx="145" cy="25" r="12" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeOpacity="0.45" strokeWidth="1.5" />
+      <circle cx="160" cy="55" r="14" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeOpacity="0.4" strokeWidth="1.5" />
+      <circle cx="145" cy="90" r="10" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeOpacity="0.35" strokeWidth="1.5" />
     </svg>
   ),
   engineering: (
-    <svg viewBox="0 0 200 120" className="w-full h-full text-[var(--color-foreground)]">
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[var(--color-accent)]">
       {/* Code brackets */}
-      <path d="M 40 30 L 25 55 L 40 80" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M 160 30 L 175 55 L 160 80" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 35 25 L 15 55 L 35 85" fill="none" stroke="currentColor" strokeOpacity="0.5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 165 25 L 185 55 L 165 85" fill="none" stroke="currentColor" strokeOpacity="0.5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
       {/* Code lines */}
-      <line x1="60" y1="40" x2="100" y2="40" stroke="currentColor" strokeOpacity="0.12" strokeWidth="2" strokeLinecap="round" />
-      <line x1="70" y1="55" x2="130" y2="55" stroke="currentColor" strokeOpacity="0.1" strokeWidth="2" strokeLinecap="round" />
-      <line x1="60" y1="70" x2="110" y2="70" stroke="currentColor" strokeOpacity="0.08" strokeWidth="2" strokeLinecap="round" />
+      <line x1="55" y1="38" x2="105" y2="38" stroke="currentColor" strokeOpacity="0.4" strokeWidth="3" strokeLinecap="round" />
+      <line x1="65" y1="55" x2="135" y2="55" stroke="currentColor" strokeOpacity="0.35" strokeWidth="3" strokeLinecap="round" />
+      <line x1="55" y1="72" x2="115" y2="72" stroke="currentColor" strokeOpacity="0.3" strokeWidth="3" strokeLinecap="round" />
+      {/* Cursor */}
+      <rect x="138" y="50" width="3" height="14" fill="currentColor" fillOpacity="0.5" />
     </svg>
   ),
   tools: (
-    <svg viewBox="0 0 200 120" className="w-full h-full text-[var(--color-foreground)]">
-      {/* Gear */}
-      <circle cx="100" cy="60" r="22" fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
-      <circle cx="100" cy="60" r="10" fill="none" stroke="currentColor" strokeOpacity="0.18" strokeWidth="1.5" />
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[var(--color-accent)]">
+      {/* Main gear */}
+      <circle cx="100" cy="60" r="28" fill="none" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
+      <circle cx="100" cy="60" r="14" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeOpacity="0.5" strokeWidth="2" />
       {/* Gear teeth */}
-      <line x1="100" y1="35" x2="100" y2="26" stroke="currentColor" strokeOpacity="0.15" strokeWidth="3" strokeLinecap="round" />
-      <line x1="100" y1="85" x2="100" y2="94" stroke="currentColor" strokeOpacity="0.15" strokeWidth="3" strokeLinecap="round" />
-      <line x1="75" y1="60" x2="66" y2="60" stroke="currentColor" strokeOpacity="0.15" strokeWidth="3" strokeLinecap="round" />
-      <line x1="125" y1="60" x2="134" y2="60" stroke="currentColor" strokeOpacity="0.15" strokeWidth="3" strokeLinecap="round" />
+      <line x1="100" y1="28" x2="100" y2="16" stroke="currentColor" strokeOpacity="0.5" strokeWidth="5" strokeLinecap="round" />
+      <line x1="100" y1="92" x2="100" y2="104" stroke="currentColor" strokeOpacity="0.5" strokeWidth="5" strokeLinecap="round" />
+      <line x1="68" y1="60" x2="56" y2="60" stroke="currentColor" strokeOpacity="0.5" strokeWidth="5" strokeLinecap="round" />
+      <line x1="132" y1="60" x2="144" y2="60" stroke="currentColor" strokeOpacity="0.5" strokeWidth="5" strokeLinecap="round" />
+      {/* Diagonal teeth */}
+      <line x1="80" y1="40" x2="72" y2="32" stroke="currentColor" strokeOpacity="0.45" strokeWidth="4" strokeLinecap="round" />
+      <line x1="120" y1="40" x2="128" y2="32" stroke="currentColor" strokeOpacity="0.45" strokeWidth="4" strokeLinecap="round" />
+      <line x1="80" y1="80" x2="72" y2="88" stroke="currentColor" strokeOpacity="0.45" strokeWidth="4" strokeLinecap="round" />
+      <line x1="120" y1="80" x2="128" y2="88" stroke="currentColor" strokeOpacity="0.45" strokeWidth="4" strokeLinecap="round" />
     </svg>
   ),
   research: (
-    <svg viewBox="0 0 200 120" className="w-full h-full text-[var(--color-foreground)]">
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[var(--color-accent)]">
       {/* Open book */}
-      <path d="M 100 85 L 100 30" stroke="currentColor" strokeOpacity="0.1" strokeWidth="1" />
-      <path d="M 100 30 Q 70 25, 40 35 L 40 85 Q 70 80, 100 85" fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
-      <path d="M 100 30 Q 130 25, 160 35 L 160 85 Q 130 80, 100 85" fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1.5" />
+      <path d="M 100 95 L 100 30" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" />
+      <path d="M 100 30 Q 65 24, 30 36 L 30 95 Q 65 88, 100 95" fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
+      <path d="M 100 30 Q 135 24, 170 36 L 170 95 Q 135 88, 100 95" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeOpacity="0.4" strokeWidth="2" />
       {/* Page lines */}
-      <line x1="50" y1="45" x2="85" y2="42" stroke="currentColor" strokeOpacity="0.08" strokeWidth="1" />
-      <line x1="50" y1="55" x2="88" y2="52" stroke="currentColor" strokeOpacity="0.06" strokeWidth="1" />
-      <line x1="115" y1="42" x2="150" y2="45" stroke="currentColor" strokeOpacity="0.08" strokeWidth="1" />
+      <line x1="42" y1="48" x2="85" y2="44" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" />
+      <line x1="42" y1="60" x2="88" y2="56" stroke="currentColor" strokeOpacity="0.25" strokeWidth="1.5" />
+      <line x1="42" y1="72" x2="82" y2="68" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1.5" />
+      <line x1="115" y1="44" x2="158" y2="48" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" />
+      <line x1="112" y1="56" x2="158" y2="60" stroke="currentColor" strokeOpacity="0.25" strokeWidth="1.5" />
       {/* Lightbulb */}
-      <circle cx="100" cy="15" r="8" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1" />
+      <circle cx="100" cy="12" r="10" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeOpacity="0.5" strokeWidth="1.5" />
+      <path d="M 96 18 L 96 24 L 104 24 L 104 18" stroke="currentColor" strokeOpacity="0.4" strokeWidth="1.5" />
     </svg>
   ),
 };
@@ -226,15 +250,17 @@ export default function SkillsSection() {
       {/* Active Category Content */}
       <div key={activeCategory} className="animate-fade-in">
         {/* Category Header with Illustration */}
-        <div className="p-8 lg:p-10 bg-[var(--color-card)] rounded-3xl mb-10">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="p-6 lg:p-8 bg-[var(--color-card)] rounded-3xl mb-10">
+          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
             {/* SVG Illustration */}
-            <div className="w-[180px] h-[100px] flex-shrink-0 mx-auto lg:mx-0 opacity-80">
-              {CategoryIllustrations[activeCategory]}
+            <div className="w-[180px] h-[110px] flex-shrink-0 rounded-2xl bg-[var(--color-muted)]/30 overflow-hidden">
+              <div className="w-full h-full flex items-center justify-center">
+                {CategoryIllustrations[activeCategory]}
+              </div>
             </div>
             
             {/* Category Text Content */}
-            <div className="flex flex-col gap-5 flex-1">
+            <div className="flex flex-col gap-4 flex-1 text-center lg:text-left">
               <h3 className="text-xl lg:text-2xl font-semibold font-serif">
                 <span className="text-[var(--color-accent)]">{activeConfig?.name}</span>
                 <span className="text-[var(--color-muted-foreground)] font-normal mx-2">|</span>
