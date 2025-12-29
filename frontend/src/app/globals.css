@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
-/* Design System - Warm, sophisticated palette */
+/* Design System - Day/Night Immersive Theme */
 
 @theme inline {
-  /* Light mode colors */
-  --color-background: hsl(36 44% 96%);
-  --color-foreground: hsl(0 0% 18%);
+  /* Day Mode Colors - Warm, sunny, optimistic */
+  --color-background: transparent;
+  --color-foreground: hsl(220 30% 20%);
 
-  --color-card: hsl(33 40% 94%);
-  --color-card-foreground: hsl(0 0% 18%);
+  --color-card: hsla(255 100% 100% / 0.7);
+  --color-card-foreground: hsl(220 30% 20%);
 
-  --color-primary: hsl(0 0% 18%);
-  --color-primary-foreground: hsl(36 44% 96%);
+  --color-primary: hsl(35 95% 55%);
+  --color-primary-foreground: hsl(220 30% 15%);
 
-  --color-secondary: hsl(25 30% 70%);
-  --color-secondary-foreground: hsl(0 0% 18%);
+  --color-secondary: hsl(200 60% 70%);
+  --color-secondary-foreground: hsl(220 30% 20%);
 
-  --color-muted: hsl(33 30% 88%);
-  --color-muted-foreground: hsl(0 0% 40%);
+  --color-muted: hsla(45 80% 95% / 0.65);
+  --color-muted-foreground: hsl(220 20% 40%);
 
-  --color-accent: hsl(140 20% 50%);
-  --color-accent-foreground: hsl(36 44% 96%);
+  --color-accent: hsl(25 90% 55%);
+  --color-accent-foreground: hsl(45 100% 98%);
 
-  --color-border: hsl(33 25% 85%);
-  --color-ring: hsl(0 0% 18%);
+  --color-border: hsla(35 60% 75% / 0.5);
+  --color-ring: hsl(35 95% 55%);
 
-  --color-surface-elevated: hsl(36 44% 98%);
-  --color-cream: hsl(40 40% 90%);
+  --color-surface-elevated: hsla(255 100% 100% / 0.75);
+  --color-cream: hsla(40 80% 97% / 0.7);
 
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
@@ -65,31 +65,31 @@ h6 {
   letter-spacing: -0.025em;
 }
 
-/* Dark mode */
+/* Night Mode - Deep, starry, mystical */
 .dark {
-  --color-background: hsl(0 0% 10%);
-  --color-foreground: hsl(36 44% 96%);
+  --color-background: transparent;
+  --color-foreground: hsl(220 30% 95%);
 
-  --color-card: hsl(0 0% 14%);
-  --color-card-foreground: hsl(36 44% 96%);
+  --color-card: hsla(230 30% 15% / 0.7);
+  --color-card-foreground: hsl(220 30% 95%);
 
-  --color-primary: hsl(36 44% 96%);
-  --color-primary-foreground: hsl(0 0% 18%);
+  --color-primary: hsl(45 90% 70%);
+  --color-primary-foreground: hsl(230 30% 12%);
 
-  --color-secondary: hsl(25 15% 30%);
-  --color-secondary-foreground: hsl(36 44% 96%);
+  --color-secondary: hsl(260 40% 50%);
+  --color-secondary-foreground: hsl(220 30% 95%);
 
-  --color-muted: hsl(0 0% 20%);
-  --color-muted-foreground: hsl(0 0% 60%);
+  --color-muted: hsla(230 30% 25% / 0.65);
+  --color-muted-foreground: hsl(220 20% 70%);
 
-  --color-accent: hsl(140 20% 45%);
-  --color-accent-foreground: hsl(36 44% 96%);
+  --color-accent: hsl(200 80% 60%);
+  --color-accent-foreground: hsl(230 30% 12%);
 
-  --color-border: hsl(0 0% 20%);
-  --color-ring: hsl(36 44% 96%);
+  --color-border: hsla(230 30% 35% / 0.5);
+  --color-ring: hsl(45 90% 70%);
 
-  --color-surface-elevated: hsl(0 0% 16%);
-  --color-cream: hsl(40 20% 25%);
+  --color-surface-elevated: hsla(230 30% 18% / 0.75);
+  --color-cream: hsla(230 25% 22% / 0.7);
 }
 
 /* Utility classes */
@@ -649,5 +649,31 @@ h6 {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Project Modal - Solid backgrounds for readability */
+.project-modal-container {
+  background-color: hsl(45 50% 97%);
+}
+
+.dark .project-modal-container {
+  background-color: hsl(230 30% 8%);
+}
+
+.project-modal-container .modal-card {
+  background-color: hsl(45 50% 95%);
+}
+
+.dark .project-modal-container .modal-card {
+  background-color: hsl(230 30% 15%);
+}
+
+/* Modal gradient overlay */
+.modal-gradient-overlay {
+  background: linear-gradient(to bottom, transparent 0%, transparent 40%, hsl(45 50% 97%) 100%);
+}
+
+.dark .modal-gradient-overlay {
+  background: linear-gradient(to bottom, transparent 0%, transparent 40%, hsl(230 30% 8%) 100%);
 }
 

@@ -1,22 +1,35 @@
+"use client";
+
+import { useState, useCallback } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SkillsHexGrid from "@/components/SkillsHexGrid";
 import ExperienceCard from "@/components/ExperienceCard";
 import ProjectsSection from "@/components/ProjectsSection";
+import EnvironmentBackground from "@/components/EnvironmentBackground";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { EXPERIENCES } from "@/lib/experiences";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-[var(--color-background)] animate-fade-in">
-      <Header />
+  const [isNight, setIsNight] = useState(false);
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  const handleThemeChange = useCallback((night: boolean) => {
+    setIsNight(night);
+  }, []);
+
+  return (
+    <div className="min-h-screen animate-fade-in relative">
+      {/* Immersive Environment Background */}
+      <EnvironmentBackground isNight={isNight} />
+
+      <Header onThemeChange={handleThemeChange} />
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {/* Hero / About Section */}
         <section
           id="about"
-          className="relative rounded-[2.5rem] overflow-hidden bg-[var(--color-muted)] my-8 animate-fade-in"
+          className="relative rounded-[2.5rem] overflow-hidden bg-[var(--color-muted)] my-8 animate-fade-in backdrop-blur-sm"
         >
           <div className="p-8 md:p-12 lg:p-16">
             <div className="max-w-4xl space-y-6 md:space-y-8">
@@ -45,21 +58,21 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   <a
                     href={SOCIAL_LINKS.github}
-                    className="w-12 h-12 rounded-full border-2 border-[var(--color-border)] hover:border-[var(--color-primary)] hover:bg-[var(--color-card)] transition-all flex items-center justify-center hover:scale-110"
+                    className="w-12 h-12 rounded-full border-2 border-[var(--color-border)] hover:border-[var(--color-primary)] hover:bg-[var(--color-card)] transition-all flex items-center justify-center hover:scale-110 backdrop-blur-sm"
                     aria-label="GitHub"
                   >
                     <Github className="w-5 h-5" />
                   </a>
                   <a
                     href={SOCIAL_LINKS.linkedin}
-                    className="w-12 h-12 rounded-full border-2 border-[var(--color-border)] hover:border-[var(--color-primary)] hover:bg-[var(--color-card)] transition-all flex items-center justify-center hover:scale-110"
+                    className="w-12 h-12 rounded-full border-2 border-[var(--color-border)] hover:border-[var(--color-primary)] hover:bg-[var(--color-card)] transition-all flex items-center justify-center hover:scale-110 backdrop-blur-sm"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
                     href={SOCIAL_LINKS.email}
-                    className="w-12 h-12 rounded-full border-2 border-[var(--color-border)] hover:border-[var(--color-primary)] hover:bg-[var(--color-card)] transition-all flex items-center justify-center hover:scale-110"
+                    className="w-12 h-12 rounded-full border-2 border-[var(--color-border)] hover:border-[var(--color-primary)] hover:bg-[var(--color-card)] transition-all flex items-center justify-center hover:scale-110 backdrop-blur-sm"
                     aria-label="Email"
                   >
                     <Mail className="w-5 h-5" />
@@ -118,7 +131,7 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="py-12 md:py-16">
-          <div className="rounded-[2.5rem] bg-[var(--color-card)] p-12 md:p-16 text-center animate-scale-in">
+          <div className="rounded-[2.5rem] bg-[var(--color-card)] backdrop-blur-sm p-12 md:p-16 text-center animate-scale-in">
             <div className="max-w-2xl mx-auto space-y-8">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                 Let&apos;s connect.

@@ -55,6 +55,7 @@ export default function ProjectModal({
 
   const modalContent = (
     <div
+      className="project-modal-container"
       style={{
         position: "fixed",
         top: 0,
@@ -62,7 +63,6 @@ export default function ProjectModal({
         right: 0,
         bottom: 0,
         zIndex: 999999,
-        backgroundColor: "var(--color-background)",
         overflowY: "auto",
       }}
     >
@@ -209,11 +209,10 @@ export default function ProjectModal({
           />
           {/* Gradient overlay */}
           <div
+            className="modal-gradient-overlay"
             style={{
               position: "absolute",
               inset: 0,
-              background:
-                "linear-gradient(to bottom, transparent 0%, transparent 40%, var(--color-background) 100%)",
               pointerEvents: "none",
             }}
           />
@@ -311,12 +310,12 @@ export default function ProjectModal({
             {project.signals.map((signal, i) => (
               <span
                 key={i}
+                className="modal-card"
                 style={{
                   padding: "10px 18px",
                   borderRadius: "9999px",
                   fontSize: "14px",
                   fontWeight: 500,
-                  backgroundColor: "var(--color-card)",
                   border: "1px solid var(--color-border)",
                   color: "var(--color-foreground)",
                 }}
