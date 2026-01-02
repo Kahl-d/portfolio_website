@@ -81,11 +81,16 @@ export default function Home() {
   const aboutBgOpacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
 
   // Text animations
-  const aboutInitialTextScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.2]);
+  // Title stays visible but moves to top and scales down to become "Page Heading"
+  const aboutInitialTextScale = useTransform(scrollYProgress, [0, 0.2], [1, 1]);
+  const aboutTitleScale = useTransform(scrollYProgress, [0.2, 0.3], [1, 0.6]); // Shrink to header size
+  const aboutTitleY = useTransform(scrollYProgress, [0.2, 0.3], ["0vh", "-42vh"]); // Move to top (assuming center is 50vh, 50-8 = 42)
+  const aboutTitleOpacity = useTransform(scrollYProgress, [0.2, 0.3], [1, 1]); // Stay visible
 
-  // Extra content appears and STAYS (Resistance Phase: 0.2 - 0.35)
-  const aboutExtraContentOpacity = useTransform(scrollYProgress, [0.2, 0.25], [0, 1]);
-  const aboutExtraContentY = useTransform(scrollYProgress, [0.2, 0.25], [30, 0]);
+  // Extra content appears and STAYS (Reading Phase: 0.2 - 0.45)
+  // Enters from bottom, then holds position while user scrolls
+  const aboutExtraContentOpacity = useTransform(scrollYProgress, [0.25, 0.35], [0, 1]); // Dalayed slightly to let title move
+  const aboutExtraContentY = useTransform(scrollYProgress, [0.25, 0.35, 0.45], ["20vh", "0vh", "0vh"]);
 
   // Other boxes fade out faster
   const otherBoxesOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
@@ -95,14 +100,14 @@ export default function Home() {
   // ===== PHASE 2: RESISTANCE & TRANSITION (35% - 45%) =====
 
   // About content fades out LATER (after reading phase)
-  const aboutContentOpacity = useTransform(scrollYProgress, [0.35, 0.45], [1, 0]);
+  const aboutContentOpacity = useTransform(scrollYProgress, [0.4, 0.5], [1, 0]);
 
   // Experience section slides in from right + fades in
-  const experienceOpacity = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
-  const experienceX = useTransform(scrollYProgress, [0.4, 0.5], ["100vw", "0vw"]);
+  const experienceOpacity = useTransform(scrollYProgress, [0.45, 0.55], [0, 1]);
+  const experienceX = useTransform(scrollYProgress, [0.45, 0.55], ["100vw", "0vw"]);
 
   // Section title appears
-  const experienceTitleOpacity = useTransform(scrollYProgress, [0.42, 0.5], [0, 1]);
+  const experienceTitleOpacity = useTransform(scrollYProgress, [0.47, 0.55], [0, 1]);
 
   // ===== PHASE 3: TIMELINE NAVIGATION (50% - 100%) =====
 
@@ -111,7 +116,7 @@ export default function Home() {
 
   // Scroll to Experience section
   const scrollToExperience = () => {
-    const targetY = window.innerHeight * 5.5;
+    const targetY = window.innerHeight * 6; // Adjusted for new timing
     window.scrollTo({
       top: targetY,
       behavior: "smooth",
@@ -157,6 +162,9 @@ export default function Home() {
         aboutBorderRadius={aboutBorderRadius}
         aboutBgOpacity={aboutBgOpacity}
         aboutInitialTextScale={aboutInitialTextScale}
+        aboutTitleScale={aboutTitleScale}
+        aboutTitleY={aboutTitleY}
+        aboutTitleOpacity={aboutTitleOpacity}
         aboutExtraContentOpacity={aboutExtraContentOpacity}
         aboutExtraContentY={aboutExtraContentY}
         contentOpacity={aboutContentOpacity}

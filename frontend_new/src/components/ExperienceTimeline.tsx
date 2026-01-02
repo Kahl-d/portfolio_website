@@ -27,8 +27,9 @@ const EducationIcon = ({ className = "w-4 h-4" }) => (
 const WorkIcon = ({ className = "w-4 h-4" }) => (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0" /></svg>
 );
+// Updated to Document/Paper Icon for Research
 const ResearchIcon = ({ className = "w-4 h-4" }) => (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" /></svg>
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
 );
 const DefaultIcon = ({ className = "w-4 h-4" }) => (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
@@ -37,6 +38,12 @@ const DefaultIcon = ({ className = "w-4 h-4" }) => (
 const TrophyIcon = ({ className = "w-5 h-5" }) => (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor"><path fillRule="evenodd" d="M5.166 2.621v.858c-1.035.148-2.059.33-3.071.543a.75.75 0 00-.584.859 6.753 6.753 0 006.138 5.6 6.73 6.73 0 002.743 1.346A6.707 6.707 0 019.279 15H8.54c-1.036 0-1.875.84-1.875 1.875V19.5h-.75a.75.75 0 000 1.5h12.17a.75.75 0 000-1.5h-.75v-2.625c0-1.036-.84-1.875-1.875-1.875h-.739a6.707 6.707 0 01-1.112-3.173 6.73 6.73 0 002.743-1.347 6.753 6.753 0 006.139-5.6.75.75 0 00-.585-.858 47.077 47.077 0 00-3.07-.543V2.62a.75.75 0 00-.658-.744 49.22 49.22 0 00-6.093-.377c-2.063 0-4.096.128-6.093.377a.75.75 0 00-.657.744zm0 2.629c0 1.196.312 2.32.857 3.294A5.266 5.266 0 013.16 5.337a45.6 45.6 0 012.006-.343v.256zm13.5 0v-.256c.674.1 1.343.214 2.006.343a5.265 5.265 0 01-2.863 3.207 6.72 6.72 0 00.857-3.294z" clipRule="evenodd" /></svg>
 );
+const MedalIcon = ({ className = "w-5 h-5" }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor"><path fillRule="evenodd" d="M5.25 2.25a.75.75 0 01.75.75v2.25h12V3a.75.75 0 011.5 0v2.25a3 3 0 01-3 3h-9a3 3 0 01-3-3V3a.75.75 0 01.75-.75zM6.75 6.75v-.75h10.5v.75a1.5 1.5 0 01-1.5 1.5h-7.5a1.5 1.5 0 01-1.5-1.5z" clipRule="evenodd" /><path fillRule="evenodd" d="M12 9.75a6 6 0 100 12 6 6 0 000-12zm-3 6a3 3 0 116 0 3 3 0 01-6 0z" clipRule="evenodd" /></svg>
+);
+const ScrollIcon = ({ className = "w-5 h-5" }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor"><path fillRule="evenodd" d="M11.625 1.295A2.25 2.25 0 009.675.247 2.27 2.27 0 007.27.382C6.72.748 6.375 1.36 6.375 2.02v13.56c0 .54.44 1.13 1.05 1.33l6.505 2.126.07.018a.749.749 0 00.088-1.492l-5.6-1.528V2.736a.75.75 0 111.458.12v9.752a2.38 2.38 0 001.077 2.008l4.427 2.767a1.59 1.59 0 001.025.26c.7 0 1.258-.616 1.115-1.294l-1.01-4.793a.75.75 0 00-.735-.595H13.5a.75.75 0 01-.75-.75V3.375a2.25 2.25 0 012.25-2.25h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 00-.75.75v5.046l.872 4.135a3.09 3.09 0 01-.284 2.583l-4.427-2.766a.88.88 0 01-.399-.744V3.19c0-.66.345-1.272.895-1.638.164-.11.36-.184.567-.221a.75.75 0 00.165-1.488.76.76 0 00-.268.012z" clipRule="evenodd" /></svg>
+);
 
 const CategoryIcon = ({ category, className }: { category: ExperienceCategory; className?: string }) => {
     switch (category) {
@@ -44,6 +51,14 @@ const CategoryIcon = ({ category, className }: { category: ExperienceCategory; c
         case "professional": return <WorkIcon className={className} />;
         case "research": return <ResearchIcon className={className} />;
         default: return <DefaultIcon className={className} />;
+    }
+};
+
+const AwardIcon = ({ type, className }: { type: string; className?: string }) => {
+    switch (type) {
+        case "medal": return <MedalIcon className={className} />;
+        case "scroll": return <ScrollIcon className={className} />;
+        case "trophy": default: return <TrophyIcon className={className} />;
     }
 };
 
@@ -80,9 +95,9 @@ function calculateExperienceRows(experiences: Experience[]): Map<string, number>
         // Try to fit in existing row
         for (let i = 0; i < rowEndDates.length; i++) {
             const endDate = rowEndDates[i];
-            // Add a 1-month buffer space
+            // Add a 3-month buffer space for better separation
             const bufferDate = new Date(endDate || 0);
-            bufferDate.setMonth(bufferDate.getMonth() + 1);
+            bufferDate.setMonth(bufferDate.getMonth() + 3);
 
             if (!endDate || bufferDate < exp.startDate) {
                 assignedRow = i;
@@ -94,9 +109,8 @@ function calculateExperienceRows(experiences: Experience[]): Map<string, number>
             assignedRow = rowEndDates.length;
         }
 
-        // CONSTRAINT: Clamp rows to prevent vertical overflow (max 5 rows total: 0 to 4)
-        // This ensures they stay relatively close to the center line
-        const constrainedRow = assignedRow % 5;
+        // CONSTRAINT: Clamp rows to prevent vertical overflow (max 10 rows total, helps spread out)
+        const constrainedRow = assignedRow % 10;
 
         rows.set(exp.id, constrainedRow);
         rowEndDates[constrainedRow] = exp.endDate || new Date(2030, 0, 1);
@@ -188,17 +202,18 @@ export default function ExperienceTimeline({
             </motion.div>
 
             {/* --- MAIN TIMELINE TRACK --- */}
-            <div className="flex-1 flex items-center justify-center relative pointer-events-auto">
+            <div className="flex-1 flex items-center justify-start relative pointer-events-auto overflow-hidden">
                 <motion.div
                     className="relative flex items-center"
                     style={{
                         x: timelineX,
                         width: TOTAL_WIDTH,
-                        height: "60vh", // Confined height for the track
+                        height: "80vh", // Confined height for the track
+                        minWidth: TOTAL_WIDTH, // Ensure explicit width
                     }}
                 >
                     {/* 1. The Central Line */}
-                    <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-[hsl(var(--border))]" />
+                    <div className="absolute left-0 w-full top-1/2 h-0.5 bg-[hsl(var(--border))]" />
 
                     {/* 2. Month Ticks (Only start of year and mid-year) */}
                     {TIMELINE_MONTHS.map((m, i) => {
@@ -229,8 +244,9 @@ export default function ExperienceTimeline({
                         // Alternating rows: Even rows above, Odd rows below
                         // We clamp the visual vertical distance to ensure it fits in viewport
                         const isAbove = row % 2 === 0;
-                        const rowMultiplier = Math.floor(row / 2) + 1; // 1, 1, 2, 2, etc.
-                        const verticalOffset = isAbove ? -(rowMultiplier * 65 + 35) : (rowMultiplier * 65 + 35);
+                        const level = Math.floor(row / 2) + 1;
+                        // Increase vertical spread to prevent overlap
+                        const verticalOffset = isAbove ? -(level * 80 + 20) : (level * 80 + 20);
 
                         const colors = CATEGORY_COLORS[exp.category];
 
@@ -243,7 +259,7 @@ export default function ExperienceTimeline({
                                     width: width,
                                     top: "50%",
                                     y: verticalOffset,
-                                    height: 50
+                                    height: 60
                                 }}
                                 whileHover={{ scale: 1.05, zIndex: 50 }}
                                 whileTap={{ scale: 0.95 }}
@@ -291,7 +307,7 @@ export default function ExperienceTimeline({
                                 onClick={() => setSelectedItem({ type: 'award', data: award })}
                             >
                                 <div className="relative">
-                                    <TrophyIcon className="w-6 h-6 text-amber-500 drop-shadow-md" />
+                                    <AwardIcon type={award.type} className="w-8 h-8 text-amber-500 drop-shadow-md" />
                                     <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-amber-500 rounded-full animate-ping opacity-75" />
                                 </div>
                             </motion.button>
@@ -346,7 +362,8 @@ export default function ExperienceTimeline({
                                 </div>
                             ) : (
                                 <div className="text-center space-y-4">
-                                    <TrophyIcon className="w-16 h-16 mx-auto text-amber-500" />
+                                    {/* Use AwardIcon instead of hardcoded TrophyIcon */}
+                                    <AwardIcon type={(selectedItem.data as Award).type} className="w-16 h-16 mx-auto text-amber-500" />
                                     <h3 className="text-2xl font-serif font-bold text-[hsl(var(--foreground))]">{(selectedItem.data as Award).title}</h3>
                                     <p className="text-[hsl(var(--muted-foreground))]">{(selectedItem.data as Award).organization} • {(selectedItem.data as Award).date.getFullYear()}</p>
                                     <p className="max-w-lg mx-auto text-sm leading-relaxed">{(selectedItem.data as Award).description}</p>
