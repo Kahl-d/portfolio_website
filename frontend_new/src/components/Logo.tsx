@@ -4,14 +4,15 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Briefcase } from "lucide-react";
+import { Home, Briefcase, Sparkles } from "lucide-react";
 
 interface LogoProps {
     onHomeClick?: () => void;
     onExperienceClick?: () => void;
+    onSkillsClick?: () => void;
 }
 
-export default function Logo({ onHomeClick, onExperienceClick }: LogoProps) {
+export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick }: LogoProps) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -80,6 +81,16 @@ export default function Logo({ onHomeClick, onExperienceClick }: LogoProps) {
                         >
                             <Briefcase className="w-4 h-4" />
                             Experience
+                        </button>
+                        <button
+                            onClick={() => {
+                                onSkillsClick?.();
+                                setIsHovered(false);
+                            }}
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                        >
+                            <Sparkles className="w-4 h-4" />
+                            Skills
                         </button>
                     </motion.div>
                 )}

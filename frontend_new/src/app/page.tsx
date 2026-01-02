@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import AboutSection from "@/components/AboutSection";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
+import SkillsBlueprint from "@/components/SkillsBlueprint";
 import Logo from "@/components/Logo";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -62,7 +63,7 @@ function GridBox({
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Track scroll progress (now 400vh for more scroll room)
+  // Track scroll progress (1600vh for Landing + About + Experience + Skills)
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -109,14 +110,37 @@ export default function Home() {
   // Section title appears
   const experienceTitleOpacity = useTransform(scrollYProgress, [0.47, 0.55], [0, 1]);
 
-  // ===== PHASE 3: TIMELINE NAVIGATION (50% - 100%) =====
+  // ===== PHASE 3: TIMELINE NAVIGATION (50% - 68%) =====
 
-  // Timeline horizontal progress
-  const timelineProgress = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
+  // Timeline horizontal progress (ends earlier to give breathing room)
+  const timelineProgress = useTransform(scrollYProgress, [0.5, 0.68], [0, 1]);
+
+  // Experience holds after timeline completes, then fades gently
+  const experienceFadeOut = useTransform(scrollYProgress, [0.72, 0.80], [1, 0]);
+
+  // ===== PHASE 4: SKILLS SECTION (75% - 100%) =====
+
+  // Skills fades in AFTER experience fades with overlap for smooth transition
+  const skillsOpacity = useTransform(scrollYProgress, [0.75, 0.82], [0, 1]);
+  const skillsY = useTransform(scrollYProgress, [0.75, 0.82], ["30vh", "0vh"]);
+
+  // Skills internal progress (for rotating through categories)
+  const skillsProgress = useTransform(scrollYProgress, [0.82, 1], [0, 1]);
 
   // Scroll to Experience section
   const scrollToExperience = () => {
-    const targetY = window.innerHeight * 6; // Adjusted for new timing
+    const containerHeight = 16; // 1600vh = 16 viewport heights
+    const targetY = window.innerHeight * (containerHeight * 0.55); // ~55% for experience
+    window.scrollTo({
+      top: targetY,
+      behavior: "smooth",
+    });
+  };
+
+  // Scroll to Skills section
+  const scrollToSkills = () => {
+    const containerHeight = 16;
+    const targetY = window.innerHeight * (containerHeight * 0.80); // ~80% for skills
     window.scrollTo({
       top: targetY,
       behavior: "smooth",
@@ -132,25 +156,35 @@ export default function Home() {
   };
 
   return (
-    <div ref={containerRef} className="relative h-[1200vh]">
+    <div ref={containerRef} className="relative h-[1600vh]">
       {/* ===== FIXED HEADER - Always on top ===== */}
       <header className="fixed top-0 left-0 right-0 z-[100] p-4 md:p-6 lg:p-8">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <Logo
             onHomeClick={scrollToHome}
             onExperienceClick={scrollToExperience}
+            onSkillsClick={scrollToSkills}
           />
           <ThemeToggle />
         </div>
       </header>
 
-      {/* ===== EXPERIENCE TIMELINE (z-15) ===== */}
-      <ExperienceTimeline
-        timelineProgress={timelineProgress}
-        opacity={experienceOpacity}
-        sectionTitleOpacity={experienceTitleOpacity}
-        slideX={experienceX}
+      {/* ===== SKILLS SECTION (z-18) ===== */}
+      <SkillsBlueprint
+        scrollProgress={skillsProgress}
+        opacity={skillsOpacity}
+        slideY={skillsY}
       />
+
+      {/* ===== EXPERIENCE TIMELINE (z-15) ===== */}
+      <motion.div style={{ opacity: experienceFadeOut }}>
+        <ExperienceTimeline
+          timelineProgress={timelineProgress}
+          opacity={experienceOpacity}
+          sectionTitleOpacity={experienceTitleOpacity}
+          slideX={experienceX}
+        />
+      </motion.div>
 
       {/* ===== ABOUT SECTION - Expands to full screen (z-10) ===== */}
       <AboutSection
@@ -213,6 +247,7 @@ export default function Home() {
               opacity={otherBoxesOpacity}
               scale={otherBoxesScale}
               backgroundImage="https://d7hftxdivxxvm.cloudfront.net/?height=570&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrJc4mlDJy3odqIdUvHzHCw%2Flarger.jpg&width=445"
+              onClick={scrollToSkills}
             >
               <span className="text-3xl font-serif font-bold text-white tracking-wide drop-shadow-lg">Skills</span>
             </GridBox>
@@ -277,6 +312,7 @@ export default function Home() {
               opacity={otherBoxesOpacity}
               scale={otherBoxesScale}
               backgroundImage="https://d7hftxdivxxvm.cloudfront.net/?height=570&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrJc4mlDJy3odqIdUvHzHCw%2Flarger.jpg&width=445"
+              onClick={scrollToSkills}
             >
               <span className="text-xl font-serif font-bold text-white drop-shadow-md">Skills</span>
             </GridBox>
