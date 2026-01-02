@@ -8,6 +8,8 @@ export default function ThemeToggle() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        // Trigger re-render to match client side
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
         const savedTheme = localStorage.getItem("theme");
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

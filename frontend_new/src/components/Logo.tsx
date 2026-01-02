@@ -2,11 +2,15 @@
 
 import { SITE_CONFIG } from "@/lib/constants";
 
-export default function Logo() {
+export default function Logo({ onClick }: { onClick?: () => void }) {
     return (
         <a
             href="#"
-            className="flex items-center gap-2.5 group"
+            onClick={(e) => {
+                e.preventDefault();
+                onClick?.();
+            }}
+            className="flex items-center gap-2.5 group cursor-pointer"
         >
             {/* Logo icon box */}
             <div
