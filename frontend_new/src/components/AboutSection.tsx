@@ -13,6 +13,7 @@ interface AboutSectionProps {
     aboutInitialTextScale: MotionValue<number>;
     aboutExtraContentOpacity: MotionValue<number>;
     aboutExtraContentY: MotionValue<number>;
+    contentOpacity?: MotionValue<number>;
 }
 
 export default function AboutSection({
@@ -25,6 +26,7 @@ export default function AboutSection({
     aboutInitialTextScale,
     aboutExtraContentOpacity,
     aboutExtraContentY,
+    contentOpacity,
 }: AboutSectionProps) {
     return (
         <motion.div
@@ -53,7 +55,10 @@ export default function AboutSection({
             />
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col items-center justify-center px-6">
+            <motion.div
+                className="relative z-10 flex flex-col items-center justify-center px-6"
+                style={{ opacity: contentOpacity }}
+            >
                 {/* Name and greeting */}
                 <motion.div
                     className="flex flex-col items-center justify-center text-center"
@@ -88,7 +93,7 @@ export default function AboutSection({
                         Building digital experiences with passion and precision.
                     </p>
                 </motion.div>
-            </div>
+            </motion.div>
         </motion.div>
     );
 }
