@@ -12,9 +12,10 @@ interface LogoProps {
     onWritingClick?: () => void;
     onHighlightsClick?: () => void;
     onContactClick?: () => void;
+    onNoMiClick?: () => void;
 }
 
-export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, onWritingClick, onHighlightsClick, onContactClick }: LogoProps) {
+export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, onWritingClick, onHighlightsClick, onContactClick, onNoMiClick }: LogoProps) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -108,6 +109,17 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, on
                         >
                             <Mail className="w-4 h-4" />
                             Contact
+                        </button>
+                        <div className="h-px bg-[hsl(var(--border))] my-1 mx-2" />
+                        <button
+                            onClick={() => {
+                                onNoMiClick?.();
+                                setIsHovered(false);
+                            }}
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-bold rounded-lg hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition-all text-indigo-500"
+                        >
+                            <Sparkles className="w-4 h-4" />
+                            no-mi.ai
                         </button>
                     </motion.div>
                 )}

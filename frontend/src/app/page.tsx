@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import AboutSection from "@/components/AboutSection";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
@@ -11,6 +11,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import WritingSection from "@/components/WritingSection";
 import HighlightsGallery from "@/components/HighlightsGallery";
 import ContactSection from "@/components/ContactSection";
+import NoMiOverlay from "@/components/NoMiOverlay";
 
 // Reusable Grid Box component with proper theme colors
 function GridBox({
@@ -209,6 +210,11 @@ export default function Home() {
   const contactPointerEvents = useTransform(scrollYProgress, (v) => (v > PHASES.CONTACT.entry ? "auto" : "none") as string);
 
 
+  // No-Mi.ai State
+  const [showNoMi, setShowNoMi] = useState(false);
+  const openNoMi = () => setShowNoMi(true);
+  const closeNoMi = () => setShowNoMi(false);
+
   // Scroll Helpers
   const performScroll = (targetRatio: number) => {
     const targetY = window.innerHeight * (SCROLL_HEIGHT * targetRatio);
@@ -217,6 +223,9 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative h-[2800vh]">
+
+      {/* ===== OVERLAYS ===== */}
+      <NoMiOverlay isOpen={showNoMi} onClose={closeNoMi} />
 
       {/* ===== FIXED HEADER - Always on top ===== */}
       <header className="fixed top-0 left-0 right-0 z-[100] p-4 md:p-6 lg:p-8">
@@ -228,6 +237,7 @@ export default function Home() {
             onWritingClick={() => performScroll(PHASES.WRITING.snap)}
             onHighlightsClick={() => performScroll(PHASES.HIGHLIGHTS.snap)}
             onContactClick={() => performScroll(PHASES.CONTACT.snap)}
+            onNoMiClick={openNoMi}
           />
           <ThemeToggle />
         </div>
@@ -238,6 +248,7 @@ export default function Home() {
         opacity={contactOpacity}
         y={contactY}
         pointerEvents={contactPointerEvents}
+        onNoMiClick={openNoMi}
       />
 
       {/* ===== HIGHLIGHTS SECTION (z-25) ===== */}
@@ -323,8 +334,9 @@ export default function Home() {
               opacity={otherBoxesOpacity}
               scale={otherBoxesScale}
               backgroundImage="https://mir-s3-cdn-cf.behance.net/projects/404/a7e44868993189.Y3JvcCwzMTIzLDI0NDMsMjcwLDA.jpg"
+              onClick={openNoMi}
             >
-              <span className="text-card-title text-white tracking-wide drop-shadow-lg">Projects</span>
+              <span className="text-card-title text-white tracking-wide drop-shadow-lg">no-mi.ai</span>
             </GridBox>
             {/* Skills: Spans 3 rows (Row 1-4) - Fixed span */}
             <GridBox
@@ -391,8 +403,9 @@ export default function Home() {
               opacity={otherBoxesOpacity}
               scale={otherBoxesScale}
               backgroundImage="https://mir-s3-cdn-cf.behance.net/projects/404/a7e44868993189.Y3JvcCwzMTIzLDI0NDMsMjcwLDA.jpg"
+              onClick={openNoMi}
             >
-              <span className="text-card-title text-white drop-shadow-md">Projects</span>
+              <span className="text-card-title text-white drop-shadow-md">no-mi.ai</span>
             </GridBox>
             {/* Skills: Row 5-6 (2 rows), Col 1-3 */}
             <GridBox

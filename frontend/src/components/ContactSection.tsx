@@ -8,9 +8,10 @@ interface ContactSectionProps {
     opacity: MotionValue<number>;
     y: MotionValue<string>;
     pointerEvents: MotionValue<string>;
+    onNoMiClick: () => void;
 }
 
-export default function ContactSection({ opacity, y, pointerEvents }: ContactSectionProps) {
+export default function ContactSection({ opacity, y, pointerEvents, onNoMiClick }: ContactSectionProps) {
     const [copied, setCopied] = useState(false);
     const email = "khalidmehtabk@gmail.com";
 
@@ -33,7 +34,7 @@ export default function ContactSection({ opacity, y, pointerEvents }: ContactSec
                 <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end">
 
                     {/* Left: Headline */}
-                    <div className="lg:col-span-12">
+                    <div className="lg:col-span-8">
                         <motion.div
                             initial={{ y: 20, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
@@ -44,6 +45,22 @@ export default function ContactSection({ opacity, y, pointerEvents }: ContactSec
                                 SAY<br />HELLO
                             </h2>
                         </motion.div>
+                    </div>
+
+                    {/* Right: No-Mi.ai Call to Action */}
+                    <div className="lg:col-span-4 flex justify-start lg:justify-end items-end pb-8 pointer-events-auto">
+                        <button
+                            onClick={onNoMiClick}
+                            className="group relative flex items-center justify-center gap-3 px-8 py-6 bg-gradient-to-br from-indigo-500 to-purple-700 text-white rounded-2xl shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-full md:w-auto"
+                        >
+                            <div className="flex flex-col items-start">
+                                <span className="text-xs font-mono opacity-80 mb-1">AI ASSISTANT</span>
+                                <span className="text-2xl font-serif font-bold tracking-tight">Chat with no-mi.ai</span>
+                            </div>
+                            <div className="bg-white/20 p-2 rounded-full ml-4 group-hover:rotate-45 transition-transform duration-500">
+                                <ArrowUpRight size={24} />
+                            </div>
+                        </button>
                     </div>
 
                     {/* Left Bottom: Interaction */}
@@ -86,16 +103,18 @@ export default function ContactSection({ opacity, y, pointerEvents }: ContactSec
                             </button>
                         </div>
 
-                        <div className="flex gap-6">
-                            <a href="https://linkedin.com/in/khalid-khan" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
-                                LinkedIn <ArrowUpRight size={14} />
-                            </a>
-                            <a href="https://github.com/khalid-khan" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
-                                GitHub <ArrowUpRight size={14} />
-                            </a>
-                            <a href="https://twitter.com" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
-                                X (Twitter) <ArrowUpRight size={14} />
-                            </a>
+                        <div className="flex flex-col md:flex-row items-end gap-6 text-right">
+                            <div className="flex gap-6">
+                                <a href="https://linkedin.com/in/khalid-khan" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
+                                    LinkedIn <ArrowUpRight size={14} />
+                                </a>
+                                <a href="https://github.com/khalid-khan" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
+                                    GitHub <ArrowUpRight size={14} />
+                                </a>
+                                <a href="https://twitter.com" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
+                                    X (Twitter) <ArrowUpRight size={14} />
+                                </a>
+                            </div>
                         </div>
                     </div>
 
