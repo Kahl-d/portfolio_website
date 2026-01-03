@@ -4,15 +4,18 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Briefcase, Sparkles } from "lucide-react";
+import { Menu, Home, Layers, Code, Briefcase, BookOpen, Sparkles, Mail } from "lucide-react";
 
 interface LogoProps {
     onHomeClick?: () => void;
     onExperienceClick?: () => void;
     onSkillsClick?: () => void;
+    onWritingClick?: () => void;
+    onHighlightsClick?: () => void;
+    onContactClick?: () => void;
 }
 
-export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick }: LogoProps) {
+export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, onWritingClick, onHighlightsClick, onContactClick }: LogoProps) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -91,6 +94,36 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick }: 
                         >
                             <Sparkles className="w-4 h-4" />
                             Skills
+                        </button>
+                        <button
+                            onClick={() => {
+                                onWritingClick?.();
+                                setIsHovered(false);
+                            }}
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                        >
+                            <BookOpen className="w-4 h-4" />
+                            Writing
+                        </button>
+                        <button
+                            onClick={() => {
+                                onHighlightsClick?.();
+                                setIsHovered(false);
+                            }}
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                        >
+                            <Sparkles className="w-4 h-4" />
+                            Highlights
+                        </button>
+                        <button
+                            onClick={() => {
+                                onContactClick?.();
+                                setIsHovered(false);
+                            }}
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                        >
+                            <Mail className="w-4 h-4" />
+                            Contact
                         </button>
                     </motion.div>
                 )}
