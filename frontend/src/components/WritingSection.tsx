@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, MotionValue, useTransform } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import { PUBLICATIONS, type Publication } from "@/lib/publicationData";
-import { ArrowUpRight, BookOpen, Quote, Calendar, User, FileText, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Quote, User, FileText, ExternalLink } from "lucide-react";
 
 // ===================================
 // CITATION UTILS
@@ -37,7 +37,7 @@ function PaperCard({ paper }: { paper: Publication }) {
             className="group relative flex flex-col w-full h-full bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
         >
             {/* Hover Glow & Texture */}
-            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-multiply" />
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply bg-[hsl(var(--foreground))]" />
             <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary)/0.03)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Top Accent Line */}
@@ -213,18 +213,4 @@ export default function WritingSection({ opacity, y, pointerEvents }: WritingSec
 }
 
 // Add simple style for custom scrollbar
-const css = `
-.custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 4px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--muted-foreground));
-}
-`;
+

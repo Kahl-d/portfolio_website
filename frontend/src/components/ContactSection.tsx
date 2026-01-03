@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, MotionValue } from "framer-motion";
-import { Download, Mail, ArrowUpRight, Copy } from "lucide-react";
+import { Download, Mail, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
 interface ContactSectionProps {
@@ -40,7 +40,7 @@ export default function ContactSection({ opacity, y, pointerEvents, onNoMiClick 
                             whileInView={{ y: 0, opacity: 1 }}
                             className="border-b border-[hsl(var(--foreground))] pb-4 mb-4"
                         >
-                            <span className="text-eyebrow text-[hsl(var(--primary))] mb-2 block">What's Next?</span>
+                            <span className="text-eyebrow text-[hsl(var(--primary))] mb-2 block">What&apos;s Next?</span>
                             <h2 className="text-6xl md:text-8xl lg:text-9xl leading-[0.9] font-serif font-black text-[hsl(var(--foreground))] tracking-tighter mix-blend-difference">
                                 SAY<br />HELLO
                             </h2>
@@ -66,7 +66,7 @@ export default function ContactSection({ opacity, y, pointerEvents, onNoMiClick 
                     {/* Left Bottom: Interaction */}
                     <div className="lg:col-span-6 space-y-6">
                         <p className="text-lg md:text-xl font-light text-[hsl(var(--muted-foreground))] leading-relaxed">
-                            Currently open to new opportunities in AI Engineering and Research. Let's build the future together.
+                            Currently open to new opportunities in AI Engineering and Research. Let&apos;s build the future together.
                         </p>
 
                         <div className="flex flex-wrap gap-4">

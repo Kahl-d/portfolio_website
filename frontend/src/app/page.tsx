@@ -225,7 +225,20 @@ export default function Home() {
     <div ref={containerRef} className="relative h-[2800vh]">
 
       {/* ===== OVERLAYS ===== */}
-      <NoMiOverlay isOpen={showNoMi} onClose={closeNoMi} />
+      <NoMiOverlay
+        isOpen={showNoMi}
+        onClose={closeNoMi}
+        onNavigate={(section) => {
+          switch (section) {
+            case 'experience': performScroll(PHASES.EXPERIENCE.snap); break;
+            case 'skills': performScroll(PHASES.SKILLS.snap); break;
+            case 'writing': performScroll(PHASES.WRITING.snap); break;
+            case 'highlights': performScroll(PHASES.HIGHLIGHTS.snap); break;
+            case 'contact': performScroll(PHASES.CONTACT.snap); break;
+            case 'home': performScroll(0); break;
+          }
+        }}
+      />
 
       {/* ===== FIXED HEADER - Always on top ===== */}
       <header className="fixed top-0 left-0 right-0 z-[100] p-4 md:p-6 lg:p-8">

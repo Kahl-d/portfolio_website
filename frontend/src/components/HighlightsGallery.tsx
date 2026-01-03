@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, MotionValue, useTransform } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import { HIGHLIGHTS, type HighlightItem } from "@/lib/highlightsData";
 import { Trophy, Award, Sparkles, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 // ===================================
 // SUB-COMPONENTS
@@ -14,10 +15,11 @@ function HeroCard({ item }: { item: HighlightItem }) {
             {/* Background Image / GIF */}
             {item.image && (
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <Image
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
                     {/* Lighter Gradient to show image */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--background))] via-transparent to-transparent opacity-80" />

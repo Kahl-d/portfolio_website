@@ -28,7 +28,7 @@ export default function AboutSection({
     aboutBottom,
     aboutBorderRadius,
     aboutBgOpacity,
-    aboutInitialTextScale,
+    // aboutInitialTextScale, // Unused
     aboutTitleScale,
     aboutTitleY,
     aboutTitleOpacity,
@@ -123,7 +123,7 @@ export default function AboutSection({
                             <div className="space-y-4 text-body text-[hsl(var(--muted-foreground))] text-lg leading-relaxed">
                                 <p>
                                     As the <strong>Founding AI Engineer at Xuman.AI</strong> and a researcher at the <strong>NLP Lab at SFSU</strong>,
-                                    I don't just train models—I deconstruct them. From defining the "trajectory of narrative modeling" in my thesis
+                                    I don&apos;t just train models—I deconstruct them. From defining the &quot;trajectory of narrative modeling&quot; in my thesis
                                     to building real-time, human-like voice agents, I am driven by the challenge of making machines understand not just words, but intent and culture.
                                 </p>
                                 <p>
@@ -139,7 +139,7 @@ export default function AboutSection({
                             <div className="space-y-4">
                                 <div className="text-eyebrow text-[hsl(var(--primary))]">Current Focus</div>
                                 <h3 className="text-2xl font-serif text-[hsl(var(--foreground))] italic">
-                                    "Accuracy without understanding is fragile."
+                                    &quot;Accuracy without understanding is fragile.&quot;
                                 </h3>
                             </div>
 
