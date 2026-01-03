@@ -1,10 +1,9 @@
 "use client";
 
 import { SITE_CONFIG } from "@/lib/constants";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, Home, Layers, Code, Briefcase, BookOpen, Sparkles, Mail } from "lucide-react";
+import { Home, Briefcase, BookOpen, Sparkles, Mail } from "lucide-react";
 
 interface LogoProps {
     onHomeClick?: () => void;
@@ -31,28 +30,13 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, on
                     e.preventDefault();
                     onHomeClick?.();
                 }}
-                className="flex items-center gap-2.5 group cursor-pointer relative z-20"
+                className="group cursor-pointer relative z-20 py-1"
             >
-                {/* Logo icon box */}
-                <div
-                    className="w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-                    style={{ backgroundColor: "hsl(var(--primary))" }}
-                >
-                    <span
-                        className="font-bold text-base md:text-lg tracking-tight"
-                        style={{ color: "hsl(var(--primary-foreground))" }}
-                    >
-                        {SITE_CONFIG.name.split(" ").map(n => n.charAt(0)).join("")}
+                <div className="flex items-center justify-center w-12 h-12 rounded-full border border-[hsl(var(--foreground))] bg-[hsl(var(--background))] hover:bg-[hsl(var(--foreground))] transition-all duration-300 group-hover:scale-105 shadow-sm">
+                    <span className="font-serif font-black text-sm tracking-tighter text-[hsl(var(--foreground))] group-hover:text-[hsl(var(--background))] transition-colors">
+                        KMK
                     </span>
                 </div>
-
-                {/* Logo text - hidden on small screens */}
-                <span
-                    className="text-base md:text-lg font-semibold hidden sm:block transition-colors duration-300"
-                    style={{ color: "hsl(var(--foreground))" }}
-                >
-                    {SITE_CONFIG.name}
-                </span>
             </a>
 
             {/* Hover Menu */}
@@ -70,7 +54,7 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, on
                                 onHomeClick?.();
                                 setIsHovered(false);
                             }}
-                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))] transition-colors text-[hsl(var(--muted-foreground))]"
                         >
                             <Home className="w-4 h-4" />
                             Home
@@ -80,7 +64,7 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, on
                                 onExperienceClick?.();
                                 setIsHovered(false);
                             }}
-                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))] transition-colors text-[hsl(var(--muted-foreground))]"
                         >
                             <Briefcase className="w-4 h-4" />
                             Experience
@@ -90,7 +74,7 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, on
                                 onSkillsClick?.();
                                 setIsHovered(false);
                             }}
-                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))] transition-colors text-[hsl(var(--muted-foreground))]"
                         >
                             <Sparkles className="w-4 h-4" />
                             Skills
@@ -100,7 +84,7 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, on
                                 onWritingClick?.();
                                 setIsHovered(false);
                             }}
-                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))] transition-colors text-[hsl(var(--muted-foreground))]"
                         >
                             <BookOpen className="w-4 h-4" />
                             Writing
@@ -110,7 +94,7 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, on
                                 onHighlightsClick?.();
                                 setIsHovered(false);
                             }}
-                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))] transition-colors text-[hsl(var(--muted-foreground))]"
                         >
                             <Sparkles className="w-4 h-4" />
                             Highlights
@@ -120,7 +104,7 @@ export default function Logo({ onHomeClick, onExperienceClick, onSkillsClick, on
                                 onContactClick?.();
                                 setIsHovered(false);
                             }}
-                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--accent)/0.1)] hover:text-[hsl(var(--accent))] transition-colors text-[hsl(var(--muted-foreground))]"
+                            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))] transition-colors text-[hsl(var(--muted-foreground))]"
                         >
                             <Mail className="w-4 h-4" />
                             Contact

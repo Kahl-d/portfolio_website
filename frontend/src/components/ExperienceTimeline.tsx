@@ -167,22 +167,22 @@ export default function ExperienceTimeline({
             <div className="absolute top-0 left-0 right-0 h-40 z-20 pointer-events-none bg-gradient-to-b from-[hsl(var(--background))] to-transparent" />
 
             <motion.div className="absolute top-8 w-full text-center z-30 opacity-100 mix-blend-difference" style={{ opacity: sectionTitleOpacity }}>
-                <h2 className="text-8xl md:text-9xl font-serif font-bold text-[hsl(var(--foreground))] opacity-5 tracking-tighter select-none">
+                <h2 className="text-[8rem] md:text-[13rem] leading-none opacity-5 tracking-tighter select-none font-black text-[hsl(var(--foreground))]">
                     {currentYear}
                 </h2>
             </motion.div>
 
             <motion.div
-                className="absolute top-24 left-0 right-0 text-center z-30"
+                className="absolute top-28 left-0 right-0 text-center z-30"
                 style={{ opacity: sectionTitleOpacity }}
             >
-                <h3 className="text-xl md:text-2xl font-serif tracking-widest uppercase text-[hsl(var(--muted-foreground))]">
+                <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-[hsl(var(--muted-foreground))] drop-shadow-sm">
                     Experience
                 </h3>
             </motion.div>
 
             {/* --- MAIN TIMELINE TRACK --- */}
-            <div className="flex-1 flex items-center justify-start relative pointer-events-auto overflow-hidden">
+            <div className="flex-1 flex items-center justify-start relative pointer-events-auto overflow-hidden z-40">
                 <motion.div
                     className="relative flex items-center"
                     style={{
@@ -207,8 +207,8 @@ export default function ExperienceTimeline({
                                 className="absolute top-1/2 -translate-y-1/2 flex flex-col items-center"
                                 style={{ left: i * MONTH_WIDTH }}
                             >
-                                <div className={`w-0.5 ${isStart ? "h-8 bg-[hsl(var(--foreground))]" : "h-4 bg-[hsl(var(--border))]"}`} />
-                                <span className={`mt-4 text-[10px] uppercase tracking-wider ${isStart ? "font-bold text-[hsl(var(--foreground))]" : "text-[hsl(var(--muted-foreground))]"}`}>
+                                <div className={`w-0.5 ${isStart ? "h-10 bg-[hsl(var(--foreground))]" : "h-5 bg-[hsl(var(--border))]"}`} />
+                                <span className={`mt-5 text-[10px] md:text-xs uppercase tracking-wider ${isStart ? "font-bold text-[hsl(var(--foreground))]" : "text-[hsl(var(--muted-foreground))]"}`}>
                                     {isStart ? m.year : "Jul"}
                                 </span>
                             </div>
@@ -218,7 +218,7 @@ export default function ExperienceTimeline({
                     {/* 3. Experiences Cards */}
                     {EXPERIENCES.map((exp) => {
                         const startPos = getTimelinePosition(exp.startDate) * TOTAL_WIDTH;
-                        const width = Math.max(getExperienceWidth(exp.startDate, exp.endDate) * TOTAL_WIDTH, 60);
+                        const width = Math.max(getExperienceWidth(exp.startDate, exp.endDate) * TOTAL_WIDTH, 140); // Moderate min width
                         const row = experienceRows.get(exp.id) || 0;
 
                         // Alternating rows: Even rows above, Odd rows below
@@ -226,22 +226,26 @@ export default function ExperienceTimeline({
                         const isAbove = row % 2 === 0;
                         const level = Math.floor(row / 2) + 1;
                         // Increase vertical spread to prevent overlap
-                        const verticalOffset = isAbove ? -(level * 80 + 20) : (level * 80 + 20);
+                        const verticalOffset = isAbove ? -(level * 80 + 30) : (level * 80 + 30);
 
                         const colors = CATEGORY_COLORS[exp.category];
+
+                        // Z-Index fix: Closer levels (lower level number) get HIGHER z-index
+                        const zLayer = 40 - level;
 
                         return (
                             <motion.button
                                 key={exp.id}
-                                className="absolute group text-left z-20"
+                                className="absolute group text-left"
                                 style={{
                                     left: startPos,
                                     width: width,
                                     top: "50%",
                                     y: verticalOffset,
-                                    height: 60
+                                    height: 70, // Moderate height
+                                    zIndex: zLayer,
                                 }}
-                                whileHover={{ scale: 1.05, zIndex: 50 }}
+                                whileHover={{ scale: 1.05, zIndex: 100 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => setSelectedItem({ type: 'exp', data: exp })}
                             >
@@ -254,19 +258,19 @@ export default function ExperienceTimeline({
 
                                 {/* Card Body */}
                                 <div className={`
-                                    relative h-full w-full rounded-lg border border-[hsl(var(--border))] 
+                                    relative h-full w-full rounded-xl border border-[hsl(var(--border))] 
                                     bg-[hsl(var(--card))] overflow-hidden shadow-sm transition-all duration-300
-                                    group-hover:shadow-md group-hover:border-[hsl(${colors.light})]
+                                    group-hover:shadow-xl group-hover:border-[hsl(${colors.light})]
                                 `}>
                                     <div
                                         className="absolute left-0 top-0 bottom-0 w-1 transition-colors"
                                         style={{ backgroundColor: `hsl(${colors.light})` }}
                                     />
                                     <div className="pl-3 pr-2 py-1.5 flex flex-col justify-center h-full">
-                                        <h4 className="font-serif font-medium text-sm truncate text-[hsl(var(--foreground))]">
+                                        <h4 className="font-serif font-bold text-sm md:text-base leading-tight truncate text-[hsl(var(--foreground))] mb-0.5">
                                             {exp.title}
                                         </h4>
-                                        <p className="text-[10px] text-[hsl(var(--muted-foreground))] truncate">
+                                        <p className="text-[10px] md:text-xs text-[hsl(var(--muted-foreground))] truncate font-medium">
                                             {exp.organization}
                                         </p>
                                     </div>
@@ -281,14 +285,21 @@ export default function ExperienceTimeline({
                         return (
                             <motion.button
                                 key={award.id}
-                                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 group"
+                                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-50 group"
                                 style={{ left: pos }}
-                                whileHover={{ scale: 1.2 }}
+                                whileHover={{ scale: 1.1 }}
                                 onClick={() => setSelectedItem({ type: 'award', data: award })}
                             >
-                                <div className="relative">
-                                    <AwardIcon type={award.type} className="w-8 h-8 text-amber-500 drop-shadow-md" />
-                                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-amber-500 rounded-full animate-ping opacity-75" />
+                                <div className="relative flex flex-col items-center">
+                                    <div className="relative p-3 rounded-full bg-gradient-to-br from-amber-400/20 to-amber-600/10 backdrop-blur-md border border-amber-500/30 shadow-lg group-hover:shadow-amber-500/20 transition-all duration-300">
+                                        <AwardIcon type={award.type} className="w-6 h-6 text-amber-500" />
+                                    </div>
+                                    <div className="absolute -bottom-2 w-1 h-8 bg-gradient-to-b from-amber-500/50 to-transparent" />
+
+                                    {/* Tooltip-style Label on Hover */}
+                                    <div className="absolute bottom-full mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center whitespace-nowrap bg-[hsl(var(--card)/0.9)] backdrop-blur px-3 py-1 rounded-md border border-[hsl(var(--border))] shadow-xl pointer-events-none">
+                                        <span className="text-[10px] font-bold uppercase tracking-wider text-amber-500">{award.type}</span>
+                                    </div>
                                 </div>
                             </motion.button>
                         );
@@ -322,8 +333,8 @@ export default function ExperienceTimeline({
                                             <CategoryIcon category={(selectedItem.data as Experience).category} className="w-6 h-6 text-[hsl(var(--foreground))]" />
                                         </div>
                                         <div>
-                                            <h3 className="text-2xl font-serif font-bold text-[hsl(var(--foreground))]">{(selectedItem.data as Experience).title}</h3>
-                                            <p className="text-[hsl(var(--muted-foreground))]">{(selectedItem.data as Experience).organization}</p>
+                                            <h3 className="text-card-title text-[hsl(var(--foreground))]">{(selectedItem.data as Experience).title}</h3>
+                                            <p className="text-body text-[hsl(var(--muted-foreground))]">{(selectedItem.data as Experience).organization}</p>
                                         </div>
                                     </div>
                                     <div className="flex flex-wrap gap-2 text-xs font-mono text-[hsl(var(--primary))] opacity-80">
@@ -331,7 +342,7 @@ export default function ExperienceTimeline({
                                         <span>—</span>
                                         <span>{(selectedItem.data as Experience).endDate?.getFullYear() ?? "Present"}</span>
                                     </div>
-                                    <ul className="space-y-2 text-sm text-[hsl(var(--foreground)/0.8)] leading-relaxed">
+                                    <ul className="space-y-2 text-body text-[hsl(var(--foreground)/0.8)]">
                                         {(selectedItem.data as Experience).description.map((d, i) => (
                                             <li key={i} className="flex gap-2">
                                                 <span className="block w-1 h-1 mt-2 rounded-full bg-[hsl(var(--primary))]" />
@@ -344,9 +355,9 @@ export default function ExperienceTimeline({
                                 <div className="text-center space-y-4">
                                     {/* Use AwardIcon instead of hardcoded TrophyIcon */}
                                     <AwardIcon type={(selectedItem.data as Award).type} className="w-16 h-16 mx-auto text-amber-500" />
-                                    <h3 className="text-2xl font-serif font-bold text-[hsl(var(--foreground))]">{(selectedItem.data as Award).title}</h3>
-                                    <p className="text-[hsl(var(--muted-foreground))]">{(selectedItem.data as Award).organization} • {(selectedItem.data as Award).date.getFullYear()}</p>
-                                    <p className="max-w-lg mx-auto text-sm leading-relaxed">{(selectedItem.data as Award).description}</p>
+                                    <h3 className="text-card-title text-[hsl(var(--foreground))]">{(selectedItem.data as Award).title}</h3>
+                                    <p className="text-body text-[hsl(var(--muted-foreground))]">{(selectedItem.data as Award).organization} • {(selectedItem.data as Award).date.getFullYear()}</p>
+                                    <p className="max-w-lg mx-auto text-body">{(selectedItem.data as Award).description}</p>
                                 </div>
                             )}
                         </div>

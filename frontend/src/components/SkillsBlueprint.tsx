@@ -179,22 +179,23 @@ function TransformerBlock({ category, isActive, isPast, index, total, gap, onCli
             >
                 {/* FRONT FACE - VISUAL STATE */}
                 <div
-                    className={`absolute inset-0 border flex items-center justify-between px-4 transition-all duration-500 ${isPast ? "backdrop-blur-md" : "backdrop-blur-sm"
+                    className={`absolute inset-0 border flex items-center justify-between px-4 transition-all duration-500 ${isPast ? "backdrop-blur-md" : "backdrop-blur-[2px]"
                         }`}
                     style={{
                         transform: "translateZ(170px)",
                         // PAST/ACTIVE: Colored & Filled
-                        // FUTURE: Blueprint (Dashed, Monochromatic/Low Opacity)
-                        borderColor: isPast ? `hsl(${category.color})` : "hsl(var(--muted-foreground)/0.3)",
-                        backgroundColor: isPast ? `hsl(${category.color}/0.15)` : "transparent",
+                        // FUTURE: Blueprint (Dashed, Monochromatic). Increased opacity for light mode visibility.
+                        borderColor: isPast ? `hsl(${category.color})` : "hsl(var(--foreground)/0.3)", // Increased from 0.3 muted to 0.3 foreground
+                        backgroundColor: isPast ? `hsl(${category.color}/0.15)` : "hsla(var(--background), 0.1)", // Slight tint
                         borderStyle: isPast ? "solid" : "dashed",
                         boxShadow: isActive ? `0 0 30px hsl(${category.color}/0.3)` : undefined,
+                        borderWidth: isPast ? "1px" : "1.5px", // Slightly thicker dashed lines
                     }}
                 >
                     {/* Tech Code */}
                     <div className="flex items-center gap-2">
-                        <div className="w-1 h-3 bg-current" style={{ color: isPast ? `hsl(${category.color})` : "hsl(var(--muted-foreground))" }} />
-                        <span className="text-[10px] font-mono tracking-wider" style={{ color: isPast ? "inherit" : "hsl(var(--muted-foreground))" }}>
+                        <div className="w-1 h-3 bg-current" style={{ color: isPast ? `hsl(${category.color})` : "hsl(var(--foreground)/0.6)" }} />
+                        <span className="text-[10px] font-mono tracking-wider font-semibold" style={{ color: isPast ? "inherit" : "hsl(var(--foreground)/0.6)" }}>
                             {isPast ? `VER_${index}.0` : `BLPRNT_${index}`}
                         </span>
                     </div>
@@ -203,8 +204,8 @@ function TransformerBlock({ category, isActive, isPast, index, total, gap, onCli
                     <span
                         className="text-sm font-bold uppercase tracking-wider"
                         style={{
-                            color: isPast ? `hsl(${category.color})` : "hsl(var(--muted-foreground))",
-                            opacity: isPast ? 1 : 0.5
+                            color: isPast ? `hsl(${category.color})` : "hsl(var(--foreground))",
+                            opacity: isPast ? 1 : 0.7 // Increased opacity
                         }}
                     >
                         {category.name}
@@ -217,10 +218,10 @@ function TransformerBlock({ category, isActive, isPast, index, total, gap, onCli
                                 key={i}
                                 className="w-3 rounded-full bg-current"
                                 style={{
-                                    color: isPast ? `hsl(${category.color})` : "hsl(var(--muted-foreground))",
-                                    opacity: isPast ? (isActive ? 1 : 0.5) : 0.1
+                                    color: isPast ? `hsl(${category.color})` : "hsl(var(--foreground))",
+                                    opacity: isPast ? (isActive ? 1 : 0.5) : 0.3 // Increased opacity
                                 }}
-                                animate={{ opacity: isActive ? [0.2, 1, 0.2] : (isPast ? 0.5 : 0.1) }}
+                                animate={{ opacity: isActive ? [0.2, 1, 0.2] : (isPast ? 0.5 : 0.3) }}
                                 transition={{
                                     duration: isActive ? 0.5 : 2,
                                     delay: i * 0.1,
@@ -236,8 +237,9 @@ function TransformerBlock({ category, isActive, isPast, index, total, gap, onCli
                     className="absolute inset-0 border bg-[hsl(var(--background)/0.9)]"
                     style={{
                         transform: "rotateY(180deg) translateZ(170px)",
-                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--muted-foreground)/0.1)",
+                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--foreground)/0.15)",
                         borderStyle: isPast ? "solid" : "dashed",
+                        borderWidth: isPast ? "1px" : "1.5px",
                     }}
                 />
 
@@ -247,8 +249,9 @@ function TransformerBlock({ category, isActive, isPast, index, total, gap, onCli
                     style={{
                         width: 340,
                         transform: "rotateY(-90deg) translateZ(170px)",
-                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--muted-foreground)/0.1)",
+                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--foreground)/0.15)",
                         borderStyle: isPast ? "solid" : "dashed",
+                        borderWidth: isPast ? "1px" : "1.5px",
                     }}
                 />
                 <div
@@ -256,8 +259,9 @@ function TransformerBlock({ category, isActive, isPast, index, total, gap, onCli
                     style={{
                         width: 340,
                         transform: "rotateY(90deg) translateZ(170px)",
-                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--muted-foreground)/0.1)",
+                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--foreground)/0.15)",
                         borderStyle: isPast ? "solid" : "dashed",
+                        borderWidth: isPast ? "1px" : "1.5px",
                     }}
                 />
 
@@ -268,16 +272,18 @@ function TransformerBlock({ category, isActive, isPast, index, total, gap, onCli
                         width: 340,
                         height: 340,
                         transform: "rotateX(90deg) translateZ(20px)",
-                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--muted-foreground)/0.1)",
+                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--foreground)/0.15)",
                         borderStyle: isPast ? "solid" : "dashed",
+                        borderWidth: isPast ? "1px" : "1.5px",
                     }}
                 >
                     {/* Circuit Grid - Colored for Past, Gray for Blueprint */}
-                    <div className="absolute inset-0 opacity-10"
+                    <div className="absolute inset-0"
                         style={{
+                            opacity: isPast ? 0.1 : 0.05, // Subtle grid
                             backgroundImage: isPast
                                 ? `linear-gradient(hsl(${category.color}) 1px, transparent 1px), linear-gradient(90deg, hsl(${category.color}) 1px, transparent 1px)`
-                                : `linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--muted-foreground)) 1px, transparent 1px)`,
+                                : `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
                             backgroundSize: "20px 20px"
                         }}
                     />
@@ -301,7 +307,8 @@ function TransformerBlock({ category, isActive, isPast, index, total, gap, onCli
                         width: 340,
                         height: 340,
                         transform: "rotateX(-90deg) translateZ(20px)",
-                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--muted-foreground)/0.1)"
+                        borderColor: isPast ? `hsl(${category.color}/0.2)` : "hsl(var(--foreground)/0.15)",
+                        borderWidth: isPast ? "1px" : "1.5px",
                     }}
                 />
             </div>
@@ -330,19 +337,19 @@ function SkillsPanel({ category, pointerEvents }: { category: CategoryConfig; po
                 {/* Tech Header */}
                 <div className="flex items-center gap-2 mb-2 opacity-70">
                     <Terminal size={14} style={{ color: `hsl(${category.color})` }} />
-                    <span className="text-[10px] font-mono text-[hsl(var(--muted-foreground))] uppercase tracking-widest">
+                    <span className="text-eyebrow text-[hsl(var(--muted-foreground))]">
                         EXEC_CTX: {category.id.toUpperCase()}
                     </span>
                 </div>
 
-                <h3 className="text-4xl font-bold font-serif mb-1" style={{ color: `hsl(${category.color})` }}>
+                <h3 className="text-section-title mb-1" style={{ color: `hsl(${category.color})` }}>
                     {category.name}
                 </h3>
-                <div className="text-xs font-mono uppercase tracking-widest text-[hsl(var(--muted-foreground))] mb-6">
+                <div className="text-eyebrow text-[hsl(var(--muted-foreground))] mb-6">
                     {category.title}
                 </div>
 
-                <p className="text-sm leading-relaxed text-[hsl(var(--foreground)/0.9)] mb-8 drop-shadow-sm border-l border-dashed border-[hsl(var(--border))] pl-4 py-2">
+                <p className="text-body text-[hsl(var(--foreground)/0.9)] mb-8 drop-shadow-sm border-l border-dashed border-[hsl(var(--border))] pl-4 py-2">
                     {category.description}
                 </p>
 
@@ -442,8 +449,8 @@ export default function SkillsBlueprint({
             className="fixed inset-0 z-[18] flex items-center justify-center pointer-events-none"
             style={{ opacity, y: slideY }}
         >
-            {/* Background Gradients */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.03)_0%,transparent_60%)] origin-center" />
+            {/* Background Gradients - Adjusted for depth */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.05)_0%,transparent_70%)] origin-center" />
 
             {/* HUD Navigation (Left) */}
             <HUDNavigation
@@ -452,9 +459,9 @@ export default function SkillsBlueprint({
                 onSelect={setActiveIndex}
                 pointerEvents={displayEvents}
             />
-            {/* Title */}
+            {/* Title - HD Clarity */}
             <div className="absolute top-24 left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none">
-                <h2 className="text-6xl md:text-9xl font-serif font-bold text-[hsl(var(--foreground)/0.03)] uppercase tracking-widest">
+                <h2 className="text-display font-black text-[hsl(var(--foreground)/0.4)] uppercase tracking-widest drop-shadow-sm">
                     SKILLS
                 </h2>
             </div>

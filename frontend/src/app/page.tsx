@@ -82,13 +82,13 @@ const PHASES = {
   EXPERIENCE: {
     entry: 0.40,
     visibleStart: 0.45,
-    visibleEnd: 0.70,
+    visibleEnd: 0.72, // Extended visibility
     exit: 0.75,
     snap: 0.55, // Center of timeline
   },
   SKILLS: {
-    entry: 0.72,
-    visibleStart: 0.75,
+    entry: 0.73, // Smoother handoff
+    visibleStart: 0.76,
     visibleEnd: 0.85,
     exit: 0.88,
     snap: 0.80,
@@ -137,7 +137,7 @@ export default function Home() {
   // About Text Animations
   const aboutInitialTextScale = useTransform(scrollYProgress, [0, PHASES.LANDING.end], [1, 1]);
   const aboutTitleScale = useTransform(scrollYProgress, [PHASES.LANDING.end, 0.25], [1, 0.6]); // Shrink to header
-  const aboutTitleY = useTransform(scrollYProgress, [PHASES.LANDING.end, 0.25], ["0vh", "-42vh"]);
+  const aboutTitleY = useTransform(scrollYProgress, [PHASES.LANDING.end, 0.25], ["0vh", "-35vh"]);
   const aboutTitleOpacity = useTransform(scrollYProgress, [PHASES.LANDING.end, 0.25], [1, 1]);
 
   // About Content Appearance
@@ -305,7 +305,7 @@ export default function Home() {
               backgroundImage="https://www.thames-sidestudios.co.uk/user/pages/04.news/exhibitions/2022/10.counter/JonathanCallan_DSC_1863Counter2022_2000px.jpg"
               onClick={() => performScroll(PHASES.EXPERIENCE.snap)}
             >
-              <span className="text-3xl font-serif font-bold text-white tracking-wide drop-shadow-lg">Experience</span>
+              <span className="text-card-title text-white tracking-wide drop-shadow-lg">Experience</span>
             </GridBox>
             <GridBox
               gridColumn="3 / 5"
@@ -315,7 +315,7 @@ export default function Home() {
               backgroundImage="https://artstormer.com/wp-content/uploads/2011/04/127685475_28a1267609.jpg?w=640"
               onClick={() => performScroll(PHASES.WRITING.snap)}
             >
-              <span className="text-3xl font-serif font-bold text-white tracking-wide drop-shadow-lg">Writing</span>
+              <span className="text-card-title text-white tracking-wide drop-shadow-lg">Writing</span>
             </GridBox>
             <GridBox
               gridColumn="3 / 5"
@@ -324,7 +324,7 @@ export default function Home() {
               scale={otherBoxesScale}
               backgroundImage="https://mir-s3-cdn-cf.behance.net/projects/404/a7e44868993189.Y3JvcCwzMTIzLDI0NDMsMjcwLDA.jpg"
             >
-              <span className="text-3xl font-serif font-bold text-white tracking-wide drop-shadow-lg">Projects</span>
+              <span className="text-card-title text-white tracking-wide drop-shadow-lg">Projects</span>
             </GridBox>
             {/* Skills: Spans 3 rows (Row 1-4) - Fixed span */}
             <GridBox
@@ -335,7 +335,7 @@ export default function Home() {
               backgroundImage="https://d7hftxdivxxvm.cloudfront.net/?height=570&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrJc4mlDJy3odqIdUvHzHCw%2Flarger.jpg&width=445"
               onClick={() => performScroll(PHASES.SKILLS.snap)}
             >
-              <span className="text-3xl font-serif font-bold text-white tracking-wide drop-shadow-lg">Skills</span>
+              <span className="text-card-title text-white tracking-wide drop-shadow-lg">Skills</span>
             </GridBox>
             {/* Contact: Spans 1 row (Row 4-5) - Fixed span */}
             <GridBox
@@ -346,7 +346,7 @@ export default function Home() {
               backgroundImage="https://d7hftxdivxxvm.cloudfront.net/?height=292&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FXGb5KQgDEqN69YTnefQi5w%2Flarger.jpg&width=445"
               onClick={() => performScroll(PHASES.CONTACT.snap)}
             >
-              <span className="text-3xl font-serif font-bold text-white tracking-wide drop-shadow-lg">Contact</span>
+              <span className="text-card-title text-white tracking-wide drop-shadow-lg">Contact</span>
             </GridBox>
             {/* Highlights: Spans 4 rows */}
             <GridBox
@@ -373,7 +373,7 @@ export default function Home() {
               backgroundImage="https://www.thames-sidestudios.co.uk/user/pages/04.news/exhibitions/2022/10.counter/JonathanCallan_DSC_1863Counter2022_2000px.jpg"
               onClick={() => performScroll(PHASES.EXPERIENCE.snap)}
             >
-              <span className="text-2xl font-serif font-bold text-white drop-shadow-md">Experience</span>
+              <span className="text-card-title text-white drop-shadow-md">Experience</span>
             </GridBox>
             <GridBox
               gridColumn="3 / 5"
@@ -383,7 +383,7 @@ export default function Home() {
               backgroundImage="https://artstormer.com/wp-content/uploads/2011/04/127685475_28a1267609.jpg?w=640"
               onClick={() => performScroll(PHASES.WRITING.snap)}
             >
-              <span className="text-xl font-serif font-bold text-white drop-shadow-md">Writing</span>
+              <span className="text-card-title text-white drop-shadow-md">Writing</span>
             </GridBox>
             <GridBox
               gridColumn="3 / 5"
@@ -392,7 +392,7 @@ export default function Home() {
               scale={otherBoxesScale}
               backgroundImage="https://mir-s3-cdn-cf.behance.net/projects/404/a7e44868993189.Y3JvcCwzMTIzLDI0NDMsMjcwLDA.jpg"
             >
-              <span className="text-xl font-serif font-bold text-white drop-shadow-md">Projects</span>
+              <span className="text-card-title text-white drop-shadow-md">Projects</span>
             </GridBox>
             {/* Skills: Row 5-6 (2 rows), Col 1-3 */}
             <GridBox
@@ -403,7 +403,7 @@ export default function Home() {
               backgroundImage="https://d7hftxdivxxvm.cloudfront.net/?height=570&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrJc4mlDJy3odqIdUvHzHCw%2Flarger.jpg&width=445"
               onClick={() => performScroll(PHASES.SKILLS.snap)}
             >
-              <span className="text-xl font-serif font-bold text-white drop-shadow-md">Skills</span>
+              <span className="text-card-title text-white drop-shadow-md">Skills</span>
             </GridBox>
             {/* Contact: Row 7 (1 row), Col 1-3 */}
             <GridBox
@@ -414,7 +414,7 @@ export default function Home() {
               backgroundImage="https://d7hftxdivxxvm.cloudfront.net/?height=292&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FXGb5KQgDEqN69YTnefQi5w%2Flarger.jpg&width=445"
               onClick={() => performScroll(PHASES.CONTACT.snap)}
             >
-              <span className="text-xl font-serif font-bold text-white drop-shadow-md">Contact</span>
+              <span className="text-card-title text-white drop-shadow-md">Contact</span>
             </GridBox>
             {/* Highlights: Row 5-8 (3 rows), Col 4 */}
             <GridBox

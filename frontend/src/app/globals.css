@@ -17,7 +17,7 @@
     --popover: 36 44% 96%;
     --popover-foreground: 0 0% 18%;
 
-    --primary: 0 0% 18%;
+    --primary: 36 85% 45%;
     --primary-foreground: 36 44% 96%;
 
     --secondary: 25 30% 70%;
@@ -134,6 +134,26 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.4s ease, color 0.3s ease;
+    user-select: none;
+    /* Disable text selection */
+    cursor: default;
+    /* Default cursor */
+  }
+
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    cursor: pointer;
+  }
+
+  /* Re-enable selection for inputs */
+  input,
+  textarea {
+    user-select: text;
+    cursor: text;
   }
 
   h1,
@@ -155,24 +175,142 @@
 
 @layer utilities {
 
+
   /* Pill navigation */
   .pill-nav {
     border-radius: 9999px;
-    background-color: hsl(var(--card) / 0.9);
+    background-color: hsl(var(--card) / 0.8);
     backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border));
+    border: 1px solid hsl(var(--border) / 0.5);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* standardized-typography */
+  .text-display {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    /* text-5xl */
+    line-height: 1;
+    font-weight: 800;
+    /* font-extrabold */
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 768px) {
+    .text-display {
+      font-size: 4.5rem;
+      /* text-7xl */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-display {
+      font-size: 6rem;
+      /* ~text-8xl/9xl */
+    }
+  }
+
+  .text-section-title {
+    font-family: var(--font-serif);
+    font-size: 1.875rem;
+    /* text-3xl */
+    line-height: 1.1;
+    font-weight: 700;
+    /* font-bold */
+    letter-spacing: -0.01em;
+  }
+
+  @media (min-width: 768px) {
+    .text-section-title {
+      font-size: 3rem;
+      /* text-5xl */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-section-title {
+      font-size: 3.75rem;
+      /* text-6xl */
+    }
+  }
+
+  .text-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    /* text-2xl */
+    line-height: 1.2;
+    font-weight: 600;
+    /* font-semibold */
+  }
+
+  @media (min-width: 768px) {
+    .text-card-title {
+      font-size: 1.875rem;
+      /* text-3xl */
+    }
+  }
+
+  .text-eyebrow {
+    font-family: var(--font-sans);
+    /* or mono if preferred */
+    font-size: 0.75rem;
+    /* text-xs */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: hsl(var(--primary));
+  }
+
+  @media (min-width: 768px) {
+    .text-eyebrow {
+      font-size: 0.875rem;
+      /* text-sm */
+    }
+  }
+
+  .text-body-lead {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    /* text-lg */
+    line-height: 1.6;
+    font-weight: 300;
+    /* font-light */
+  }
+
+  @media (min-width: 768px) {
+    .text-body-lead {
+      font-size: 1.25rem;
+      /* text-xl */
+    }
+  }
+
+  .text-body {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    /* text-sm */
+    line-height: 1.6;
+    font-weight: 400;
+    /* font-regular */
+  }
+
+  @media (min-width: 768px) {
+    .text-body {
+      font-size: 1rem;
+      /* text-base */
+    }
   }
 
   /* Card hover effect */
   .card-hover {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px -2px hsl(var(--foreground) / 0.04);
+    box-shadow: 0 4px 6px -1px hsl(var(--foreground) / 0.02);
+    border: 1px solid hsl(var(--border) / 0.6);
   }
 
   .card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px -8px hsl(var(--foreground) / 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px hsl(var(--foreground) / 0.05);
+    border-color: hsl(var(--primary) / 0.3);
   }
 }
 
