@@ -1,8 +1,5 @@
-[tool.poetry]
-package-mode = false
-
 [project]
-name = "portfolio-backend"
+name = "app"
 version = "0.1.0"
 description = "Portfolio website backend"
 authors = [
