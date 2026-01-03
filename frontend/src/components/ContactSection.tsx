@@ -48,7 +48,7 @@ export default function ContactSection({ opacity, y, pointerEvents, onNoMiClick 
                     </div>
 
                     {/* Right: No-Mi.ai Call to Action */}
-                    <div className="lg:col-span-4 flex justify-start lg:justify-end items-end pb-8 pointer-events-auto">
+                    <div className="lg:col-span-4 flex justify-start lg:justify-end items-end pb-8">
                         <button
                             onClick={onNoMiClick}
                             className="group relative flex items-center justify-center gap-3 px-8 py-6 bg-gradient-to-br from-indigo-500 to-purple-700 text-white rounded-2xl shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-full md:w-auto"
@@ -69,7 +69,7 @@ export default function ContactSection({ opacity, y, pointerEvents, onNoMiClick 
                             Currently open to new opportunities in AI Engineering and Research. Let's build the future together.
                         </p>
 
-                        <div className="flex flex-wrap gap-4 pointer-events-auto">
+                        <div className="flex flex-wrap gap-4">
                             <a
                                 href={`mailto:${email}`}
                                 className="group relative inline-flex items-center gap-2 px-6 py-3 bg-[hsl(var(--foreground))] text-[hsl(var(--background))] rounded-full text-base font-bold hover:scale-105 transition-transform duration-300"
@@ -78,7 +78,7 @@ export default function ContactSection({ opacity, y, pointerEvents, onNoMiClick 
                                 <Mail size={16} />
                             </a>
                             <a
-                                href="/resume.pdf"
+                                href="/KhalidMKhan_Resume.pdf"
                                 target="_blank"
                                 className="group inline-flex items-center gap-2 px-6 py-3 border border-[hsl(var(--border))] rounded-full text-base font-medium hover:bg-[hsl(var(--card))] transition-colors"
                             >
@@ -89,7 +89,7 @@ export default function ContactSection({ opacity, y, pointerEvents, onNoMiClick 
                     </div>
 
                     {/* Right Bottom: Details */}
-                    <div className="lg:col-span-6 flex flex-col items-start lg:items-end justify-end space-y-6 pointer-events-auto">
+                    <div className="lg:col-span-6 flex flex-col items-start lg:items-end justify-end space-y-6">
                         <div className="flex flex-col items-start lg:items-end gap-1">
                             <span className="text-[10px] font-bold uppercase tracking-widest text-[hsl(var(--muted-foreground))]">Email</span>
                             <button
@@ -105,10 +105,10 @@ export default function ContactSection({ opacity, y, pointerEvents, onNoMiClick 
 
                         <div className="flex flex-col md:flex-row items-end gap-6 text-right">
                             <div className="flex gap-6">
-                                <a href="https://linkedin.com/in/khalid-khan" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
+                                <a href="https://linkedin.com/in/khalidm-khan/" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
                                     LinkedIn <ArrowUpRight size={14} />
                                 </a>
-                                <a href="https://github.com/khalid-khan" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
+                                <a href="https://github.com/Kahl-d" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">
                                     GitHub <ArrowUpRight size={14} />
                                 </a>
                                 <a href="https://twitter.com" target="_blank" className="text-base font-medium hover:text-[hsl(var(--primary))] transition-colors flex items-center gap-1">

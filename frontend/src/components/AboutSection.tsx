@@ -160,7 +160,7 @@ export default function AboutSection({
                                         <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                                     </a>
                                     <a
-                                        href="https://www.linkedin.com/in/khalid-khan-7b4b3b1b0/"
+                                        href="https://www.linkedin.com/in/khalidm-khan/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="group flex items-center justify-between px-6 py-4 rounded-xl border border-[hsl(var(--border))] hover:border-[#0077b5] hover:text-[#0077b5] transition-all duration-300"
