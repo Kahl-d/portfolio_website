@@ -10,11 +10,10 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://khalidmkhan.vercel.app",
-        "https://khalidmk-3f9p478sr-kahlds-projects.vercel.app",
-        # Allow all Vercel preview deployments for this project
-        "https://khalidmk-*.vercel.app", 
+        "https://khalidmk.com", 
+        "https://www.khalidmk.com",
     ],
+    allow_origin_regex="https://khalidmk.*\.vercel\.app", 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
