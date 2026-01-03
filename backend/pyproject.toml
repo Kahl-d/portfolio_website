@@ -5,6 +5,7 @@ description = "Portfolio website backend"
 authors = [
     {name = "Khalid Khan"}
 ]
+packages = [{include = "app"}]
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
